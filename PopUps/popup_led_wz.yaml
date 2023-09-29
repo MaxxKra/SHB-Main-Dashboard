@@ -1,0 +1,210 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.     # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b    # 
+#    888    888 888     888 888    888      888     888 888    888    # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P    # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"     # 
+#    888        888     888 888             888     888 888           # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888           # 
+#    888         "Y88888P"  888              "Y88888P"  888           # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+#    888      8888888888 8888888b.       888       888 8888888888P    # 
+#    888      888        888  "Y88b      888   o   888       d88P     # 
+#    888      888        888    888      888  d8b  888      d88P      # 
+#    888      8888888    888    888      888 d888b 888     d88P       # 
+#    888      888        888    888      888d88888b888    d88P        # 
+#    888      888        888    888      88888P Y88888   d88P         # 
+#    888      888        888  .d88P      8888P   Y8888  d88P          # 
+#    88888888 8888888888 8888888P"       888P     Y888 d8888888888    # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+title: Wohnbereich LEDs
+dismissable: true
+entity: light.wohnbereich_leds
+size: normal
+style: |-
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+  type: custom:vertical-stack-in-card
+  card_mod:
+    style: |
+      ha-card {
+        background: transparent;
+        border: transparent;
+      }
+  cards:
+
+#----------------------------------------------------------------
+#  Entitäten Karte                                           
+#----------------------------------------------------------------
+
+    - type: entities
+      entities:
+        - entity: light.wohnbereich_indirekte_beleuchtung
+          secondary_info: last-changed
+      card_mod:
+        style: |
+          ha-card {
+            background: transparent;
+            border: transparent;
+          }
+
+#----------------------------------------------------------------
+#  Layout Karte                                           
+#----------------------------------------------------------------
+
+    - type: custom:layout-card
+      layout_type: custom:grid-layout
+      layout:
+        grid-template-columns: auto 40%
+      view_layout:
+        column: 2
+      card_mod:
+        style: |
+          ha-card {
+            background: transparent;
+            border: transparent;
+          }
+      cards:
+
+#----------------------------------------------------------------
+#  Layout Karte                                           
+#----------------------------------------------------------------
+
+        - type: custom:layout-card
+          column_height: 1
+          layout_type: custom:vertical-layout
+          cards:
+
+#----------------------------------------------------------------
+#  Light Entity Karte                                          
+#----------------------------------------------------------------
+
+            - type: custom:light-entity-card
+              entity: light.wohnbereich_indirekte_beleuchtung
+              shorten_cards: false
+              consolidate_entities: true
+              child_card: false
+              hide_header: true
+              header: ''
+              color_wheel: true
+              persist_features: false
+              brightness: false
+              color_temp: true
+              white_value: true
+              color_picker: false
+              speed: true
+              intensity: true
+              force_features: false
+              show_slider_percent: false
+              full_width_sliders: true
+              brightness_icon: weather-sunny
+              white_icon: file-word-box
+              temperature_icon: thermometer
+              speed_icon: speedometer
+              intensity_icon: transit-connection-horizontal
+              effects_list: false
+              card_mod:
+                style: |
+                  ha-card {
+                    background: transparent;
+                    border: transparent;
+                  }
+
+#----------------------------------------------------------------
+#  Light Entity Karte                                          
+#----------------------------------------------------------------
+
+            - type: custom:light-entity-card
+              entity: light.wohnbereich_indirekte_beleuchtung
+              shorten_cards: false
+              consolidate_entities: true
+              child_card: false
+              hide_header: true
+              header: ''
+              color_wheel: true
+              persist_features: false
+              brightness: false
+              color_temp: false
+              white_value: true
+              color_picker: true
+              speed: true
+              intensity: true
+              force_features: false
+              show_slider_percent: false
+              full_width_sliders: true
+              brightness_icon: weather-sunny
+              white_icon: file-word-box
+              temperature_icon: thermometer
+              speed_icon: speedometer
+              intensity_icon: transit-connection-horizontal
+              effects_list: false
+              card_mod:
+                style: |
+                  ha-card {
+                    background: transparent;
+                    border: transparent;
+                  }
+
+#----------------------------------------------------------------
+#  Light Slider Karte                                          
+#----------------------------------------------------------------
+
+        - type: custom:light-slider-card
+          entity: light.wohnbereich_indirekte_beleuchtung
+          hide_title: true
+          attribute: brightness_pct
+          slider_color_auto: true
+          slider_corner_radius: 30px
+          slider_track_color: '#d9d9d9'
+          slider_color_rgb_off: '--card-mod-icon-color'
+          hide_thumb: true
+          icon_color: '#fff'
+          icon_position: inside
+          state_color: '#fff'
+          state_position: inside
+          slider_height: 330px
+          slider_width: 100px
+          card_mod:
+            style: |
+              ha-card {
+                background: transparent;
+                border: transparent;
+              }
+          
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+
+view_layout:
+  grid-area: pop4
