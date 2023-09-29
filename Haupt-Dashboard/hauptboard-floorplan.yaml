@@ -1,0 +1,12 @@
+# lovelace_gen
+
+title: Hauptboard
+kiosk_mode:
+  entity_settings:
+    - entity:
+        switch.vollbild_shb_touch: 'on'
+      hide_sidebar: true
+      hide_header: true
+
+views:
+  - !include hauptboard-floorplan-data.yaml
