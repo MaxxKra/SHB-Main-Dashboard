@@ -1,0 +1,413 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.     # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b    # 
+#    888    888 888     888 888    888      888     888 888    888    # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P    # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"     # 
+#    888        888     888 888             888     888 888           # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888           # 
+#    888         "Y88888P"  888              "Y88888P"  888           # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+#    8888888888 888                   888                             # 
+#    888        888                   888                             # 
+#    888        888                   888                             # 
+#    8888888    888  .d88b.   .d8888b 888  888 888  888               # 
+#    888        888 d88""88b d88P"    888 .88P 888  888               # 
+#    888        888 888  888 888      888888K  888  888               # 
+#    888        888 Y88..88P Y88b.    888 "88b Y88b 888               # 
+#    888        888  "Y88P"   "Y8888P 888  888  "Y88888               # 
+#                                                   888               # 
+#                                              Y8b d88P               # 
+#                                               "Y88P"                # 
+
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+title: Unser fleißiger Flocky!
+dismissable: true
+entity: vacuum.flocky
+size: normal
+style: |-
+  --popup-max-width: 1200px;
+  --popup-min-width: 800px;
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      } 
+
+card:
+#----------------------------------------------------------------
+#  Picture Elements Card                                                  
+#----------------------------------------------------------------
+  type: picture-elements
+  image: /local/lovelace/icon/flocky/bg_flocky_popup.png
+  elements:
+
+#----------------------------------------------------------------
+#  Flocky Status-Bilder (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      entity: vacuum.flocky
+      show_entity_picture: true
+      show_icon: false
+      show_state: false
+      show_name: false
+      size: 70%
+      state:
+        - value: docked
+          entity_picture: /local/lovelace/icon/flocky/flocky_docked.png
+        - value: returning
+          entity_picture: /local/lovelace/icon/flocky/flocky_cleaning.gif
+          styles:
+            icon:
+              - animation:
+                  - returning 6s linear infinite
+        - value: idle
+          entity_picture: /local/lovelace/icon/flocky/flocky_cleaning.gif
+        - value: cleaning
+          entity_picture: /local/lovelace/icon/flocky/flocky_cleaning.gif
+          styles:
+            icon:
+              - animation:
+                  - bewegen 6s linear infinite
+      extra_styles: |
+        @keyframes bewegen {
+                  0% {transform: rotatez(0deg)}
+                  25% {transform: rotatez(45deg)}
+                  50% { transform: rotatez(0deg)}
+                  75% {transform: rotatez(-45deg)}
+                  100% {transform: rotatez(0deg)}
+                  }
+        @keyframes returning {
+                  0% {transform: rotatez(160deg)}
+                  25% {transform: rotatez(180deg)}
+                  50% { transform: rotatez(200deg)}
+                  75% {transform: rotatez(180deg)}
+                  100% {transform: rotatez(160deg)}
+                  }
+      styles:
+        entity_picture:
+          - width: 80%
+          - padding: 10%
+        card:
+          - background: transparent
+          - border: none
+      style:
+        left: 75%
+        top: 45%
+        width: 45%
+
+#----------------------------------------------------------------
+#  Überschrift (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      show_name: true
+      name: Flocky
+      styles:
+        card:
+          - background: transparent
+          - border: none
+        name: 
+          - color: white
+          - font-family: Arial Rounded MT
+          - font-size: 3vw
+      style:
+        left: 26%
+        top: 20%
+        width: 45%
+
+#----------------------------------------------------------------
+#  Status-Text (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      show_name: true
+      name: |
+        [[[
+          if (states['vacuum.flocky'].state == 'docked') return 'ist in der Dockingstation';
+          if (states['vacuum.flocky'].state == 'cleaning') return 'ist beim Putzen';
+          if (states['vacuum.flocky'].state == 'returning') return 'fährt zurück nach Hause';
+          else return 'ist verwirrt'
+        ]]]
+      styles:
+        card:
+          - background: transparent
+          - border: none
+        name: 
+          - color: >
+              [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+          - font-family: Arial Rounded MT
+          - font-size: 2vw
+      style:
+        left: 26%
+        top: 30%
+        width: 45%
+
+#----------------------------------------------------------------
+#  Texte Staubsauger Geschwindigkeit (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      show_name: true
+      name: ECO
+      styles:
+        card:
+          - background: transparent
+          - border: none
+        name: 
+          - font-family: Arial Rounded MT
+          - font-size: 1vw
+      style:
+        left: 8%
+        top: 45%
+        width: 15%
+
+    - type: custom:button-card
+      show_name: true
+      name: NORMAL
+      styles:
+        card:
+          - background: transparent
+          - border: none
+        name: 
+          - font-family: Arial Rounded MT
+          - font-size: 1vw
+      style:
+        left: 26%
+        top: 45%
+        width: 15%
+
+    - type: custom:button-card
+      show_name: true
+      name: MAX
+      styles:
+        card:
+          - background: transparent
+          - border: none
+        name: 
+          - font-family: Arial Rounded MT
+          - font-size: 1vw
+      style:
+        left: 44%
+        top: 45%
+        width: 15%
+
+#----------------------------------------------------------------
+#  Geschwindigkeit Auswahl (Mushroom Number Card)                              
+#----------------------------------------------------------------
+    - type: custom:mushroom-number-card
+      entity: input_number.flocky_speed
+      primary_info: none
+      secondary_info: none
+      icon_type: none
+      style:
+        left: 26%
+        top: 50%
+        width: 48%
+      card_mod:
+        style: |
+          ha-card {
+            background: transparent;
+            border: none
+          }
+
+#----------------------------------------------------------------
+#  Geschwindigkeit Status (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      show_name: true
+      name: |
+        [[[
+          return 'Geschwindigkeit:' + ' ' + ' ' + states['vacuum.flocky'].attributes.fan_speed;
+        ]]]
+      styles:
+        card:
+          - background: transparent
+          - border: none
+        name: 
+          - color: >
+              [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+          - font-family: Arial Rounded MT
+          - font-size: 2vw
+      style:
+        left: 26%
+        top: 60%
+        width: 45%
+
+#----------------------------------------------------------------
+#  Button Flocky Start (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      entity: vacuum.flocky
+      show_entity_picture: true
+      show_name: false
+      aspect_ratio: 1/1
+      size: 100%
+      state:
+        - value: docked
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_start_off.png
+        - value: cleaning
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_start_on.png
+        - value: idle
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_start_on.png
+        - value: returning
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_start_on.png
+      styles:
+        card:
+          - background: transparent
+          - border: >
+              [[[ return '4px double ' + states['sensor.dashboard_primar_farbe'].state; ]]]
+      tap_action:
+        action: call-service
+        service: input_button.press
+        service_data:
+          entity_id: input_button.flocky_start
+      style:
+        left: 8%
+        top: 80%
+        width: 10%
+
+#----------------------------------------------------------------
+#  Button Flocky Stop (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      entity: vacuum.flocky
+      show_entity_picture: true
+      show_name: false
+      aspect_ratio: 1/1
+      size: 100%
+      state:
+        - value: docked
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_stop_off.png
+        - value: cleaning
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_stop_on.png
+        - value: idle
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_stop_on.png
+        - value: returning
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_stop_on.png
+      styles:
+        card:
+          - background: transparent
+          - border: >
+              [[[ return '4px double ' + states['sensor.dashboard_primar_farbe'].state; ]]]
+      tap_action:
+        action: call-service
+        service: input_button.press
+        service_data:
+          entity_id: input_button.flocky_pause
+      style:
+        left: 20%
+        top: 80%
+        width: 10%
+
+#----------------------------------------------------------------
+#  Button Flocky "Wo ist?" (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      entity: vacuum.flocky
+      show_entity_picture: true
+      show_name: false
+      aspect_ratio: 1/1
+      size: 100%
+      state:
+        - value: docked
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_ort_off.png
+        - value: cleaning
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_ort_on.png
+        - value: idle
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_ort_on.png
+        - value: returning
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_ort_on.png
+      styles:
+        card:
+          - background: transparent
+          - border: >
+              [[[ return '4px double ' + states['sensor.dashboard_primar_farbe'].state; ]]]
+      tap_action:
+        action: call-service
+        service: input_button.press
+        service_data:
+          entity_id: input_button.flocky_ort
+      style:
+        left: 32%
+        top: 80%
+        width: 10%
+
+#----------------------------------------------------------------
+#  Button Flocky Nach Hause (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      entity: vacuum.flocky
+      show_entity_picture: true
+      show_name: false
+      aspect_ratio: 1/1
+      size: 100%
+      state:
+        - value: docked
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_home_off.png
+        - value: cleaning
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_home_on.png
+        - value: idle
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_home_on.png
+        - value: returning
+          entity_picture: /local/lovelace/icon/flocky/button_flocky_home_on.png
+      styles:
+        card:
+          - background: transparent
+          - border: >
+              [[[ return '4px double ' + states['sensor.dashboard_primar_farbe'].state; ]]]
+      tap_action:
+        action: call-service
+        service: input_button.press
+        service_data:
+          entity_id: input_button.flocky_home
+      style:
+        left: 44%
+        top: 80%
+        width: 10%
+
+#----------------------------------------------------------------
+#  Akkustand Status (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      show_name: true
+      name: |
+        [[[
+          return 'Akkustand:' + ' ' + ' ' + states['vacuum.flocky'].attributes.battery_level + '%';
+        ]]]
+      styles:
+        card:
+          - background: transparent
+          - border: none
+        name: 
+          - color: >
+              [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+          - font-family: Arial Rounded MT
+          - font-size: 2vw
+      style:
+        left: 75%
+        top: 90%
+        width: 45%
+
+
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+view_layout:
+  grid-area: pop18
