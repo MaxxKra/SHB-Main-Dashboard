@@ -1,0 +1,77 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.     # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b    # 
+#    888    888 888     888 888    888      888     888 888    888    # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P    # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"     # 
+#    888        888     888 888             888     888 888           # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888           # 
+#    888         "Y88888P"  888              "Y88888P"  888           # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+#    888    d8P                                                       # 
+#    888   d8P                                                        # 
+#    888  d8P                                                         # 
+#    888d88K      8888b.  88888b.d88b.   .d88b.  888d888 8888b.       # 
+#    8888888b        "88b 888 "888 "88b d8P  Y8b 888P"      "88b      # 
+#    888  Y88b   .d888888 888  888  888 88888888 888    .d888888      # 
+#    888   Y88b  888  888 888  888  888 Y8b.     888    888  888      # 
+#    888    Y88b "Y888888 888  888  888  "Y8888  888    "Y888888      # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     #
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+title: Es klingelt an der Gartentüre
+dismissable: true
+size: normal
+timeout: 40000
+entity: camera.garten_kamera
+style: |-
+  --popup-max-width: 1600px;
+  --popup-min-width: 1500px;
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      } 
+card:
+
+#----------------------------------------------------------------
+#  Bildübersicht Karte
+#----------------------------------------------------------------
+
+  type: picture-glance
+  title: Gartenkamera
+  camera_view: live
+  entities: []
+  camera_image: camera.garten_kamera
+  theme: Caule Black Orange Glass
+  tap_action:
+    action: none
+  hold_action:
+    action: none
+
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+
+view_layout:
+  grid-area: pop1
