@@ -1,0 +1,123 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.        # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b       # 
+#    888    888 888     888 888    888      888     888 888    888       # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P       # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"        # 
+#    888        888     888 888             888     888 888              # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888              # 
+#    888         "Y88888P"  888              "Y88888P"  888              # 
+#                                                                        # 
+#                                                                        # 
+#                                                                        # 
+#    8888888b.   .d88888b.   .d8888b. 88888888888 8888888 88888888888    # 
+#    888   Y88b d88P" "Y88b d88P  Y88b    888       888       888        # 
+#    888    888 888     888 Y88b.         888       888       888        # 
+#    888   d88P 888     888  "Y888b.      888       888       888        # 
+#    8888888P"  888     888     "Y88b.    888       888       888        # 
+#    888        888     888       "888    888       888       888        # 
+#    888        Y88b. .d88P Y88b  d88P    888       888       888        # 
+#    888         "Y88888P"   "Y8888P"     888     8888888     888        # 
+#                                                                        # 
+#                                                                        # 
+#                                                                        # 
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+entity: input_text.popup
+title: Touch-PC
+size: normal
+style: |-
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: none !important;
+        background-color: transparent;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+card:
+
+#----------------------------------------------------------------
+#  Picture Elements Karte                                            
+#----------------------------------------------------------------
+
+  type: picture-elements
+  image: /local/lovelace/icon/postit.png
+  elements:
+
+#----------------------------------------------------------------
+#  Custom Button Card
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      show_name: false
+      show_icon: false
+      show_state: true
+      entity: input_text.popup
+      styles:
+        state:
+          - text-overflow: unset
+          - white-space: unset
+          - word-break: break-word
+          - font-size: 2em
+          - color: blue
+          - font-family: brush script mt
+        card:
+          - background: transparent
+      style:
+        top: 40%
+        left: 50%
+        width: 65%
+
+#----------------------------------------------------------------
+#  Custom Button Card)                                                
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      show_name: true
+      show_icon: false
+      show_state: false
+      entity: input_button.gelesen
+      styles:
+        name:
+          - font-size: 1.5em
+          - font-family: arial black
+          - text-transform: uppercase
+        card:
+          - background: transparent
+          - border: none
+      style:
+        top: 85%
+        left: 50%
+        width: 65%
+      tap_action:
+        action: call-service
+        service: input_button.press
+        service_data:
+          entity_id: input_button.gelesen
+  card_mod:
+    style: |
+      ha-card {
+        background: transparent;
+        border: none
+      }
+          
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+
+view_layout:
+  grid-area: pop8
