@@ -1,0 +1,364 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.                                        #
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b                                       # 
+#    888    888 888     888 888    888      888     888 888    888                                       # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P                                       # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"                                        # 
+#    888        888     888 888             888     888 888                                              # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888                                              # 
+#    888         "Y88888P"  888              "Y88888P"  888                                              # 
+#                                                                                                        # 
+#                                                                                                        # 
+#                                                                                                        # 
+#    8888888888               888                                                        888      888    # 
+#    888                      888                                                        888      888    # 
+#    888                      888                                                        888      888    # 
+#    8888888  8888b.  888d888 88888b.   8888b.  888  888 .d8888b  888  888  888  8888b.  88888b.  888    # 
+#    888         "88b 888P"   888 "88b     "88b 888  888 88K      888  888  888     "88b 888 "88b 888    # 
+#    888     .d888888 888     888  888 .d888888 888  888 "Y8888b. 888  888  888 .d888888 888  888 888    # 
+#    888     888  888 888     888 d88P 888  888 Y88b 888      X88 Y88b 888 d88P 888  888 888  888 888    # 
+#    888     "Y888888 888     88888P"  "Y888888  "Y88888  88888P'  "Y8888888P"  "Y888888 888  888 888    # 
+#                                                                                                        # 
+#                                                                                                        # 
+#                                                                                                        # 
+
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+title: Dashboard Farbauswahl
+dismissable: true
+entity: input_select.mein_theme
+size: normal
+style: |-
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+card:
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+  type: vertical-stack
+  cards:
+#----------------------------------------------------------------
+#  Überschrift (Custom Button Card)                              
+#----------------------------------------------------------------
+    - type: custom:button-card
+      show_name: true
+      show_icon: false
+      name: Wähle eine Dashboard-Farbe
+      styles:
+        name:
+          - color: |
+              [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+          - font-family: Arial Rounded MT
+          - width: 100%
+          - font-size: 1.5vw
+          - margin: '-1vw'
+        card:
+          - background: transparent
+          - border: none
+          - border-radius: 0px
+#----------------------------------------------------------------
+#  Leerzeile (Markdown Card)                                                  
+#----------------------------------------------------------------
+    - type: markdown
+      content: '>'
+      card_mod:
+        style: |
+          ha-card {
+            border: none;
+            background: transparent;
+          }
+#----------------------------------------------------------------
+#  Raster Karte (5 Spalten)                                      
+#----------------------------------------------------------------
+    - square: false
+      type: grid
+      cards:
+#----------------------------------------------------------------
+#  Button Überschriften mit Markdown Card (5x)                                                  
+#----------------------------------------------------------------
+        - type: markdown
+          content: <center> Rose
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent;
+                margin: -15px
+              }
+        - type: markdown
+          content: <center> Purple
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent;
+                margin: -15px
+              }
+        - type: markdown
+          content: <center> Blue
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent;
+                margin: -15px
+              }
+        - type: markdown
+          content: <center> Aqua
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent;
+                margin: -15px
+              }
+        - type: markdown
+          content: <center> Green
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent;
+                margin: -15px
+              }
+      columns: 5
+#----------------------------------------------------------------
+#  Raster Karte (5 Spalten)                                                  
+#----------------------------------------------------------------
+    - square: true
+      type: grid
+      cards:
+#----------------------------------------------------------------
+#  Custom Button Cards für die Farbauswahl (5x)                                                
+#----------------------------------------------------------------
+        - type: custom:button-card
+          aspect_ratio: 1/1
+          styles:
+            card:
+              - background: '#aa3151'
+              - border-radius: 50%
+              - border: 1px groove white
+          tap_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.mein_theme
+              option: Rose
+        - type: custom:button-card
+          aspect_ratio: 1/1
+          styles:
+            card:
+              - background: '#904eab'
+              - border-radius: 50%
+              - border: 1px groove white
+          tap_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.mein_theme
+              option: Purple
+        - type: custom:button-card
+          aspect_ratio: 1/1
+          styles:
+            card:
+              - background: '#3a5ef4'
+              - border-radius: 50%
+              - border: 1px groove white
+          tap_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.mein_theme
+              option: Blue
+        - type: custom:button-card
+          aspect_ratio: 1/1
+          styles:
+            card:
+              - background: '#0bcfb0'
+              - border-radius: 50%
+              - border: 1px groove white
+          tap_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.mein_theme
+              option: Aqua
+        - type: custom:button-card
+          aspect_ratio: 1/1
+          styles:
+            card:
+              - background: '#19c31c'
+              - border-radius: 50%
+              - border: 1px groove white
+          tap_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.mein_theme
+              option: Green
+      columns: 5
+#----------------------------------------------------------------
+#  Leerzeile (Markdown Card)                                                  
+#----------------------------------------------------------------
+    - type: markdown
+      content: '>'
+      card_mod:
+        style: |
+          ha-card {
+            border: none;
+            background: transparent;
+          }
+#----------------------------------------------------------------
+#  Raster Karte (5 Spalten)                                                  
+#----------------------------------------------------------------
+    - square: false
+      type: grid
+      cards:
+#----------------------------------------------------------------
+#  Button Überschriften mit Markdown Card (5x)                                                  
+#----------------------------------------------------------------
+        - type: markdown
+          content: <center> Yellow
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent;
+                margin: -15px
+              }
+        - type: markdown
+          content: <center> Orange
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent;
+                margin: -15px
+              }
+        - type: markdown
+          content: <center> Coral
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent;
+                margin: -15px
+              }
+        - type: markdown
+          content: <center> Pink
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent;
+                margin: -15px
+              }
+        - type: markdown
+          content: <center> Gray
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent;
+                margin: -15px
+              }
+      columns: 5
+#----------------------------------------------------------------
+#  Raster Karte (5 Spalten)                                                  
+#----------------------------------------------------------------
+    - square: true
+      type: grid
+      cards:
+#----------------------------------------------------------------
+#  Custom Button Cards für die Farbauswahl (5x)                                                
+#----------------------------------------------------------------
+        - type: custom:button-card
+          aspect_ratio: 1/1
+          styles:
+            card:
+              - background: '#d6a245'
+              - border-radius: 50%
+              - border: 1px groove white
+          tap_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.mein_theme
+              option: Yellow
+        - type: custom:button-card
+          aspect_ratio: 1/1
+          styles:
+            card:
+              - background: '#d25f36'
+              - border-radius: 50%
+              - border: 1px groove white
+          tap_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.mein_theme
+              option: Orange
+        - type: custom:button-card
+          aspect_ratio: 1/1
+          styles:
+            card:
+              - background: '#fa6e5e'
+              - border-radius: 50%
+              - border: 1px groove white
+          tap_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.mein_theme
+              option: Coral
+        - type: custom:button-card
+          aspect_ratio: 1/1
+          styles:
+            card:
+              - background: '#f36f92'
+              - border-radius: 50%
+              - border: 1px groove white
+          tap_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.mein_theme
+              option: Pink
+        - type: custom:button-card
+          aspect_ratio: 1/1
+          styles:
+            card:
+              - background: '#acacac'
+              - border-radius: 50%
+              - border: 1px groove white
+          tap_action:
+            action: call-service
+            service: input_select.select_option
+            service_data:
+              entity_id: input_select.mein_theme
+              option: Gray
+      columns: 5
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+view_layout:
+  grid-area: pop16
