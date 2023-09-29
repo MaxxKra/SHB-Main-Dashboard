@@ -1,0 +1,1427 @@
+# lovelace_gen
+
+# Kommentare Type 1 - http://patorjk.com/software/taag/#p=display&f=Colossal&t=Werte
+# Kommentare Type 2 - http://patorjk.com/software/taag/#p=display&f=Slant&t=Hintergrund
+
+
+#    888       888                  888               # 
+#    888   o   888                  888               # 
+#    888  d8b  888                  888               # 
+#    888 d888b 888  .d88b.  888d888 888888 .d88b.     # 
+#    888d88888b888 d8P  Y8b 888P"   888   d8P  Y8b    # 
+#    88888P Y88888 88888888 888     888   88888888    # 
+#    8888P   Y8888 Y8b.     888     Y88b. Y8b.        # 
+#    888P     Y888  "Y8888  888      "Y888 "Y8888     # 
+#                                                     # 
+#                                                     # 
+#                                                     # 
+# TITEL SETTING
+{% set TITEL = "Hauptboard" %}
+
+# THEME SETTING
+{% set THEME = "Mein Black Aqua" %}
+
+
+# PFADE SETTING
+{% set BGBILDERPFAD = "/local/lovelace/hauptboard/bgbilder/" %}
+{% set BUTTONPFAD = "/local/lovelace/hauptboard/icon/button_" %}
+
+# SCHRIFTEN SETTING
+{% set SCHRIFT1 = "Arial Rounded MT" %}
+{% set SCHRIFT2 = "Mandalore" %}
+{% set SCHRIFT3 = "Technology" %}
+{% set SCHRIFT4 = "Brush Script MT" %}
+
+# STANDARD BILDER SETTING
+{% set TRANSPIXEL = "1x1_transparent.png" %}
+{% set FAILBUTTON = "fail.png" %}
+{% set BACKGROUND = "background.png" %}
+{% set BGNACHT = "hintergrund_nacht.png" %}
+{% set BGTAG = "tageslicht.png" %}
+
+# STANDARD SENSOREN SETTING
+{% set SONNE = "sun.sun" %}
+{% set TAGESLICHT = "sensor.sonnenlicht_transparenz" %}
+{% set MEINDAT = "sensor.mein_dashboard_datum" %}
+{% set DASHEFFEKT = "input_boolean.dashboard_effekt" %}
+{% set WOHNTEMP = "sensor.raumtemperatur_wohnzimmer_ist" %}
+{% set AUSSTEMP = "sensor.garten_temperatur" %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set LIGHTS =    [( "light"               , "arbeitszimmer_deckenlicht"             , "Arbeitszimmer Deckenlicht" , 88     , 60.22 , 2       , "on"            , "off"           , ""          , ""          , ""           , "decke"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "schlafzimmer_deckenlicht"              , "Schlafzimmer Deckenlicht"  , 85.63  , 82.13 , 2       , "on"            , "off"           , ""          , ""          , ""           , "decke"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "schlafzimmer_nachttisch_links"         , "Nachttischlampe Links"     , 90     , 89.21 , 2       , "on"            , "off"           , ""          , ""          , ""           , "nachttisch"      , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "schlafzimmer_nachttisch_rechts"        , "Nachttischlampe Rechts"    , 80.69  , 89.21 , 2       , "on"            , "off"           , ""          , ""          , ""           , "nachttisch"      , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "abstellraum_licht"                     , "Abstellraum Deckenlicht"   , 72     , 86.63 , 2       , "on"            , "off"           , ""          , ""          , ""           , "decke"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "vorraum_dauerlicht"                    , "Vorraum Dauerlicht"        , 74.44  , 62.47 , 2       , "on"            , "off"           , ""          , ""          , ""           , "decke"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "bad_decke"                             , "Badezimmer Deckenlicht"    , 66.31  , 37.3  , 2       , "on"            , "off"           , ""          , ""          , ""           , "decke"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "bad_spiegel"                           , "Badezimmer Spiegellicht"   , 65.56  , 27.75 , 2       , "on"            , "off"           , ""          , ""          , ""           , "spot"            , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "wc_licht"                              , "WC Deckenlicht"            , 71.63  , 33.15 , 2       , "on"            , "off"           , ""          , ""          , ""           , "decke"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "wohnzimmer_deckenlicht"                , "Wohnzimmer Deckenlicht"    , 61.06  , 80.22 , 2       , "on"            , "off"           , ""          , ""          , ""           , "decke"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "wohnzimmer_schreibtischlampe"          , "Wohnzimmer Schreibtisch"   , 66.06  , 92.25 , 2       , "on"            , "off"           , ""          , ""          , ""           , "schreibtisch"    , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "wohnzimmer_vitrinenlicht"              , "Wohnzimmer Vitrinenlicht"  , 53.06  , 92.25 , 2       , "on"            , "off"           , ""          , ""          , ""           , "spot"            , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "esszimmer_haengeleuchte"               , "Esszimmer Hängeleuchte"    , 63.44  , 58.88 , 2       , "on"            , "off"           , ""          , ""          , ""           , "haengeleuchte"   , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "esszimmer_vitrinenlicht"               , "Esszimmer Vitrinenlicht"   , 68     , 50.22 , 2       , "on"            , "off"           , ""          , ""          , ""           , "spot"            , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "esszimmer_spots"                       , "Esszimmer Spots"           , 59.56  , 56.29 , 2       , "on"            , "off"           , ""          , ""          , ""           , "spot"            , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "kuche_deckenlicht"                     , "Küche Deckenlicht"         , 54.56  , 40.34 , 2       , "on"            , "off"           , ""          , ""          , ""           , "decke"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "kuche_arbeitsflache"                   , "Küche Arbeitsfläche"       , 58.56  , 31.24 , 2       , "on"            , "off"           , ""          , ""          , ""           , "spot"            , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "kueche_barlicht"                       , "Küche Barlicht"            , 50.56  , 47.87 , 2       , "on"            , "off"           , ""          , ""          , ""           , "spot"            , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "on_air"                                , "Büro OnAir"                , 79     , 68.76 , 2       , "on"            , "off"           , ""          , ""          , ""           , "onair"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "videoleuchte"                          , "Büro Videoleuchte"         , 88     , 49.66 , 2       , "on"            , "off"           , ""          , ""          , ""           , "videoleuchte"    , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "terrassenlicht"                        , "Terrasse Wandleuchte"      , 42     , 44.61 , 2       , "on"            , "off"           , ""          , ""          , ""           , "wand"            , "toggle"         , "more-info"      , ""             , ""              , ""                                          )] %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set RGBW =      [( "light"               , "buro_schreibtisch"                     , "Büro Schreibtisch"         , 85     , 49.66 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          )] %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set RGB =       [( "light"               , "schlafzimmer_bett"                     , "Schlafzimmer Bettlicht"    , 85.63  , 89.21 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "vorraum_wandlicht"                     , "Vorraum Wandlicht"         , 74.44  , 75.84 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "wohnzimmer_couchtisch"                 , "Couchtisch"                , 55.31  , 81.69 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "wohnzimmer_wandlicht"                  , "Wohnzimmer Wandlicht"      , 59     , 92.25 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "esszimmer_wandlicht"                   , "Esszimmer Wandlicht"       , 68     , 58.88 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "kueche_wandlicht"                      , "Küche Wandlicht"           , 52.25  , 27.08 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "vordach_beleuchtung"                   , "Vordach Beleuchtung"       , 40.38  , 74.72 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "geschirrspuler"                        , "Geschirrspüler Licht"      , 59.56  , 39.78 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          )] %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set GERAETE =   [( "light"               , "wohnbereich_leds"                      , "Wohnbereich LEDs"          , 68     , 67.98 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "light"               , "terrasse_reserve"                      , "Terrasse Reserve"          , 31.06  , 49.21 , 2       , "on"            , "off"           , ""          , ""          , ""           , "birne"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "sensor"              , "shb_touch_zustand"                     , "SHB_Touch"                 , 59.56  , 52.02 , 2       , "Eingeschaltet" , "Ausgeschaltet" , ""          , ""          , ""           , "pc"              , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "sensor"              , "s_h_b_pc_zustand"                      , "S-H-B--PC"                 , 81.94  , 49.66 , 2       , "Eingeschaltet" , "Ausgeschaltet" , ""          , ""          , ""           , "pc"              , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "lueftung_sanitaer"                     , "WC Lüftung"                , 71.63  , 27.75 , 2       , "on"            , "off"           , ""          , ""          , ""           , "ventilator"      , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "vordach_heizung"                       , "Terrasse Heizstrahler"     , 44.38  , 64.04 , 2       , "on"            , "off"           , ""          , ""          , ""           , "heizstrahler"    , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "vollbild_shb_touch"                    , "Vollbild SHB-Touch"        , 96.88  , 4.04  , 2       , "on"            , "off"           , ""          , ""          , ""           , "re_vollbild"     , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "input_boolean"       , "dashboard_effekt"                      , "Dashboard Effekt"          , 93.75  , 4.04  , 2       , "on"            , "off"           , ""          , ""          , ""           , "re_effekt"       , "toggle"         , "fire-dom-event" , ""             , ""              , "input_select.mein_theme"                   ),
+                    ( "input_button"        , "dashboard_refresh"                     , "Dashboard Refresh"         , 90.63  , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_refresh"      , "call-service"   , "more-info"      , ""             , "mqtt.publish"  , "SHB-Touch_Taste_F5"                         ),
+                    ( "input_button"        , "dashboard_screensaver"                 , "Zum Screensaver"           , 87.5   , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_next_page"    , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-screensaver/0"                   ),
+                    ( "switch"              , "sleepmode"                             , "Monitor AUS"               , 84.38  , 4.04  , 2       , "on"            , "off"           , ""          , ""          , ""           , "re_monitor"      , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_youtube"                     , "Zur Youtube Seite"         , 81.25  , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_youtube"      , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-seiten/youtube"                  ),
+                    ( "media_player"        , "esszimmer_echo"                        , "Esszimmer Echo"            , 62.31  , 50.22 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "media_player"        , "wohnzimmer_echo"                       , "Wohnzimmer Echo"           , 55.13  , 88.88 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "media_player"        , "vorraum_echo"                          , "Vorraum Echo"              , 78     , 58.09 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "media_player"        , "arbeitszimmer_echo"                    , "Arbeitszimmer Echo"        , 94.94  , 58.65 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "media_player"        , "badezimmer_echo"                       , "Badezimmer Echo"           , 68.06  , 27.75 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "binary_sensor"       , "kontakt_eingang"                       , "Türkontakt Eingang"        , 76.19  , 47.3  , 2       , "on"            , "off"           , ""          , ""          , "off"        , "re_tuere"        , "call-service"   , "more-info"      , ""             , "switch.toggle" , "switch.ture_auf"                           ),
+                    ( "binary_sensor"       , "kontakt_garten"                        , "Türkontakt Garten"         , 46.75  , 57.75 , 2       , "on"            , "off"           , ""          , ""          , "off"        , "re_tuere"        , "none"           , "none"           , ""             , ""              , ""                                          ),
+                    ( "media_player"        , "kuchen_echo"                           , "Küchen Echo"               , 59.56  , 35.96 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "vacuum"              , "flocky"                                , "Flocky"                    , 50     , 85.39 , 2       , "cleaning"      , "docked"        , "returning" , "standby"   , ""           , "flocky"          , "more-info"      , "more-info"      , ""             , ""              , ""                                          )] %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set MARKISE =   [( "cover"               , "markiese"                              , "Markise"                   , 33.56  , 37.64 , 2       , "open"          , "closed"        , "opening"   , "closing"   , ""           , "markise"         , "toggle"         , "more-info"      , ""         , ""              , ""                                          )] %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set COVERS =    [( "cover"               , "arbeitszimmer"                         , "Rollladen Arbeitszimmer"   , 17     , 31.01 , 3.5     , "open"          , "closed"        , "opening"   , "closing"   , ""           , "re_rollladen"    , "toggle"         , "more-info"      , ""         , ""              , ""                                          ),
+                    ( "cover"               , "schlafzimmer"                          , "Rollladen Schlafzimmer"    , 21.5   , 31.01 , 3.5     , "open"          , "closed"        , "opening"   , "closing"   , ""           , "re_rollladen"    , "toggle"         , "more-info"      , ""         , ""              , ""                                          ),
+                    ( "cover"               , "kuche"                                 , "Rollladen Küche"           , 12.5   , 31.01 , 3.5     , "open"          , "closed"        , "opening"   , "closing"   , ""           , "re_rollladen"    , "toggle"         , "more-info"      , ""         , ""              , ""                                          ),
+                    ( "cover"               , "terrassentuere"                        , "Rollladen Gartentüre"      , 8      , 31.01 , 3.5     , "open"          , "closed"        , "opening"   , "closing"   , ""           , "re_rollladen"    , "toggle"         , "more-info"      , ""         , ""              , ""                                          ),
+                    ( "cover"               , "terrassenfenster"                      , "Rollladen Gartenfenster"   , 3.5    , 31.01 , 3.5     , "open"          , "closed"        , "opening"   , "closing"   , ""           , "re_rollladen"    , "toggle"         , "more-info"      , ""         , ""              , ""                                          )] %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set KALENDER =  [( "calendar"            , "geburtstag_geburtstag"                 , "Geburtstag heute"          , 87.5   , 15.06 , 24      , "on"            , "off"           , ""          , ""          , ""           , "re_birthday"     , "none"           , "none"           , ""             , ""              , "sensor.geburtstags_text"                   ),
+                    ( "calendar"            , "unsere_familie_unsere_familie"         , "Termine heute"             , 87.5   , 30    , 24      , "on"            , "off"           , ""          , ""          , ""           , "re_termine"      , "none"           , "none"           , ""             , ""              , "sensor.familien_termine"                   )] %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set TEMPS =     [( "sensor"              , "temperatur_ist_heizkoerper_wohnzimmer" , "Wohnzimmer Temperatur"     , 49     , 73.15 , 2.7     , ""              , ""              , ""          , ""          , ""           , "leer"            , "fire-dom-event" , "more-info"      , ""             , ""              , "sensor.temperatur_ist_heizkoerper_vorraum" ),
+                    ( "sensor"              , "temperatur_ist_heizkoerper_vorraum"    , "Vorraum Temperatur"        , 78     , 52.25 , 2.7     , ""              , ""              , ""          , ""          , ""           , "leer"            , "fire-dom-event" , "more-info"      , ""             , ""              , "sensor.temperatur_ist_heizkoerper_vorraum" ),
+                    ( "sensor"              , "badezimmer_echo_temperature"           , "Badezimmer Temperatur"     , 68.06  , 31.91 , 2.7     , ""              , ""              , ""          , ""          , ""           , "leer"            , "fire-dom-event" , "more-info"      , ""             , ""              , "sensor.temperatur_ist_heizkoerper_vorraum" ),
+                    ( "sensor"              , "hut_arbeitszimmer_temperature"         , "Arbeitszimmer Temperatur"  , 93     , 66.74 , 2.7     , ""              , ""              , ""          , ""          , ""           , "leer"            , "fire-dom-event" , "more-info"      , ""             , ""              , "sensor.temperatur_ist_heizkoerper_vorraum" ),
+                    ( "sensor"              , "hut_schlafzimmer_temperature"          , "Schlafzimmer Temperatur"   , 93     , 72.25 , 2.7     , ""              , ""              , ""          , ""          , ""           , "leer"            , "fire-dom-event" , "more-info"      , ""             , ""              , "sensor.temperatur_ist_heizkoerper_vorraum" ),
+                    ( "sensor"              , "garten_temperatur"                     , "Garten Temperatur"         , 38.44  , 64.27 , 2.7     , ""              , ""              , ""          , ""          , ""           , "leer"            , "fire-dom-event" , "more-info"      , ""             , ""              , "sensor.garten_temperatur"                  )] %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set TEXT =      [( "input_button"        , "dashboard_standard_text"               , "Hauptschalter"             , 10     , 4.04  , 10      , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Morgen"                    , 3.5    , 7.98  , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Nacht"                     , 9.5    , 7.98  , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Alarmpanel"                , 15.5   , 7.98  , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Strava"                    , 24     , 7.98  , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Energy"                    , 30.5   , 7.98  , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "DnD"                       , 37     , 7.98  , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Wo ist..?"                 , 48.5   , 7.98  , 10      , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Garagentor"                , 59.81  , 7.98  , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Garagenlicht"              , 66     , 7.98  , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_select"        , "rollladen_auswahl"                     , "Rollladen"                 , 12.5   , 23.03 , 10      , ""              , ""              , ""          , ""          , ""           , ""                , "more-info"      , "more-info"      , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Fenster"                   , 3.5    , 25.96 , 5       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Türe"                      , 8      , 25.96 , 5       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Küche"                     , 12.5   , 25.96 , 5       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Arbeitszimmer"             , 17     , 25.96 , 5       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Schlafzimmer"              , 21.5   , 25.96 , 5       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Gartenkamera"              , 12.5   , 38.54 , 10      , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Medien"                    , 12.5   , 66.52 , 10      , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Heizung"                   , 12.5   , 82.02 , 10      , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Sommer/Winter"             , 6      , 84.49 , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Übersicht"                 , 12.5   , 84.49 , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_standard_text"               , "Zusatzheizung"             , 19     , 84.49 , 6       , ""              , ""              , ""          , ""          , ""           , ""                , "none"           , "none"           , ""         , ""              , ""                                          )] %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set LINIEN =    [( "linie"               , ""                                      , "Rollladen"                 , 12.5   , 21.01 , 22      , ""              , ""              , ""          , ""          , ""           , ""                , ""               , ""               , ""         , ""              , ""                                          ),
+                    ( "linie"               , ""                                      , "Kamera"                    , 12.5   , 36.52 , 22      , ""              , ""              , ""          , ""          , ""           , ""                , ""               , ""               , ""         , ""              , ""                                          ),
+                    ( "linie"               , ""                                      , "Medien"                    , 12.5   , 64.49 , 22      , ""              , ""              , ""          , ""          , ""           , ""                , ""               , ""               , ""         , ""              , ""                                          ),
+                    ( "linie"               , ""                                      , "Heizung"                   , 12.5   , 80    , 22      , ""              , ""              , ""          , ""          , ""           , ""                , ""               , ""               , ""         , ""              , ""                                          )] %}
+
+ # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
+{% set QUADRAT =   [( "sensor"              , "maxx_in_der_zone"                      , "Wo ist Maxx?"              , 46.25  , 14.16 , 5       , "ZuHause"       , "Arbeit"        , "Freunde"   , "Familie"   , "Unterwegs"  , "re_Maxx"         , "more-info"      , ""               , ""             , ""              , ""                                          ),
+                    ( "sensor"              , "moni_in_der_zone"                      , "Wo ist Moni?"              , 52.5   , 14.16 , 5       , "ZuHause"       , "Arbeit"        , "Freunde"   , "Familie"   , "Unterwegs"  , "re_Moni"         , "fire-dom-event" , "none"           , ""             , ""              , "sensor.maxx_in_der_zone"                   ),
+                    ( "switch"              , "guten_morgen"                          , "Guten Morgen"              , 3.5    , 14.16 , 5       , "on"            , "off"           , ""          , ""          , ""           , "re_guten_morgen" , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "gute_nacht"                            , "Gute Nacht"                , 9.5    , 14.16 , 5       , "on"            , "off"           , ""          , ""          , ""           , "re_gute_nacht"   , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "sensor"              , "iphone_von_maxx_activity"              , "Strava"                    , 24.13  , 14.16 , 5       , "Walking"       , "Running"       , ""          , ""          , "Strava"     , "re_Maxx"         , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-seiten/strava"                   ),
+                    ( "binary_sensor"       , "garagentor_sensor_door"                , "Garagentor"                , 60     , 14.16 , 5       , "on"            , "off"           , ""          , ""          , "fehler"     , "re_garagentor"   , "call-service"   , "more-info"      , ""             , "switch.toggle" , "switch.garagentor"                         ),
+                    ( "switch"              , "garagenlicht"                          , "Garagenlicht"              , 66     , 14.16 , 5       , "on"            , "off"           , ""          , ""          , "fehler"     , "re_garagenlicht" , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_energy"                      , "Energie"                   , 30.5   , 14.16 , 5       , ""              , ""              , ""          , ""          , "Icon"       , "re_energy"       , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-seiten/my-energy"                ),
+                    ( "input_button"        , "dashboard_dnd"                         , "DnD"                       , 37     , 14.16 , 5       , ""              , ""              , ""          , ""          , "Icon"       , "re_dnd"          , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-dnd/dnd_auswahl"                 ),
+                    ( "sensor"              , "es_spielt_musik"                       , "Musik"                     , 15.5   , 74.16 , 5       , "Ja"            , "Nein"          , ""          , ""          , "Nein"       , "re_musik"        , "navigate"       , ""               , ""             , ""              , "/lovelace-seiten/medien"                   ),
+                    ( "switch"              , "fernsehen"                             , "Fernsehen"                 , 3.5    , 74.16 , 5       , "on"            , "off"           , ""          , ""          , "off"        , "re_tv"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "spielen"                               , "Spielen"                   , 9.5    , 74.16 , 5       , "on"            , "off"           , ""          , ""          , "off"        , "re_playstation"  , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "medien_hauptschalter"                  , "Alle Medien AUS"           , 21.5   , 74.16 , 5       , "on"            , "off"           , ""          , ""          , "off"        , "re_medien"       , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "hauptschalter_heizung"                 , "Heizung Sommer/Winter"     , 6      , 89.89 , 4       , "on"            , "off"           , ""          , ""          , "off"        , "re_so-wi"        , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "sensor"              , "temperatur_ist_heizkoerper_vorraum"    , "Heizung Übersicht"         , 12.5   , 89.89 , 4       , "on"            , "off"           , ""          , ""          , "off"        , "re_heizung"      , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "zusatzheizung"                         , "Zusatzheizung"             , 19     , 89.89 , 4       , "on"            , "off"           , ""          , ""          , "off"        , "re_heizung"      , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "alarm_control_panel" , "home_alarm"                            , "Alarmanlage"               , 15.5   , 14.16 , 5       , "disarmed"      , "arming"        , "pending"   , "triggered" , "armed_away" , "re_alarm"        , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-seiten/schalter"                 ),
+                    ( "sensor"              , "geschirrspuler_status"                 , "Geschirrspüler"            , 59.5   , 44.04 , 2.5     , "Läuft"         , "Fertig"        , ""          , ""          , "Läuft"      , "re_gs"           , "more-info"      , "more-info"      , "call-service" , "light.toggle"  , "light.geschirrspuler"                      ),
+                    ( "sensor"              , "waschmaschine_status"                  , "Waschmaschine"             , 62.38  , 44.04 , 2.5     , "Läuft"         , "Fertig"        , ""          , ""          , "Läuft"      , "re_wm"           , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "sensor"              , "trockner_status"                       , "Trockner"                  , 74.69  , 83.03 , 2.5     , "Läuft"         , "Fertig"        , ""          , ""          , "Läuft"      , "re_tr"           , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "input_button"        , "dashboard_kalender"                    , "Kalender"                  , 72     , 14.16 , 5       , ""              , ""              , ""          , ""          , "on"         , "re_kalender"     , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-seiten/kalender"                 )] %}
+
+
+
+#    888b     d888                                               # 
+#    8888b   d8888                                               # 
+#    88888b.d88888                                               # 
+#    888Y88888P888  8888b.   .d8888b 888d888 .d88b.  .d8888b     # 
+#    888 Y888P 888     "88b d88P"    888P"  d88""88b 88K         # 
+#    888  Y8P  888 .d888888 888      888    888  888 "Y8888b.    # 
+#    888   "   888 888  888 Y88b.    888    Y88..88P      X88    # 
+#    888       888 "Y888888  "Y8888P 888     "Y88P"   88888P'    # 
+#                                                                # 
+#                                                                # 
+#                                                                # 
+
+#-------------------------------------------------------------------------------------------------- 
+# MACRO ZUR ANPASSUNG DER SCHRIFTGRÖßE AN DIE WEITE
+#-------------------------------------------------------------------------------------------------- 
+{% macro division_10(fnt, ws) %}
+{{"  "*ws}}- font-size: {{ fnt / 10 }}vw
+{% endmacro %}
+
+#-------------------------------------------------------------------------------------------------- 
+# MACRO FÜR DIE VERBINDUNG BUTTON BILDER - STATUS
+#-------------------------------------------------------------------------------------------------- 
+{% macro stats(akt, inakt, stac, stad, stae, but ,ws)%}
+{{"  "*ws}}state:
+{{"  "*ws}}  - value: '{{ akt }}'
+{{"  "*ws}}    entity_picture: {{ BUTTONPFAD }}{{ but }}_{{ akt }}.png
+{{"  "*ws}}    styles:
+{{"  "*ws}}      card:
+{{"  "*ws}}        - border: >
+                     [[[ return '2px solid ' + states['sensor.dashboard_primar_farbe'].state; ]]]
+{{"  "*ws}}  - value: '{{ inakt }}'
+{{"  "*ws}}    entity_picture: {{ BUTTONPFAD }}{{ but }}_{{ inakt }}.png
+{{"  "*ws}}    styles:
+{{"  "*ws}}      card:
+{{"  "*ws}}        - border: 2px solid var(--state-icon-color)
+{{"  "*ws}}  - value: '{{ stac }}'
+{{"  "*ws}}    entity_picture: {{ BUTTONPFAD }}{{ but }}_{{ stac }}.png
+{{"  "*ws}}    styles:
+{{"  "*ws}}      card:
+{{"  "*ws}}        - border: 2px solid var(--state-icon-color)
+{{"  "*ws}}  - value: '{{ stad }}'
+{{"  "*ws}}    entity_picture: {{ BUTTONPFAD }}{{ but }}_{{ stad }}.png
+{{"  "*ws}}    styles:
+{{"  "*ws}}      card:
+{{"  "*ws}}        - border: 2px solid var(--state-icon-color)
+{{"  "*ws}}  - value: '{{ stae }}'
+{{"  "*ws}}    entity_picture: {{ BUTTONPFAD }}{{ but }}_{{ stae }}.png
+{{"  "*ws}}    styles:
+{{"  "*ws}}      card:
+{{"  "*ws}}        - border: 2px solid var(--state-icon-color)
+{% endmacro %}
+
+#-------------------------------------------------------------------------------------------------- 
+# MACRO FÜR DIE TAP / HOLD / DOUBLE_TAP - ACTION
+#-------------------------------------------------------------------------------------------------- 
+{% macro actions(tap, hold, doub, serv, pop, ws)%}
+{% if tap == "toggle"%}
+{{"  "*ws}}tap_action:
+{{"  "*ws}}  action: toggle
+{% elif tap == "more-info"%}
+{{"  "*ws}}tap_action:
+{{"  "*ws}}  action: more-info
+{% elif tap == "fire-dom-event"%}
+{{"  "*ws}}tap_action:
+{{"  "*ws}}  action: fire-dom-event
+{{"  "*ws}}  browser_mod:
+{{"  "*ws}}    service: browser_mod.more_info
+{{"  "*ws}}    data:
+{{"  "*ws}}      entity: {{pop}}
+{% elif tap == "call-service" and serv == "mqtt.publish"%}
+{{"  "*ws}}tap_action:
+{{"  "*ws}}  action: call-service
+{{"  "*ws}}  service: mqtt.publish
+{{"  "*ws}}  service_data:
+{{"  "*ws}}    topic: {{pop}}
+{{"  "*ws}}  target: {}
+{% elif tap == "call-service" and serv == "switch.toggle"%}
+{{"  "*ws}}tap_action:
+{{"  "*ws}}  action: call-service
+{{"  "*ws}}  service: switch.toggle
+{{"  "*ws}}  service_data:
+{{"  "*ws}}    entity_id: {{pop}}
+{% elif tap == "navigate"%}
+{{"  "*ws}}tap_action:
+{{"  "*ws}}  action: navigate
+{{"  "*ws}}  navigation_path: {{pop}}
+{% else %}
+{{"  "*ws}}tap_action:
+{{"  "*ws}}  action: none
+{% endif %}
+{% if hold == "toggle"%}
+{{"  "*ws}}hold_action:
+{{"  "*ws}}  action: toggle
+{% elif hold == "more-info"%}
+{{"  "*ws}}hold_action:
+{{"  "*ws}}  action: more-info
+{% elif hold == "fire-dom-event"%}
+{{"  "*ws}}hold_action:
+{{"  "*ws}}  action: fire-dom-event
+{{"  "*ws}}  browser_mod:
+{{"  "*ws}}    service: browser_mod.more_info
+{{"  "*ws}}    data:
+{{"  "*ws}}      entity: {{pop}}
+{% elif hold == "call-service"%}
+{{"  "*ws}}hold_action:
+{{"  "*ws}}  action: call-service
+{{"  "*ws}}  service:  mqtt.publish
+{{"  "*ws}}  service_data:
+{{"  "*ws}}    topic: {{pop}}
+{{"  "*ws}}  target: {}
+{% elif hold == "navigate"%}
+{{"  "*ws}}hold_action:
+{{"  "*ws}}  action: navigate
+{{"  "*ws}}  navigation_path: {{pop}}
+{% else %}
+{{"  "*ws}}hold_action:
+{{"  "*ws}}  action: none
+{% endif %}
+{% if doub == "toggle"%}
+{{"  "*ws}}double_tap_action:
+{{"  "*ws}}  action: toggle
+{% elif doub == "more-info"%}
+{{"  "*ws}}double_tap_action:
+{{"  "*ws}}  action: more-info
+{% elif doub == "fire-dom-event"%}
+{{"  "*ws}}double_tap_action:
+{{"  "*ws}}  action: fire-dom-event
+{{"  "*ws}}  browser_mod:
+{{"  "*ws}}    service: browser_mod.more_info
+{{"  "*ws}}    data:
+{{"  "*ws}}      entity: {{pop}}
+{% elif doub == "call-service" and serv == "mqtt.publish"%}
+{{"  "*ws}}double_tap_action:
+{{"  "*ws}}  action: call-service
+{{"  "*ws}}  service: mqtt.publish
+{{"  "*ws}}  service_data:
+{{"  "*ws}}    topic: {{pop}}
+{{"  "*ws}}  target: {}
+{% elif doub == "call-service" and serv == "light.toggle"%}
+{{"  "*ws}}double_tap_action:
+{{"  "*ws}}  action: call-service
+{{"  "*ws}}  service: light.toggle
+{{"  "*ws}}  service_data:
+{{"  "*ws}}    entity_id: {{pop}}
+{% elif doub == "call-service"%}
+{{"  "*ws}}double_tap_action:
+{{"  "*ws}}  action: call-service
+{{"  "*ws}}  service:  mqtt.publish
+{{"  "*ws}}  service_data:
+{{"  "*ws}}    topic: {{pop}}
+{{"  "*ws}}  target: {}
+{% elif doub == "navigate"%}
+{{"  "*ws}}double_tap_action:
+{{"  "*ws}}  action: navigate
+{{"  "*ws}}  navigation_path: {{pop}}
+{% else %}
+{{"  "*ws}}double_tap_action:
+{{"  "*ws}}  action: none
+{% endif %}
+{% endmacro %}
+
+
+
+#     .d8888b.  888                     888         888                                          888        #
+#    d88P  Y88b 888                     888         888                                          888        #
+#    Y88b.      888                     888         888                                          888        #
+#     "Y888b.   888888  8888b.  888d888 888888      888       8888b.  888  888  .d88b.  888  888 888888     #
+#        "Y88b. 888        "88b 888P"   888         888          "88b 888  888 d88""88b 888  888 888        #
+#          "888 888    .d888888 888     888         888      .d888888 888  888 888  888 888  888 888        #
+#    Y88b  d88P Y88b.  888  888 888     Y88b.       888      888  888 Y88b 888 Y88..88P Y88b 888 Y88b.      #
+#     "Y8888P"   "Y888 "Y888888 888      "Y888      88888888 "Y888888  "Y88888  "Y88P"   "Y88888  "Y888     #
+#                                                                          888                              #
+#                                                                     Y8b d88P                              #
+#                                                                      "Y88P"                               #
+
+#-------------------------------------------------------------------------------------------------- 
+# START DASHBOARD LAYOUT 4 SPALTEN ZU 25%
+#-------------------------------------------------------------------------------------------------- 
+title: {{ TITEL }}
+theme: {{ THEME }}
+type: custom:grid-layout
+layout:
+  grid-template-columns: 25% 25% 25% auto
+  grid-template-rows: auto
+  grid-template-areas: |
+    "plan plan plan plan"
+    "pop1 pop2 pop3 pop4"
+    "pop5 pop6 pop7 pop8"
+    "pop9 pop9 pop9 pop10"
+    "pop11 pop11 pop11 pop12"
+    "pop13 pop13 pop13 pop14"
+    "pop15 pop15 pop15 pop16"
+    "pop17 pop17 pop17 pop18"
+badges: []
+cards:
+
+
+
+
+
+
+#     .d8888b.  888                     888         8888888888 888                                    888                      # 
+#    d88P  Y88b 888                     888         888        888                                    888                      # 
+#    Y88b.      888                     888         888        888                                    888                      # 
+#     "Y888b.   888888  8888b.  888d888 888888      8888888    888  .d88b.   .d88b.  888d888 88888b.  888  8888b.  88888b.     # 
+#        "Y88b. 888        "88b 888P"   888         888        888 d88""88b d88""88b 888P"   888 "88b 888     "88b 888 "88b    # 
+#          "888 888    .d888888 888     888         888        888 888  888 888  888 888     888  888 888 .d888888 888  888    # 
+#    Y88b  d88P Y88b.  888  888 888     Y88b.       888        888 Y88..88P Y88..88P 888     888 d88P 888 888  888 888  888    # 
+#     "Y8888P"   "Y888 "Y888888 888      "Y888      888        888  "Y88P"   "Y88P"  888     88888P"  888 "Y888888 888  888    # 
+#                                                                                            888                               # 
+#                                                                                            888                               # 
+#                                                                                            888                               # 
+#-------------------------------------------------------------------------------------------------- 
+# START PICTURE ELEMENTS CARD
+#-------------------------------------------------------------------------------------------------- 
+  - type: picture-elements
+    image: {{ BGBILDERPFAD }}{{ BACKGROUND }}
+    style:
+      pointer-events: none
+    card_mod:
+      style: |
+        ha-card {
+          border: none;
+          }
+    elements:
+
+
+
+
+
+#        __  ___       __                                       ____    _ __    __   _   __           __    __     #
+#       / / / (_)___  / /____  _________ ________  ______  ____/ / /_  (_) /___/ /  / | / /___ ______/ /_  / /_    #
+#      / /_/ / / __ \/ __/ _ \/ ___/ __ `/ ___/ / / / __ \/ __  / __ \/ / / __  /  /  |/ / __ `/ ___/ __ \/ __/    #
+#     / __  / / / / / /_/  __/ /  / /_/ / /  / /_/ / / / / /_/ / /_/ / / / /_/ /  / /|  / /_/ / /__/ / / / /_      #
+#    /_/ /_/_/_/ /_/\__/\___/_/   \__, /_/   \__,_/_/ /_/\__,_/_.___/_/_/\__,_/  /_/ |_/\__,_/\___/_/ /_/\__/      #
+#                                /____/                                                                            #
+
+#-------------------------------------------------------------------------------------------------- 
+# HINTERGRUNDBILD NACHT
+#-------------------------------------------------------------------------------------------------- 
+      - type: image
+        image: {{ BGBILDERPFAD }}{{ BGNACHT }}
+        style:
+          pointer-events: none
+          top: 50%
+          left: 50%
+          width: 100%
+
+
+
+#        __  ___       __                                       ____    _ __    __   ______               #
+#       / / / (_)___  / /____  _________ ________  ______  ____/ / /_  (_) /___/ /  /_  __/___ _____ _    #
+#      / /_/ / / __ \/ __/ _ \/ ___/ __ `/ ___/ / / / __ \/ __  / __ \/ / / __  /    / / / __ `/ __ `/    #
+#     / __  / / / / / /_/  __/ /  / /_/ / /  / /_/ / / / / /_/ / /_/ / / / /_/ /    / / / /_/ / /_/ /     #
+#    /_/ /_/_/_/ /_/\__/\___/_/   \__, /_/   \__,_/_/ /_/\__,_/_.___/_/_/\__,_/    /_/  \__,_/\__, /      #
+#                                /____/                                                      /____/       #
+
+
+#-------------------------------------------------------------------------------------------------- 
+# HINTERGRUNDBILD TAG
+#-------------------------------------------------------------------------------------------------- 
+      - type: custom:config-template-card
+        variables:
+          TRANSPARENZ: states['{{ TAGESLICHT }}'].state
+        entities:
+          - {{ SONNE }}
+          - {{ TAGESLICHT }}
+        element:
+          type: image
+          entity: {{ SONNE }}
+          image: {{ BGBILDERPFAD }}{{ TRANSPIXEL }}
+          state_image:
+            above_horizon: {{ BGBILDERPFAD }}{{ BGTAG }}
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          opacity: ${TRANSPARENZ}
+          mix-blend-mode: lighten
+          pointer-events: none
+          top: 50%
+          left: 50%
+          width: 100%
+
+
+
+
+
+#        ____        __                     __  ____                    _ __     #
+#       / __ \____ _/ /___  ______ ___     / / / / /_  _________  ___  (_) /_    #
+#      / / / / __ `/ __/ / / / __ `__ \   / / / / __ \/ ___/_  / / _ \/ / __/    #
+#     / /_/ / /_/ / /_/ /_/ / / / / / /  / /_/ / / / / /    / /_/  __/ / /_      #
+#    /_____/\__,_/\__/\__,_/_/ /_/ /_/   \____/_/ /_/_/    /___/\___/_/\__/      #
+#                                                                                #
+
+
+#--------------------------------------------------------------------------------------------------
+# Überschrift Datum und Uhrzeit (Effekt)
+#--------------------------------------------------------------------------------------------------
+      - type: custom:button-card
+        entity: {{ MEINDAT }}
+        aspect_ratio: 11/1
+        show_name: true
+        show_icon: false
+        name: |
+          [[[ 
+            if (states['{{ DASHEFFEKT }}'].state == "on")
+              return `<div style='display: flex;display: -webkit-flex;'>
+              <marquee>
+              <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+              ${states['{{ MEINDAT }}'].state}&nbsp
+              </span>
+              </marquee>`;
+            else
+              return `
+              <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+              ${states['{{ MEINDAT }}'].state}&nbsp
+              </span>`
+          ]]]
+        styles:
+          name:
+            - font-size: 2.2vw
+            - font-family: {{ SCHRIFT3 }}
+            - width: 100%
+            - padding-top: 2%
+          card:
+            - background: transparent
+            - border: none
+            - margin-top: -2%
+        style:
+          left: 50%
+          top: 4.04%
+          width: 60%
+
+
+
+#          888888b.   d8b 888      888                           #      
+#          888  "88b  Y8P 888      888                           #      
+#          888  .88P      888      888                           #      
+#          8888888K.  888 888  .d88888  .d88b.  888d888          #      
+#          888  "Y88b 888 888 d88" 888 d8P  Y8b 888P"            #      
+#          888    888 888 888 888  888 88888888 888              #      
+#          888   d88P 888 888 Y88b 888 Y8b.     888              #      
+#          8888888P"  888 888  "Y88888  "Y8888  888              #      
+#                                                                #      
+#                                                                #      
+#                                                                #      
+
+#        _   __                           __        __                    __    __               #
+#       / | / /___  _________ ___  ____ _/ /__     / /   ___  __  _______/ /_  / /____  ____     #
+#      /  |/ / __ \/ ___/ __ `__ \/ __ `/ / _ \   / /   / _ \/ / / / ___/ __ \/ __/ _ \/ __ \    #
+#     / /|  / /_/ / /  / / / / / / /_/ / /  __/  / /___/  __/ /_/ / /__/ / / / /_/  __/ / / /    #
+#    /_/ |_/\____/_/  /_/ /_/ /_/\__,_/_/\___/  /_____/\___/\__,_/\___/_/ /_/\__/\___/_/ /_/     #
+#                                                                                                #
+
+#-------------------------------------------------------------------------------------------------- 
+# HINTERGRUNDBILDER NORMALE LEUCHTEN UND SCHALTER
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in LIGHTS %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: image
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        image: {{ BGBILDERPFAD }}{{ TRANSPIXEL }}
+        state_image:
+          '{{ AKTIV }}': {{ BGBILDERPFAD }}{{ ENTITY }}.png
+        style:
+          mix-blend-mode: lighten
+          pointer-events: none
+          left: 50%
+          top: 50%
+          width: 100%
+      {% endif %}
+      {% endfor %}
+
+
+#        ____  __________ _       __   __                    __    __               #
+#       / __ \/ ____/ __ ) |     / /  / /   ___  __  _______/ /_  / /____  ____     #
+#      / /_/ / / __/ __  | | /| / /  / /   / _ \/ / / / ___/ __ \/ __/ _ \/ __ \    #
+#     / _, _/ /_/ / /_/ /| |/ |/ /  / /___/  __/ /_/ / /__/ / / / /_/  __/ / / /    #
+#    /_/ |_|\____/_____/ |__/|__/  /_____/\___/\__,_/\___/_/ /_/\__/\___/_/ /_/     #
+#                                                                                   #
+
+#-------------------------------------------------------------------------------------------------- 
+# HINTERGRUNDBILDER RGBW LEUCHTEN
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in RGBW %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:config-template-card
+        variables:
+          LEUCHTENSTATUS: states['{{ DOMAIN }}.{{ ENTITY }}'].state
+          FARBMODUS: states['{{ DOMAIN }}.{{ ENTITY }}'].attributes.color_mode
+          LICHTFARBE: states['{{ DOMAIN }}.{{ ENTITY }}'].attributes.hs_color
+          HELLIGKEIT: states['{{ DOMAIN }}.{{ ENTITY }}'].attributes.brightness
+        entities:
+          - {{ DOMAIN }}.{{ ENTITY }}
+        element:
+          type: image
+          image: {{ BGBILDERPFAD }}{{ TRANSPIXEL }}
+          state_image:
+            '{{ AKTIV }}': >-
+              ${FARBMODUS === 'color_temp' ?
+              '{{ BGBILDERPFAD }}{{ ENTITY }}_weiss.png' :
+              '{{ BGBILDERPFAD }}{{ ENTITY }}_farbe.png' }
+          entity: {{ DOMAIN }}.{{ ENTITY }}
+        style:
+          filter: '${ "hue-rotate(" + (LICHTFARBE ? LICHTFARBE[0] : 0) + "deg)"}'
+          opacity: '${LEUCHTENSTATUS === ''on'' ? (HELLIGKEIT / 254) : ''100''}'
+          mix-blend-mode: lighten
+          pointer-events: none
+          left: 50%
+          top: 50%
+          width: 100%
+      {% endif %}
+      {% endfor %}
+
+
+#        ____  __________     __                    __    __               #
+#       / __ \/ ____/ __ )   / /   ___  __  _______/ /_  / /____  ____     #
+#      / /_/ / / __/ __  |  / /   / _ \/ / / / ___/ __ \/ __/ _ \/ __ \    #
+#     / _, _/ /_/ / /_/ /  / /___/  __/ /_/ / /__/ / / / /_/  __/ / / /    #
+#    /_/ |_|\____/_____/  /_____/\___/\__,_/\___/_/ /_/\__/\___/_/ /_/     #
+#                                                                          #
+
+#-------------------------------------------------------------------------------------------------- 
+# HINTERGRUNDBILDER RGB LEUCHTEN
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in RGB %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:config-template-card
+        variables:
+          LEUCHTENSTATUS: states['{{ DOMAIN }}.{{ ENTITY }}'].state
+          FARBMODUS: states['{{ DOMAIN }}.{{ ENTITY }}'].attributes.color_mode
+          LICHTFARBE: states['{{ DOMAIN }}.{{ ENTITY }}'].attributes.hs_color
+          HELLIGKEIT: states['{{ DOMAIN }}.{{ ENTITY }}'].attributes.brightness
+        entities:
+          - {{ DOMAIN }}.{{ ENTITY }}
+        element:
+          type: image
+          image: {{ BGBILDERPFAD }}{{ TRANSPIXEL }}
+          state_image:
+            '{{ AKTIV }}':  {{ BGBILDERPFAD }}{{ ENTITY }}.png
+          entity: {{ DOMAIN }}.{{ ENTITY }}
+        style:
+          filter: '${ "hue-rotate(" + (LICHTFARBE ? LICHTFARBE[0] : 0) + "deg)"}'
+          opacity: '${LEUCHTENSTATUS === ''on'' ? (HELLIGKEIT / 254) : ''100''}'
+          mix-blend-mode: lighten
+          pointer-events: none
+          left: 50%
+          top: 50%
+          width: 100%
+      {% endif %}
+      {% endfor %}
+
+
+#        ____        _______   _     __             #
+#       / __ \____  / / / (_)_(_)___/ /__  ____     #
+#      / /_/ / __ \/ / / / __ `/ __  / _ \/ __ \    #
+#     / _, _/ /_/ / / / / /_/ / /_/ /  __/ / / /    #
+#    /_/ |_|\____/_/_/_/\__,_/\__,_/\___/_/ /_/     #
+#                                                   #
+
+#-------------------------------------------------------------------------------------------------- 
+# Overlay Rollläden
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in COVERS %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: image
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        image: {{ BGBILDERPFAD }}{{ TRANSPIXEL }}
+        state_image:
+          '{{ INAKTIV}}': {{ BGBILDERPFAD }}{{ ENTITY }}.png
+        style:
+          pointer-events: none
+          left: 50%
+          top: 50%
+          width: 100%
+          opacity: 1
+      {% endif %}
+      {% endfor %}
+
+
+#        __  ___           __   _             #
+#       /  |/  /___ ______/ /__(_)_______     #
+#      / /|_/ / __ `/ ___/ //_/ / ___/ _ \    #
+#     / /  / / /_/ / /  / ,< / (__  )  __/    #
+#    /_/  /_/\__,_/_/  /_/|_/_/____/\___/     #
+#                                             #
+
+#-------------------------------------------------------------------------------------------------- 
+# Overlay Markise
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in MARKISE %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: image
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        image: {{ BGBILDERPFAD }}{{ TRANSPIXEL }}
+        state_image:
+          '{{ AKTIV}}': {{ BGBILDERPFAD }}{{ ENTITY }}.png
+          '{{ STATUSC}}': {{ BGBILDERPFAD }}{{ ENTITY }}.png
+          '{{ STATUSD}}': {{ BGBILDERPFAD }}{{ ENTITY }}.png
+        style:
+          pointer-events: none
+          left: 50%
+          top: 50%
+          width: 100%
+          opacity: 0.6
+      {% endif %}
+      {% endfor %}
+
+
+
+
+#          __  ____   _ ______                                   #
+#         /  |/  (_) (_) / / /_____  ____  ____  ___  ____       #
+#        / /|_/ / / / / / / __/ __ \/ __ \/ __ \/ _ \/ __ \      #
+#       / /  / / /_/ / / / /_/ /_/ / / / / / / /  __/ / / /      #
+#      /_/  /_/\__,_/_/_/\__/\____/_/ /_/_/ /_/\___/_/ /_/       #
+#                                                                #
+
+#-------------------------------------------------------------------------------------------------- 
+# Overlay Mülltonnen
+#--------------------------------------------------------------------------------------------------
+      - type: image
+        entity: sensor.mullabholung_heute
+        image: /local/lovelace/hauptboard/bgbilder/1x1_transparent.png
+        state_image:
+          die Altpapier, Leichtverpackung, Restabfall und Bioabfall: /local/lovelace/hauptboard/bgbilder/AP_LE_RE_BI.png
+          die Leichtverpackung, Restabfall und Bioabfall: /local/lovelace/hauptboard/bgbilder/LE_RE_BI.png
+          die Altpapier, Restabfall und Bioabfall: /local/lovelace/hauptboard/bgbilder/AP_RE_BI.png
+          die Altpapier, Leichtverpackung und Bioabfall: /local/lovelace/hauptboard/bgbilder/AP_LE_BI.png
+          die Altpapier, Leichtverpackung und Restabfall: /local/lovelace/hauptboard/bgbilder/AP_LE_RE.png
+          die Altpapier und Leichtverpackung: /local/lovelace/hauptboard/bgbilder/AP_LE.png
+          die Altpapier und Restabfall: /local/lovelace/hauptboard/bgbilder/AP_RE.png
+          die Altpapier und Bioabfall: /local/lovelace/hauptboard/bgbilder/AP_BI.png
+          die Leichtverpackung und Restabfall: /local/lovelace/hauptboard/bgbilder/LE_RE.png
+          die Leichtverpackung und Bioabfall: /local/lovelace/hauptboard/bgbilder/LE_BI.png
+          die Restabfall und Bioabfall: /local/lovelace/hauptboard/bgbilder/RE_BI.png
+          die Altpapier: /local/lovelace/hauptboard/bgbilder/AP.png
+          die Leichtverpackung: /local/lovelace/hauptboard/bgbilder/LE.png
+          die Restabfall: /local/lovelace/hauptboard/bgbilder/RE.png
+          die Bioabfall: /local/lovelace/hauptboard/bgbilder/BI.png
+          keine: /local/lovelace/hauptboard/bgbilder/Keine.png
+        style:
+          pointer-events: none
+          left: 50%
+          top: 50%
+          width: 100%
+
+#--------------------------------------------------------------------------------------------------
+# Müllabholung Text + EFFEKT
+#--------------------------------------------------------------------------------------------------
+      - type: custom:button-card
+        entity: sensor.mullabholung_text
+        aspect_ratio: 60/6
+        show_name: true
+        show_icon: false
+        name: |
+          [[[ 
+            if (states['{{ DASHEFFEKT }}'].state == "on")
+              return `
+              <div style='text-align: left;'>
+              <div style='display: flex;display: -webkit-flex;'>
+              <marquee>
+              <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+              ${states['sensor.mullabholung_text'].state}&nbsp
+              </span>
+              </marquee>`;
+            else
+              return `
+              <div style='text-align: left;'>
+              <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+              ${states['sensor.mullabholung_text'].state}&nbsp
+              </span>`
+          ]]]
+        styles:
+          name:
+            - font-size: 1.5vw
+            - font-family: {{ SCHRIFT3 }}
+            - width: 100%
+            - padding-top: 2%
+          card:
+            - background: transparent
+            - border: none
+            - margin-top: -1%
+        style:
+          pointer-events: none
+          left: 68%
+          top: 98%
+          width: 60%
+
+
+#    888888b.            888    888                                 # 
+#    888  "88b           888    888                                 # 
+#    888  .88P           888    888                                 # 
+#    8888888K.  888  888 888888 888888 .d88b.  88888b.  .d8888b     # 
+#    888  "Y88b 888  888 888    888   d88""88b 888 "88b 88K         # 
+#    888    888 888  888 888    888   888  888 888  888 "Y8888b.    # 
+#    888   d88P Y88b 888 Y88b.  Y88b. Y88..88P 888  888      X88    # 
+#    8888888P"   "Y88888  "Y888  "Y888 "Y88P"  888  888  88888P'    # 
+#                                                                   # 
+#                                                                   # 
+#                                                                   # 
+
+#        _   __                           __        ____        __  __                      #
+#       / | / /___  _________ ___  ____ _/ /__     / __ )__  __/ /_/ /_____  ____  _____    #
+#      /  |/ / __ \/ ___/ __ `__ \/ __ `/ / _ \   / __  / / / / __/ __/ __ \/ __ \/ ___/    #
+#     / /|  / /_/ / /  / / / / / / /_/ / /  __/  / /_/ / /_/ / /_/ /_/ /_/ / / / (__  )     #
+#    /_/ |_/\____/_/  /_/ /_/ /_/\__,_/_/\___/  /_____/\__,_/\__/\__/\____/_/ /_/____/      #
+#                                                                                           #
+
+#-------------------------------------------------------------------------------------------------- 
+# BUTTON NORMALE LEUCHTEN UND SCHALTER
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in LIGHTS %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:button-card
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        show_name: false
+        show_entity_picture: true
+        {% if STATUSE == ""%}
+        entity_picture: {{ BUTTONPFAD }}{{ FAILBUTTON }}
+        {% else %}
+        entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSE }}.png
+        {% endif %}
+        show_icon: false
+        aspect_ratio: 1/1
+        size: 100%
+        styles:
+          card:
+            - border: 2px solid var(--state-icon-color)
+            - border-radius: 50%
+            - background-color: var(--primary-background-color)
+        {{ stats(AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, 4) }}
+        style:
+          left: {{ LEFT }}%
+          top: {{ TOP }}%
+          width: {{ WIDTH }}%
+        {{ actions(TAP, HOLD, DOUBLE, SERVICE, POPUP, 4) }} 
+      {% endif %}
+      {% endfor %}
+
+
+#        ____  __________ _       __   ____        __  __                      #
+#       / __ \/ ____/ __ ) |     / /  / __ )__  __/ /_/ /_____  ____  _____    #
+#      / /_/ / / __/ __  | | /| / /  / __  / / / / __/ __/ __ \/ __ \/ ___/    #
+#     / _, _/ /_/ / /_/ /| |/ |/ /  / /_/ / /_/ / /_/ /_/ /_/ / / / (__  )     #
+#    /_/ |_|\____/_____/ |__/|__/  /_____/\__,_/\__/\__/\____/_/ /_/____/      #
+#                                                                              #
+
+#-------------------------------------------------------------------------------------------------- 
+# BUTTON RGBW LEUCHTEN UND SCHALTER
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in RGBW %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:button-card
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        show_name: false
+        show_entity_picture: true
+        {% if STATUSE == ""%}
+        entity_picture: {{ BUTTONPFAD }}{{ FAILBUTTON }}
+        {% else %}
+        entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSE }}.png
+        {% endif %}
+        show_icon: false
+        aspect_ratio: 1/1
+        size: 100%
+        styles:
+          card:
+            - border: 2px solid var(--state-icon-color)
+            - border-radius: 50%
+            - background-color: var(--primary-background-color)
+        {{ stats(AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, 4) }}
+        style:
+          left: {{ LEFT }}%
+          top: {{ TOP }}%
+          width: {{ WIDTH }}%
+        {{ actions(TAP, HOLD, DOUBLE, SERVICE, POPUP, 4) }} 
+      {% endif %}
+      {% endfor %}
+
+
+#        ____  __________     ____        __  __                      #
+#       / __ \/ ____/ __ )   / __ )__  __/ /_/ /_____  ____  _____    #
+#      / /_/ / / __/ __  |  / __  / / / / __/ __/ __ \/ __ \/ ___/    #
+#     / _, _/ /_/ / /_/ /  / /_/ / /_/ / /_/ /_/ /_/ / / / (__  )     #
+#    /_/ |_|\____/_____/  /_____/\__,_/\__/\__/\____/_/ /_/____/      #
+#                                                                     #
+
+#-------------------------------------------------------------------------------------------------- 
+# BUTTON RGB LEUCHTEN UND SCHALTER
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in RGB %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem)) and (WIDTH > 0)) %}
+      - type: custom:button-card
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        show_name: false
+        show_entity_picture: true
+        {% if STATUSE == ""%}
+        entity_picture: {{ BUTTONPFAD }}{{ FAILBUTTON }}
+        {% else %}
+        entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSE }}.png
+        {% endif %}
+        show_icon: false
+        aspect_ratio: 1/1
+        size: 100%
+        styles:
+          card:
+            - border: 2px solid var(--state-icon-color)
+            - border-radius: 50%
+            - background-color: var(--primary-background-color)
+        {{ stats(AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, 4) }}
+        style:
+          left: {{ LEFT }}%
+          top: {{ TOP }}%
+          width: {{ WIDTH }}%
+        {{ actions(TAP, HOLD, DOUBLE, SERVICE, POPUP, 4) }} 
+      {% endif %}
+      {% endfor %}
+
+
+#       ______          _   _ __         #
+#      / ____/__  _____(_)_(_) /____     #
+#     / / __/ _ \/ ___/ __ `/ __/ _ \    #
+#    / /_/ /  __/ /  / /_/ / /_/  __/    #
+#    \____/\___/_/   \__,_/\__/\___/     #
+#                                        #
+
+#-------------------------------------------------------------------------------------------------- 
+# RUNDE BUTTON FÜR SENSOREN, SCHALTER UND LEUCHTEN OHNE HINTERGRUNDBILD
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in GERAETE %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:button-card
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        show_name: false
+        show_entity_picture: true
+        {% if STATUSE == ""%}
+        entity_picture: {{ BUTTONPFAD }}{{ FAILBUTTON }}
+        {% else %}
+        entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSE }}.png
+        {% endif %}
+        show_icon: false
+        aspect_ratio: 1/1
+        size: 100%
+        styles:
+          card:
+            - border: 2px solid var(--state-icon-color)
+            - border-radius: 50%
+            - background-color: var(--primary-background-color)
+        {{ stats(AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, 4) }}
+        style:
+          left: {{ LEFT }}%
+          top: {{ TOP }}%
+          width: {{ WIDTH }}%
+        {{ actions(TAP, HOLD, DOUBLE, SERVICE, POPUP, 4) }} 
+      {% endif %}
+      {% endfor %}
+
+
+#      ______                                     __                          #
+#     /_  __/__  ____ ___  ____  ___  _________ _/ /___  __________  ____     #
+#      / / / _ \/ __ `__ \/ __ \/ _ \/ ___/ __ `/ __/ / / / ___/ _ \/ __ \    #
+#     / / /  __/ / / / / / /_/ /  __/ /  / /_/ / /_/ /_/ / /  /  __/ / / /    #
+#    /_/  \___/_/ /_/ /_/ .___/\___/_/   \__,_/\__/\__,_/_/   \___/_/ /_/     #
+#                      /_/                                                    #
+
+#-------------------------------------------------------------------------------------------------- 
+# BUTTON FÜR TEMPERATUREN
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in TEMPS %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:button-card
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        show_name: false
+        show_icon: false
+        show_state: true
+        aspect_ratio: 2/1
+        {{ actions(TAP, HOLD, DOUBLE, SERVICE, POPUP, 4) }}
+        style:
+          left: {{ LEFT }}%
+          top: {{ TOP }}%
+          width: {{ WIDTH }}%
+        styles:
+          card:
+            - border-radius: 5px
+            - border: >
+                  [[[ return '1px groove ' + states['sensor.dashboard_primar_farbe'].state; ]]]
+            - background: var(--primary-background-color)
+          state:
+            - color: >
+                  [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+            - font-family: {{SCHRIFT3}}
+            - font-size: 0.7vw
+      {% endif %}
+      {% endfor %}
+
+
+#--------------------------------------------------------------------------------------------------
+# RAUMTEMPERATURANZEIGE + EFFEKT
+#--------------------------------------------------------------------------------------------------
+      - type: custom:button-card
+        entity: {{ WOHNTEMP }}
+        aspect_ratio: 11/1
+        show_name: true
+        show_icon: false
+        name: |
+          [[[ 
+            if (states['{{ DASHEFFEKT }}'].state == "on")
+              return `<div style='display: flex;display: -webkit-flex;'>
+              <marquee>
+              <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+              Wohnraumtemperatur: ${states['{{ WOHNTEMP }}'].state}&nbsp°C    /     Aussentemperatur: ${states['{{ AUSSTEMP }}'].state}&nbsp°C
+              </span>
+              </marquee>`;
+            else
+              return `
+              <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+              Wohnraumtemperatur: ${states['{{ WOHNTEMP }}'].state}&nbsp°C
+              </span>`
+          ]]]
+        styles:
+          name:
+            - font-size: 1.5vw
+            - font-family: {{ SCHRIFT3 }}
+            - width: 100%
+            - padding-top: 2%
+          card:
+            - background: transparent
+            - border: none
+            - margin-top: -2%
+        style:
+          left: 12.5%
+          top: 96%
+          width: 25%
+   
+   
+#      ______                      ___       _              #
+#     /_  __/_______  ____  ____  / (_)___  (_)__  ____     #
+#      / / / ___/ _ \/ __ \/ __ \/ / / __ \/ / _ \/ __ \    #
+#     / / / /  /  __/ / / / / / / / / / / / /  __/ / / /    #
+#    /_/ /_/   \___/_/ /_/_/ /_/_/_/_/ /_/_/\___/_/ /_/     #
+#                                                           #
+
+#-------------------------------------------------------------------------------------------------- 
+# TRENNLINIEN ZUR FELDERUNTERTEILUNG
+#-------------------------------------------------------------------------------------------------- 
+
+
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in LINIEN %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:button-card
+        color_type: blank-card
+        styles:
+          card:
+            - height: 3px
+            - background-color: >
+                  [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+        style:
+          left: {{ LEFT }}%
+          top: {{ TOP }}%
+          width: {{ WIDTH }}%
+      {% endif %}
+      {% endfor %}
+
+
+#         ____        ______          __             #
+#        / __ \____  / / / /___ _____/ /__  ____     #
+#       / /_/ / __ \/ / / / __ `/ __  / _ \/ __ \    #
+#      / _, _/ /_/ / / / / /_/ / /_/ /  __/ / / /    #
+#     /_/ |_|\____/_/_/_/\__,_/\__,_/\___/_/ /_/     #
+#                                                    #
+
+#-------------------------------------------------------------------------------------------------- 
+# Button Rollläden
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in COVERS %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:button-card
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        show_name: false
+        show_entity_picture: true
+        entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSE }}.png
+        show_icon: false
+        aspect_ratio: 1/1
+        size: 100%
+        styles:
+          card:
+            - border: >
+                  [[[ return '2px groove ' + states['sensor.dashboard_primar_farbe'].state; ]]]
+            - border-radius: 5px
+            - background-color: var(--primary-background-color)
+        state:
+          - value: '{{ AKTIV }}'
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ AKTIV }}.png
+          - value: '{{ INAKTIV }}'
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ INAKTIV }}.png
+          - value: '{{ STATUSC }}'
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSC }}.png
+          - value: '{{ STATUSD }}'
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSD }}.png
+          - value: '{{ STATUSE }}'
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSE }}.png
+        style:
+          left: {{ LEFT }}%
+          top: {{ TOP }}%
+          width: {{ WIDTH }}%
+        {{ actions(TAP, HOLD, DOUBLE, SERVICE, POPUP, 4) }} 
+      {%- endif %}
+      {% endfor %}
+
+
+#        __  ___           __   _             #
+#       /  |/  /___ ______/ /__(_)_______     #
+#      / /|_/ / __ `/ ___/ //_/ / ___/ _ \    #
+#     / /  / / /_/ / /  / ,< / (__  )  __/    #
+#    /_/  /_/\__,_/_/  /_/|_/_/____/\___/     #
+#                                             #
+
+#--------------------------------------------------------------------------------------------------
+# Button Markise
+#--------------------------------------------------------------------------------------------------
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in MARKISE %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:button-card
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        show_name: false
+        show_entity_picture: true
+        {% if STATUSE == ""%}
+        entity_picture: {{ BUTTONPFAD }}{{ FAILBUTTON }}
+        {% else %}
+        entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSE }}.png
+        {% endif %}
+        show_icon: false
+        aspect_ratio: 1/1
+        size: 100%
+        styles:
+          card:
+            - border: 2px solid var(--state-icon-color)
+            - border-radius: 50%
+            - background-color: var(--primary-background-color)
+        {{ stats(AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, 4) }}
+        style:
+          left: {{ LEFT }}%
+          top: {{ TOP }}%
+          width: {{ WIDTH }}%
+        {{ actions(TAP, HOLD, DOUBLE, SERVICE, POPUP, 4) }} 
+      {%- endif %}
+      {% endfor %}
+
+
+#       _   _ __                        __         _ ______               #
+#      (_) (_) /_  ___  _______________/ /_  _____(_) __/ /____  ____     #
+#     / / / / __ \/ _ \/ ___/ ___/ ___/ __ \/ ___/ / /_/ __/ _ \/ __ \    #
+#    / /_/ / /_/ /  __/ /  (__  ) /__/ / / / /  / / __/ /_/  __/ / / /    #
+#    \____/_.___/\___/_/  /____/\___/_/ /_/_/  /_/_/  \__/\___/_/ /_/     #
+#                                                                         #
+
+#--------------------------------------------------------------------------------------------------
+# ÜBERSCHRIFTEN
+#--------------------------------------------------------------------------------------------------
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in TEXT %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:button-card
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        show_name: true
+        show_icon: false
+        name: {{ NAME }}
+        styles:
+          name:
+            {{ division_10(WIDTH, 6) }}
+            - font-family: {{ SCHRIFT1 }}
+            - width: 100%
+          card:
+            - background: transparent
+            - border: none
+            - border-radius: 0px
+        style:
+          left: {{ LEFT }}%
+          top: {{ TOP }}%
+          width: {{ WIDTH }}%
+        {{ actions(TAP, HOLD, DOUBLE, SERVICE, POPUP, 4) }}
+      {% endif %}
+      {% endfor %}
+
+
+#        __ __                                   #
+#       / //_/___ _____ ___  ___  _________ _    #
+#      / ,< / __ `/ __ `__ \/ _ \/ ___/ __ `/    #
+#     / /| / /_/ / / / / / /  __/ /  / /_/ /     #
+#    /_/ |_\__,_/_/ /_/ /_/\___/_/   \__,_/      #
+#                                                #
+
+#--------------------------------------------------------------------------------------------------
+# KAMERA VORSCHAU STREAM
+#--------------------------------------------------------------------------------------------------
+      - type: custom:button-card
+        entity: camera.garten_kamera
+        show_live_stream: true
+        show_name: false
+        size: 100%
+        styles:
+          card:
+            - border: >
+                [[[
+                  if (states['switch.garten_kamera_recording'].state == "on") return '4px groove red';
+                  if (states['switch.garten_kamera_recording'].state == "off") return '2px solid var(--secondary-color)';
+                ]]]
+            - border-radius: 0px
+          grid:
+            - margin: -11px
+        tap_action:
+          action: more-info
+        double_tap_action:
+          action: call-service
+          service: switch.toggle
+          service_data:
+            entity_id: switch.garten_kamera_recording
+        style:
+          top: 51.5%
+          left: 12.5%
+          width: 22%
+
+
+#        ____        __  __                 ____                  __           __     #
+#       / __ )__  __/ /_/ /_____  ____     / __ \__  ______ _____/ /________ _/ /_    #
+#      / __  / / / / __/ __/ __ \/ __ \   / / / / / / / __ `/ __  / ___/ __ `/ __/    #
+#     / /_/ / /_/ / /_/ /_/ /_/ / / / /  / /_/ / /_/ / /_/ / /_/ / /  / /_/ / /_      #
+#    /_____/\__,_/\__/\__/\____/_/ /_/   \___\_\__,_/\__,_/\__,_/_/   \__,_/\__/      #
+#                                                                                     #
+
+#--------------------------------------------------------------------------------------------------
+# Quadratische Buttons
+#--------------------------------------------------------------------------------------------------
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in QUADRAT %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: custom:button-card
+        entity: {{ DOMAIN }}.{{ ENTITY }}
+        show_name: false
+        show_entity_picture: true
+        {% if STATUSE == ""%}
+        entity_picture: {{ BUTTONPFAD }}{{ FAILBUTTON }}
+        {% else %}
+        entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSE }}.png
+        {% endif %}
+        show_icon: false
+        aspect_ratio: 1/1
+        size: 100%
+        styles:
+          card:
+            - border: >
+                  [[[ return '2px groove ' + states['sensor.dashboard_primar_farbe'].state; ]]]
+            - border-radius: 5px
+            - background-color: var(--primary-background-color)
+        state:
+          - value: '{{ AKTIV }}'
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ AKTIV }}.png
+          - value: '{{ INAKTIV }}'
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ INAKTIV }}.png
+          - value: '{{ STATUSC }}'
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSC }}.png
+          - value: '{{ STATUSD }}'
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSD }}.png
+          - value: '{{ STATUSE }}'
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}_{{ STATUSE }}.png
+        style:
+          left: {{ LEFT }}%
+          top: {{ TOP }}%
+          width: {{ WIDTH }}%
+        {{ actions(TAP, HOLD, DOUBLE, SERVICE, POPUP, 4) }}        
+      {% endif %}
+      {% endfor %}
+
+
+
+#        __ __ ___    __    _______   ______  __________     #
+#       / //_//   |  / /   / ____/ | / / __ \/ ____/ __ \    #
+#      / ,<  / /| | / /   / __/ /  |/ / / / / __/ / /_/ /    #
+#     / /| |/ ___ |/ /___/ /___/ /|  / /_/ / /___/ _, _/     #
+#    /_/ |_/_/  |_/_____/_____/_/ |_/_____/_____/_/ |_|      #
+#                                                            #
+
+#-------------------------------------------------------------------------------------------------- 
+# ANZEIGE DER AKTUELLEN KALENDER + EFFEKT
+#-------------------------------------------------------------------------------------------------- 
+      {% for DOMAIN, ENTITY, NAME, LEFT, TOP, WIDTH, AKTIV, INAKTIV, STATUSC, STATUSD, STATUSE, BUTTON, TAP, HOLD, DOUBLE, SERVICE, POPUP in KALENDER %}
+      {% if ((loop.index0 == 0) or ((loop.previtem is defined) and (ENTITY != loop.previtem))) %}
+      - type: conditional
+        conditions:
+          - entity: {{ DOMAIN }}.{{ ENTITY }}
+            state: '{{ AKTIV }}'
+        elements:
+          - type: custom:button-card
+            entity: {{ DOMAIN }}.{{ ENTITY }}
+            layout: icon_label
+            show_state: false
+            show_icon: false
+            show_name: true
+            show_label: true
+            show_entity_picture: true
+            entity_picture: {{ BUTTONPFAD }}{{ BUTTON }}.png
+            label: '{{NAME}}:'
+            name: |
+              [[[ 
+                if (states['{{ DASHEFFEKT }}'].state == "on")
+                  return `<div style='display: flex;display: -webkit-flex;'>
+                  <marquee>
+                  <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+                  ${states['{{POPUP}}'].state}&nbsp
+                  </span>
+                  </marquee>`;
+                else
+                  return `
+                  <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+                  ${states['{{POPUP}}'].state}&nbsp
+                  </span>`
+              ]]]
+            styles:
+              card:
+                - background-color: transparent
+                - border: none
+                - border-radius: 0px
+              name:
+                - font-size: 1.3vw
+                - font-family: {{SCHRIFT3}}
+                - white-space: unset
+                - text-overflow: unset
+                - word-break: break-word
+                - margin-top: 2%
+                - width: 100%
+              label:
+                - font-size: 1.2vw
+                - font-family: {{SCHRIFT1}}
+                - align-self: middle
+                - justify-self: start
+                - margin-left: -10%
+                - color: var(--primary-text-color)
+              entity_picture:
+                - size: 50%
+                - margin-left: -10px
+            style:
+              pointer-events: none
+              left: {{ LEFT }}%
+              top: {{ TOP }}%
+              width: {{ WIDTH }}%
+      {% endif %}
+      {% endfor %}
+
+
+
+
+#     _       __     __  __               #
+#    | |     / /__  / /_/ /____  _____    #
+#    | | /| / / _ \/ __/ __/ _ \/ ___/    #
+#    | |/ |/ /  __/ /_/ /_/  __/ /        #
+#    |__/|__/\___/\__/\__/\___/_/         #
+#                                         #
+
+
+      - type: conditional
+        conditions:
+          - entity: calendar.unsere_familie_unsere_familie
+            state: 'off'
+          - entity: calendar.geburtstag_geburtstag
+            state: 'off'
+        elements:
+          - type: custom:platinum-weather-card
+            card_config_version: 8
+            entity_forecast_icon: weather.openweathermap
+            entity_forecast_icon_1: weather.openweathermap
+            entity_forecast_max_1: weather.openweathermap
+            entity_forecast_min_1: weather.openweathermap
+            entity_pop_1: weather.openweathermap
+            entity_summary_1: weather.openweathermap
+            entity_temperature: sensor.garten_temperatur
+            option_show_overview_decimals: true
+            option_show_overview_separator: true
+            option_static_icons: false
+            option_time_format: 24hour
+            section_order:
+              - overview
+              - extended
+              - slots
+              - daily_forecast
+            show_section_slots: false
+            tap_action:
+              action: fire-dom-event
+              browser_mod:
+                service: browser_mod.more_info
+                data:
+                  entity: sensor.garten_temperatur
+            style:
+              left: 87.5%
+              top: 27%
+              width: 25%
+            card_mod:
+              style: |
+                ha-card {
+                  font-size: 90%;
+                  font-family: {{SCHRIFT3}};
+                  border: none;
+                  background: transparent;
+                }
+    view_layout:
+      grid-area: plan
+
+
+#    8888888b.                   888     888                       #
+#    888   Y88b                  888     888                       #
+#    888    888                  888     888                       #
+#    888   d88P .d88b.  88888b.  888     888 88888b.  .d8888b      #
+#    8888888P" d88""88b 888 "88b 888     888 888 "88b 88K          #
+#    888       888  888 888  888 888     888 888  888 "Y8888b.     #
+#    888       Y88..88P 888 d88P Y88b. .d88P 888 d88P      X88     #
+#    888        "Y88P"  88888P"   "Y88888P"  88888P"   88888P'     #
+#                       888                  888                   #
+#                       888                  888                   #
+#                       888                  888                   #
+
+
+#-------------------------------------------------------------------------------------------------- 
+# INCLUDIERTE POPUPS IN FILES GESPEICHERT
+#-------------------------------------------------------------------------------------------------- 
+
+# INCLUDE POPUPS MIT EIGENEN FILES
+  - !include popup_kamera.yaml # Area Position - pop1
+  - !include popup_touchpc.yaml # Area Position - pop2
+  - !include popup_shbpc.yaml # Area Position - pop3
+  - !include popup_led_wz.yaml # Area Position - pop4
+  - !include popup_geschirrspueler.yaml # Area Position - pop5
+  - !include popup_waschmaschine.yaml # Area Position - pop6
+  - !include popup_trockner.yaml # Area Position - pop7
+  - !include popup_postit.yaml # Area Position - pop8
+  - !include popup_heizung.yaml # Area Position - pop9
+  - !include popup_led_az.yaml # Area Position - pop10
+  - !include popup_wetter.yaml # Area Position - pop11
+  - !include popup_order66.yaml # Area Position - pop12
+  - !include popup_muellerinnerung.yaml # Area Position - pop13
+  - !include popup_rollladen.yaml # Area Position - pop15
+  - !include popup_wo_ist.yaml # Area Position - pop17
+  - !include popup_farbauswahl.yaml # Area Position - pop16
+  - !include popup_flocky.yaml # Area Position - pop18
