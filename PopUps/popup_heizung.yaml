@@ -1,0 +1,330 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.     # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b    # 
+#    888    888 888     888 888    888      888     888 888    888    # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P    # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"     # 
+#    888        888     888 888             888     888 888           # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888           # 
+#    888         "Y88888P"  888              "Y88888P"  888           # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+#    888    888          d8b                                          # 
+#    888    888          Y8P                                          # 
+#    888    888                                                       # 
+#    8888888888  .d88b.  888 88888888 888  888 88888b.   .d88b.       # 
+#    888    888 d8P  Y8b 888    d88P  888  888 888 "88b d88P"88b      # 
+#    888    888 88888888 888   d88P   888  888 888  888 888  888      # 
+#    888    888 Y8b.     888  d88P    Y88b 888 888  888 Y88b 888      # 
+#    888    888  "Y8888  888 88888888  "Y88888 888  888  "Y88888      # 
+#                                                            888      # 
+#                                                       Y8b d88P      # 
+#                                                        "Y88P"       # 
+
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+title: Heizung / Thermostate / Temperaturen
+dismissable: true
+entity: sensor.temperatur_ist_heizkoerper_vorraum
+size: wide
+style: |-
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      } 
+card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+  type: vertical-stack
+  cards:
+
+#----------------------------------------------------------------
+#  Überschrift (Custom Banner Card)                              
+#----------------------------------------------------------------
+
+    - type: custom:banner-card
+      heading: Heizung / Thermostate / Temperaturen
+      card_mod:
+        style: |
+          ha-card {
+            --ha-card-background: transperant;
+            border: none;
+          }
+          :host {
+            --banner-card-heading-color-dark: {{ states['sensor.dashboard_primar_farbe'].state }};
+            font-family: Arial Rounded MT;
+          }
+
+#----------------------------------------------------------------
+#  Rasterkarte (3 Spalten)                              
+#----------------------------------------------------------------
+
+    - type: grid
+      square: false
+      columns: 3
+      cards:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                              
+#----------------------------------------------------------------
+
+        - type: vertical-stack
+          cards:
+
+#----------------------------------------------------------------
+#  Spalte 1
+#
+#  Entitäten Karte                         
+#----------------------------------------------------------------
+
+            - type: entities
+              entities:
+                - entity: switch.hauptschalter_heizung
+                  name: Sommer/Winter
+                  icon: mdi:sun-snowflake-variant
+                  toggle: true
+                  state_color: true
+                  state_header: I/O
+
+#----------------------------------------------------------------
+#  Trennlinie                             
+#----------------------------------------------------------------
+
+                - type: section
+
+                - entity: switch.zusatzheizung
+                  name: Heizung Boost
+                  icon: mdi:radiator
+                  toggle: true
+                  state_color: true
+                  state_header: I/O
+
+                - type: section
+
+                - type: custom:multiple-entity-row
+                  entity: input_boolean.heizung_wohnzimmer
+                  name: Wohnzimmer
+                  toggle: true
+                  state_color: true
+                  state_header: I/O
+                  icon: mdi:radiator
+                  entities:
+                    - entity: sensor.heizkorper_wohnzimmer_battery_level
+                      name: Batt
+                    - entity: sensor.temperatur_soll_heizkoerper_wohnzimmer
+                      name: SOLL
+                    - entity: sensor.temperatur_ist_heizkoerper_wohnzimmer
+                      name: IST
+
+                - type: custom:multiple-entity-row
+                  entity: input_boolean.heizung_vorraum
+                  name: Vorraum
+                  toggle: true
+                  state_color: true
+                  state_header: I/O
+                  icon: mdi:radiator
+                  entities:
+                    - entity: sensor.heizkorper_vorraum_battery_level
+                      name: Batt
+                    - entity: sensor.temperatur_soll_heizkoerper_vorraum
+                      name: SOLL
+                    - entity: sensor.temperatur_ist_heizkoerper_vorraum
+                      name: IST
+                  styles:
+                    icon:
+                      - color: red
+
+                - type: custom:multiple-entity-row
+                  entity: sensor.raumtemperatur_wohnzimmer_ist
+                  name: Wohnbereich
+                  state_header: IST
+                  entities:
+                    - entity: sensor.raumtemperatur_wohnzimmer_soll
+                      name: SOLL
+
+                - type: custom:multiple-entity-row
+                  entity: sensor.badezimmer_echo_temperature
+                  name: Badezimmer
+                  state_header: IST
+
+                - type: custom:multiple-entity-row
+                  entity: sensor.hut_schlafzimmer_temperature
+                  name: Schlafzimmer
+                  state_header: IST
+
+                - type: custom:multiple-entity-row
+                  entity: sensor.hut_arbeitszimmer_temperature
+                  name: Arbeitszimmer
+                  state_header: IST
+
+                - type: section
+
+                - type: custom:multiple-entity-row
+                  entity: sensor.garten_temperatur
+                  name: Garten
+                  state_header: IST
+                  entities:
+                    - entity: sensor.garten_temperatur_batterie_status
+                      name: Batt
+
+                - type: section
+
+              card_mod:
+                style: |
+                  ha-card {
+                    --ha-card-background: transperant;
+                    color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                    border: none;
+                    --paper-item-icon-color: white;
+                    --secondary-text-color: white
+                  }
+
+#----------------------------------------------------------------
+#  Spalte 2
+#
+#  Vertikaler Stapel                              
+#----------------------------------------------------------------
+
+        - type: vertical-stack
+          cards:
+
+#----------------------------------------------------------------
+#  Better Thermostat Karte                              
+#----------------------------------------------------------------
+
+            - type: custom:better-thermostat-ui-card
+              entity: climate.wohnzimmer_thermostat
+              disable_window: true
+              eco_temperature: 12
+              disable_summer: true
+              disable_eco: true
+              name: Wohnbereich Thermostat
+              card_mod:
+                style: |
+                  ha-card {
+                    --ha-card-background: transperant;
+                    color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                    border: none
+                  }
+
+#----------------------------------------------------------------
+#  Entitäten Karte                         
+#----------------------------------------------------------------
+
+            - type: entities
+              entities:
+                - type: section
+                - type: section
+                - entity: switch.vordach_heizung
+                  toggle: true
+                  state_color: true
+                  state_header: I/O
+                - entity: input_select.heizstrahler_leistung
+                - entity: sensor.vordach_heizung_power
+                  name: Aktuelle Leistung
+                - type: section
+              card_mod:
+                style: |
+                  ha-card {
+                    --ha-card-background: transperant;
+                    color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                    border: none;
+                    --paper-item-icon-color: white;
+                    --secondary-text-color: white
+                  }
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                              
+#----------------------------------------------------------------
+
+        - type: vertical-stack
+          cards:
+
+#----------------------------------------------------------------
+#  Spalte 3
+#
+#  Überschrift Markdown Karte                            
+#----------------------------------------------------------------
+
+            - type: markdown
+              content: '## <center> Temperaturverlauf'
+              card_mod:
+                style: |
+                  ha-card {
+                    --ha-card-background: transperant;
+                    color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                    border: none
+                  }
+
+#----------------------------------------------------------------
+#  Apex Charts Karte                            
+#----------------------------------------------------------------
+
+            - type: custom:apexcharts-card
+              graph_span: 6h
+              header:
+                show: false
+              series:
+                - entity: sensor.raumtemperatur_wohnzimmer_ist
+                  type: line
+                  stroke_width: 2
+                  name: Wohnraum Temp.
+                  group_by:
+                    func: avg
+                    duration: 10min
+                - entity: sensor.badezimmer_echo_temperature
+                  type: line
+                  stroke_width: 2
+                  name: Badezimmer Temp.
+                  group_by:
+                    func: avg
+                    duration: 10min
+                - entity: sensor.hut_schlafzimmer_temperature
+                  type: line
+                  stroke_width: 2
+                  name: Schlafzimmer Temp.
+                  group_by:
+                    func: avg
+                    duration: 10min
+                - entity: sensor.hut_arbeitszimmer_temperature
+                  type: line
+                  stroke_width: 2
+                  name: Arbeitszimmer Temp.
+                  group_by:
+                    func: avg
+                    duration: 10min
+              card_mod:
+                style: |
+                  ha-card {
+                    --ha-card-background: transperant;
+                    color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                    border: none
+                  }
+
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+
+view_layout:
+  grid-area: pop9
