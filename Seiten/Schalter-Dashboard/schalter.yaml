@@ -1,0 +1,3213 @@
+  - theme: Caule Black Blue
+    title: SCHALTER
+    path: schalter
+    animated_background: none
+    panel: true
+    type: panel
+    badges: []
+    cards:
+      - type: picture-elements
+        image: /local/lovelace/Schalter_DB/BG_Schalter_DB.png
+        variables:
+          schrift1: Arial Rounded MT
+          schrift2: Mandalore
+          schrift3: Technology
+        elements:
+          - type: custom:button-card
+            entity: group.gruppe_wohnzimmer
+            show_name: true
+            show_state: false
+            show_icon: false
+            name: Wohnzimmer
+            size: 100%
+            styles:
+              name:
+                - font-size: 1.4vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+                - color: grey
+              card:
+                - border: 5px double black
+                - background: '#262626'
+                - height: 1.4vw
+                - padding: 1em
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 21%
+              top: 5%
+              width: 40%
+          - type: custom:button-card
+            entity: group.gruppe_wohnzimmer
+            show_name: false
+            show_state: false
+            show_icon: false
+            aspect_ratio: 1/1
+            state:
+              - value: 'off'
+                styles:
+                  card:
+                    - background: grey
+              - value: 'on'
+                styles:
+                  card:
+                    - background: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            styles:
+              card:
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 43.5%
+              top: 7.5%
+              width: 3%
+          - type: custom:button-card
+            entity: group.gruppe_wohnzimmer
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kontrollleuchte.png
+            styles:
+              card:
+                - background: transparent
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 43.5%
+              top: 7.5%
+              width: 3.5%
+          - type: custom:button-card
+            entity: group.gruppe_wohnzimmer
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Hebel_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50px
+                - background: transparent
+            style:
+              left: 43.5%
+              top: 17%
+              width: 6%
+          - type: custom:button-card
+            entity: light.wohnzimmer_deckenlicht
+            name: Decke
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 5%
+              top: 10%
+              width: 8%
+          - type: custom:button-card
+            entity: light.wohnzimmer_deckenlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 5%
+              top: 17%
+              width: 5%
+          - type: custom:button-card
+            entity: light.wohnzimmer_couchtisch
+            name: Couchtisch
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 13%
+              top: 10%
+              width: 8%
+          - type: custom:button-card
+            entity: light.wohnzimmer_couchtisch
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 13%
+              top: 17%
+              width: 5%
+          - type: custom:button-card
+            entity: light.wohnzimmer_vitrinenlicht
+            name: Vitrine
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 21%
+              top: 10%
+              width: 8%
+          - type: custom:button-card
+            entity: light.wohnzimmer_vitrinenlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 21%
+              top: 17%
+              width: 5%
+          - type: custom:button-card
+            entity: light.wohnzimmer_schreibtischlampe
+            name: Schreibtisch
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 29%
+              top: 10%
+              width: 8%
+          - type: custom:button-card
+            entity: light.wohnzimmer_schreibtischlampe
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 29%
+              top: 17%
+              width: 5%
+          - type: custom:button-card
+            entity: light.wohnzimmer_wandlicht
+            name: Wandlicht
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 37%
+              top: 10%
+              width: 8%
+          - type: custom:button-card
+            entity: light.wohnzimmer_wandlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 37%
+              top: 17%
+              width: 5%
+          - type: custom:button-card
+            entity: group.gruppe_esszimmer
+            show_name: true
+            show_state: false
+            show_icon: false
+            name: Esszimmer
+            size: 100%
+            styles:
+              name:
+                - font-size: 1.4vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+                - color: black
+              card:
+                - border: 5px double black
+                - background: '#262626'
+                - height: 1.4vw
+                - padding: 1em
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 17%
+              top: 55%
+              width: 32%
+          - type: custom:button-card
+            entity: group.gruppe_esszimmer
+            show_name: false
+            show_state: false
+            show_icon: false
+            aspect_ratio: 1/1
+            state:
+              - value: 'off'
+                styles:
+                  card:
+                    - background: grey
+              - value: 'on'
+                styles:
+                  card:
+                    - background: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            styles:
+              card:
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 35.5%
+              top: 57.5%
+              width: 3%
+          - type: custom:button-card
+            entity: group.gruppe_esszimmer
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kontrollleuchte.png
+            styles:
+              card:
+                - background: transparent
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 35.5%
+              top: 57.5%
+              width: 3.5%
+          - type: custom:button-card
+            entity: group.gruppe_esszimmer
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Hebel_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 35.5%
+              top: 67%
+              width: 6%
+          - type: custom:button-card
+            entity: light.esszimmer_haengeleuchte
+            name: Tischleuchte
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 5%
+              top: 60%
+              width: 8%
+          - type: custom:button-card
+            entity: light.esszimmer_haengeleuchte
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 5%
+              top: 67%
+              width: 5%
+          - type: custom:button-card
+            entity: light.esszimmer_spots
+            name: Spots
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 13%
+              top: 60%
+              width: 8%
+          - type: custom:button-card
+            entity: light.esszimmer_spots
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 13%
+              top: 67%
+              width: 5%
+          - type: custom:button-card
+            entity: light.esszimmer_vitrinenlicht
+            name: Vitrine
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 21%
+              top: 60%
+              width: 8%
+          - type: custom:button-card
+            entity: light.esszimmer_vitrinenlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 21%
+              top: 67%
+              width: 5%
+          - type: custom:button-card
+            entity: light.esszimmer_wandlicht
+            name: Wandlicht
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 29%
+              top: 60%
+              width: 8%
+          - type: custom:button-card
+            entity: light.esszimmer_wandlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 29%
+              top: 67%
+              width: 5%
+          - type: custom:button-card
+            entity: group.gruppe_arbeitszimmer
+            show_name: true
+            show_state: false
+            show_icon: false
+            name: Arbeitszimmer
+            size: 100%
+            styles:
+              name:
+                - font-size: 1.4vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+                - color: black
+              card:
+                - border: 5px double black
+                - background: '#262626'
+                - height: 1.4vw
+                - padding: 1em
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 57%
+              top: 55%
+              width: 32%
+          - type: custom:button-card
+            entity: group.gruppe_arbeitszimmer
+            show_name: false
+            show_state: false
+            show_icon: false
+            aspect_ratio: 1/1
+            state:
+              - value: 'off'
+                styles:
+                  card:
+                    - background: grey
+              - value: 'on'
+                styles:
+                  card:
+                    - background: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            styles:
+              card:
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 75.5%
+              top: 57.5%
+              width: 3%
+          - type: custom:button-card
+            entity: group.gruppe_arbeitszimmer
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kontrollleuchte.png
+            styles:
+              card:
+                - background: transparent
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 75.5%
+              top: 57.5%
+              width: 3.5%
+          - type: custom:button-card
+            entity: group.gruppe_arbeitszimmer
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Hebel_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 75.5%
+              top: 67%
+              width: 6%
+          - type: custom:button-card
+            entity: light.arbeitszimmer_deckenlicht
+            name: Decke
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 45%
+              top: 60%
+              width: 8%
+          - type: custom:button-card
+            entity: light.arbeitszimmer_deckenlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 45%
+              top: 67%
+              width: 5%
+          - type: custom:button-card
+            entity: light.buro_schreibtisch
+            name: Schreibtisch
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 53%
+              top: 60%
+              width: 8%
+          - type: custom:button-card
+            entity: light.buro_schreibtisch
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 53%
+              top: 67%
+              width: 5%
+          - type: custom:button-card
+            entity: switch.videoleuchte
+            name: Videoleuchte
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 61%
+              top: 60%
+              width: 8%
+          - type: custom:button-card
+            entity: switch.videoleuchte
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 61%
+              top: 67%
+              width: 5%
+          - type: custom:button-card
+            entity: switch.on_air
+            name: On Air
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 69%
+              top: 60%
+              width: 8%
+          - type: custom:button-card
+            entity: switch.on_air
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 69%
+              top: 67%
+              width: 5%
+          - type: custom:button-card
+            entity: group.gruppe_kueche
+            show_name: true
+            show_state: false
+            show_icon: false
+            name: KUECHE
+            size: 100%
+            styles:
+              name:
+                - font-size: 1.4vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+                - color: black
+              card:
+                - border: 5px double black
+                - background: '#262626'
+                - height: 1.4vw
+                - padding: 1em
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 21%
+              top: 30%
+              width: 40%
+          - type: custom:button-card
+            entity: group.gruppe_kueche
+            show_name: false
+            show_state: false
+            show_icon: false
+            aspect_ratio: 1/1
+            state:
+              - value: 'off'
+                styles:
+                  card:
+                    - background: grey
+              - value: 'on'
+                styles:
+                  card:
+                    - background: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            styles:
+              card:
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 43.5%
+              top: 32.5%
+              width: 3%
+          - type: custom:button-card
+            entity: group.gruppe_kueche
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kontrollleuchte.png
+            styles:
+              card:
+                - background: transparent
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 43.5%
+              top: 32.5%
+              width: 3.5%
+          - type: custom:button-card
+            entity: group.gruppe_kueche
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Hebel_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 43.5%
+              top: 42%
+              width: 6%
+          - type: custom:button-card
+            entity: light.kuche_deckenlicht
+            name: Decke
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 5%
+              top: 35%
+              width: 8%
+          - type: custom:button-card
+            entity: light.kuche_deckenlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 5%
+              top: 42%
+              width: 5%
+          - type: custom:button-card
+            entity: light.kuche_arbeitsflache
+            name: Arbeitsfl.
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 13%
+              top: 35%
+              width: 8%
+          - type: custom:button-card
+            entity: light.kuche_arbeitsflache
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 13%
+              top: 42%
+              width: 5%
+          - type: custom:button-card
+            entity: light.kueche_barlicht
+            name: Bar
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 21%
+              top: 35%
+              width: 8%
+          - type: custom:button-card
+            entity: light.kueche_barlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 21%
+              top: 42%
+              width: 5%
+          - type: custom:button-card
+            entity: light.kueche_wandlicht
+            name: Wandlicht
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 29%
+              top: 35%
+              width: 8%
+          - type: custom:button-card
+            entity: light.kueche_wandlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 29%
+              top: 42%
+              width: 5%
+          - type: custom:button-card
+            entity: light.geschirrspuler
+            name: Geschirrsp.
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 37%
+              top: 35%
+              width: 8%
+          - type: custom:button-card
+            entity: light.geschirrspuler
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 37%
+              top: 42%
+              width: 5%
+          - type: custom:button-card
+            entity: group.gruppe_schlafzimmer
+            show_name: true
+            show_state: false
+            show_icon: false
+            name: Schlafzimmer
+            size: 100%
+            styles:
+              name:
+                - font-size: 1.4vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+                - color: black
+              card:
+                - border: 5px double black
+                - background: '#262626'
+                - height: 1.4vw
+                - padding: 1em
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 61%
+              top: 30%
+              width: 24%
+          - type: custom:button-card
+            entity: group.gruppe_schlafzimmer
+            show_name: false
+            show_state: false
+            show_icon: false
+            aspect_ratio: 1/1
+            state:
+              - value: 'off'
+                styles:
+                  card:
+                    - background: grey
+              - value: 'on'
+                styles:
+                  card:
+                    - background: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            styles:
+              card:
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 75.5%
+              top: 32.5%
+              width: 3%
+          - type: custom:button-card
+            entity: group.gruppe_schlafzimmer
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kontrollleuchte.png
+            styles:
+              card:
+                - background: transparent
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 75.5%
+              top: 32.5%
+              width: 3.5%
+          - type: custom:button-card
+            entity: group.gruppe_schlafzimmer
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Hebel_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 75.5%
+              top: 42%
+              width: 6%
+          - type: custom:button-card
+            entity: light.schlafzimmer_deckenlicht
+            name: Decke
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 53%
+              top: 35%
+              width: 8%
+          - type: custom:button-card
+            entity: light.schlafzimmer_deckenlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 53%
+              top: 42%
+              width: 5%
+          - type: custom:button-card
+            entity: light.schlafzimmer_bettlicht
+            name: Bett
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 61%
+              top: 35%
+              width: 8%
+          - type: custom:button-card
+            entity: light.schlafzimmer_bettlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 61%
+              top: 42%
+              width: 5%
+          - type: custom:button-card
+            entity: group.gruppe_nachttisch
+            name: Nachttisch
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 69%
+              top: 35%
+              width: 8%
+          - type: custom:button-card
+            entity: group.gruppe_nachttisch
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 69%
+              top: 42%
+              width: 5%
+          - type: custom:button-card
+            entity: group.gruppe_terrasse
+            show_name: true
+            show_state: false
+            show_icon: false
+            name: Garten
+            size: 100%
+            styles:
+              name:
+                - font-size: 1.4vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+                - color: black
+              card:
+                - border: 5px double black
+                - background: '#262626'
+                - height: 1.4vw
+                - padding: 1em
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 61%
+              top: 5%
+              width: 24%
+          - type: custom:button-card
+            entity: group.gruppe_terrasse
+            show_name: false
+            show_state: false
+            show_icon: false
+            aspect_ratio: 1/1
+            state:
+              - value: 'off'
+                styles:
+                  card:
+                    - background: grey
+              - value: 'on'
+                styles:
+                  card:
+                    - background: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            styles:
+              card:
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 75.5%
+              top: 7.5%
+              width: 3%
+          - type: custom:button-card
+            entity: group.gruppe_terrasse
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kontrollleuchte.png
+            styles:
+              card:
+                - background: transparent
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 75.5%
+              top: 7.5%
+              width: 3.5%
+          - type: custom:button-card
+            entity: group.gruppe_terrasse
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Hebel_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 75.5%
+              top: 17%
+              width: 6%
+          - type: custom:button-card
+            entity: light.terrassenlicht
+            name: Garten
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 53%
+              top: 10%
+              width: 8%
+          - type: custom:button-card
+            entity: light.terrassenlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 53%
+              top: 17%
+              width: 5%
+          - type: custom:button-card
+            entity: light.vordach_beleuchtung
+            name: Vordach
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 61%
+              top: 10%
+              width: 8%
+          - type: custom:button-card
+            entity: light.vordach_beleuchtung
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 61%
+              top: 17%
+              width: 5%
+          - type: custom:button-card
+            entity: light.terrasse_reserve
+            name: Sonder
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 69%
+              top: 10%
+              width: 8%
+          - type: custom:button-card
+            entity: light.terrasse_reserve
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 69%
+              top: 17%
+              width: 5%
+          - type: custom:button-card
+            entity: group.gruppe_vorraum
+            show_name: true
+            show_state: false
+            show_icon: false
+            name: Vorraum
+            size: 100%
+            styles:
+              name:
+                - font-size: 1.4vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+                - color: black
+              card:
+                - border: 5px double black
+                - background: '#262626'
+                - height: 1.4vw
+                - padding: 1em
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 45%
+              top: 80%
+              width: 24%
+          - type: custom:button-card
+            entity: group.gruppe_vorraum
+            show_name: false
+            show_state: false
+            show_icon: false
+            aspect_ratio: 1/1
+            state:
+              - value: 'off'
+                styles:
+                  card:
+                    - background: grey
+              - value: 'on'
+                styles:
+                  card:
+                    - background: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            styles:
+              card:
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 59.5%
+              top: 82.5%
+              width: 3%
+          - type: custom:button-card
+            entity: group.gruppe_vorraum
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kontrollleuchte.png
+            styles:
+              card:
+                - background: transparent
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 59.5%
+              top: 82.5%
+              width: 3.5%
+          - type: custom:button-card
+            entity: group.gruppe_vorraum
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Hebel_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 59.5%
+              top: 92%
+              width: 6%
+          - type: custom:button-card
+            entity: switch.vorraum_deckenlicht
+            name: Decke
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 37%
+              top: 85%
+              width: 8%
+          - type: custom:button-card
+            entity: switch.vorraum_deckenlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 37%
+              top: 92%
+              width: 5%
+          - type: custom:button-card
+            entity: light.vorraum_wandlicht
+            name: Wandlicht
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 45%
+              top: 85%
+              width: 8%
+          - type: custom:button-card
+            entity: light.vorraum_wandlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 45%
+              top: 92%
+              width: 5%
+          - type: custom:button-card
+            entity: light.abstellraum_licht
+            name: Abstellraum
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 53%
+              top: 85%
+              width: 8%
+          - type: custom:button-card
+            entity: light.abstellraum_licht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 53%
+              top: 92%
+              width: 5%
+          - type: custom:button-card
+            entity: group.gruppe_sanitaer
+            show_name: true
+            show_state: false
+            show_icon: false
+            name: BAD     /     WC
+            size: 100%
+            styles:
+              name:
+                - font-size: 1.4vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+                - color: black
+              card:
+                - border: 5px double black
+                - background: '#262626'
+                - height: 1.4vw
+                - padding: 1em
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 13%
+              top: 80%
+              width: 24%
+          - type: custom:button-card
+            entity: group.gruppe_sanitaer
+            show_name: false
+            show_state: false
+            show_icon: false
+            aspect_ratio: 1/1
+            state:
+              - value: 'off'
+                styles:
+                  card:
+                    - background: grey
+              - value: 'on'
+                styles:
+                  card:
+                    - background: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            styles:
+              card:
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 27.5%
+              top: 82.5%
+              width: 3%
+          - type: custom:button-card
+            entity: group.gruppe_sanitaer
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kontrollleuchte.png
+            styles:
+              card:
+                - background: transparent
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 27.5%
+              top: 82.5%
+              width: 3.5%
+          - type: custom:button-card
+            entity: group.gruppe_sanitaer
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Hebel_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 27.5%
+              top: 92%
+              width: 6%
+          - type: custom:button-card
+            entity: light.bad_decke
+            name: Decke
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 5%
+              top: 85%
+              width: 8%
+          - type: custom:button-card
+            entity: light.bad_decke
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 5%
+              top: 92%
+              width: 5%
+          - type: custom:button-card
+            entity: light.bad_spiegel
+            name: Spiegel
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 13%
+              top: 85%
+              width: 8%
+          - type: custom:button-card
+            entity: light.bad_spiegel
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 13%
+              top: 92%
+              width: 5%
+          - type: custom:button-card
+            entity: light.wc_licht
+            name: WC Decke
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 21%
+              top: 85%
+              width: 8%
+          - type: custom:button-card
+            entity: light.wc_licht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 21%
+              top: 92%
+              width: 5%
+          - type: custom:button-card
+            entity: group.gruppe_keller
+            show_name: true
+            show_state: false
+            show_icon: false
+            name: Garage
+            size: 100%
+            styles:
+              name:
+                - font-size: 1.4vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+                - color: black
+              card:
+                - border: 5px double black
+                - background: '#262626'
+                - height: 1.4vw
+                - padding: 1em
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 73%
+              top: 80%
+              width: 16%
+          - type: custom:button-card
+            entity: group.gruppe_keller
+            show_name: false
+            show_state: false
+            show_icon: false
+            aspect_ratio: 1/1
+            state:
+              - value: 'off'
+                styles:
+                  card:
+                    - background: grey
+              - value: 'on'
+                styles:
+                  card:
+                    - background: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            styles:
+              card:
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 83.5%
+              top: 82.5%
+              width: 3%
+          - type: custom:button-card
+            entity: group.gruppe_keller
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kontrollleuchte.png
+            styles:
+              card:
+                - background: transparent
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 83.5%
+              top: 82.5%
+              width: 3.5%
+          - type: custom:button-card
+            entity: group.gruppe_keller
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Hebel_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 83.5%
+              top: 92%
+              width: 6%
+          - type: custom:button-card
+            entity: switch.garagenlicht
+            name: Garage
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.1vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 69%
+              top: 85%
+              width: 8%
+          - type: custom:button-card
+            entity: switch.garagenlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 69%
+              top: 92%
+              width: 5%
+          - type: custom:button-card
+            entity: switch.kellerlicht
+            name: Keller
+            show_name: true
+            show_state: false
+            show_icon: false
+            size: 100%
+            styles:
+              name:
+                - font-size: 1vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.05vw
+                - text-overflow: unset
+                - word-break: break-word
+              card:
+                - border: 5px double black
+                - background: '#262626'
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 77%
+              top: 85%
+              width: 8%
+          - type: custom:button-card
+            entity: switch.kellerlicht
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Kipp_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Kipp_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 77%
+              top: 92%
+              width: 5%
+          - type: custom:button-card
+            entity: switch.dashboard_hauptschalter
+            show_name: false
+            show_state: false
+            show_icon: false
+            aspect_ratio: 1/1
+            state:
+              - value: 'off'
+                styles:
+                  card:
+                    - background: grey
+              - value: 'on'
+                styles:
+                  card:
+                    - background: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            styles:
+              card:
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 93%
+              top: 77%
+              width: 4%
+          - type: custom:button-card
+            entity: switch.dashboard_hauptschalter
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Kontrollleuchte.png
+            styles:
+              card:
+                - background: transparent
+                - border-radius: 50px
+                - border: none
+            style:
+              pointer-events: none
+              left: 93%
+              top: 77%
+              width: 4.5%
+          - type: custom:button-card
+            entity: switch.dashboard_hauptschalter
+            show_name: true
+            show_state: false
+            show_icon: false
+            name: Hauptschalter
+            size: 100%
+            styles:
+              name:
+                - font-size: 1.3vw
+                - font-weight: bold
+                - font-family: Technology
+                - white-space: unset
+                - letter-spacing: 0.07vw
+                - text-overflow: unset
+                - word-break: break-word
+                - color: black
+              card:
+                - border: 5px double black
+                - background: '#262626'
+                - height: 1.4vw
+                - padding: 1em
+            state:
+              - value: 'off'
+                styles:
+                  name:
+                    - color: black
+              - value: 'on'
+                styles:
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - text-shadow: >
+                        [[[ return '1px 1px 4px' +
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+            style:
+              left: 93%
+              top: 85%
+              width: 13%
+          - type: custom:button-card
+            entity: switch.dashboard_hauptschalter
+            show_name: false
+            show_entity_picture: true
+            size: 100%
+            entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+            state:
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/Button_Hebel_off.png
+                styles:
+                  card:
+                    - border: none
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/Button_Hebel_on.png
+                styles:
+                  card:
+                    - border: none
+            styles:
+              card:
+                - border: transparent
+                - border-radius: 50%
+                - background: transparent
+            style:
+              left: 93%
+              top: 92%
+              width: 6%
+          - type: custom:button-card
+            color_type: blank-card
+            styles:
+              card:
+                - height: 9vw
+                - background-color: '#151849'
+                - border: 6px double rgb(54,54,60)
+            style:
+              pointer-events: none
+              left: 89%
+              top: 12%
+              width: 20%
+          - entity: sensor.time
+            hold_action:
+              action: none
+            style:
+              font-size: 5.41vw
+              font-weight: 200
+              font-family: Technology
+              left: 80%
+              letter-spacing: '-0.05vw'
+              text-align: left
+              text-shadow: 2px 2px 5px white
+              max-width: 1px
+              top: 9%
+            tap_action:
+              action: navigate
+              navigation_path: /hauptboard-floorplan/0
+            type: state-label
+            card_mod:
+              style: |
+                :host {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                }
+          - entity: sensor.mein_datum
+            hold_action:
+              action: none
+            style:
+              font-size: 1.3vw
+              font-weight: 300
+              font-family: Technology
+              left: 89%
+              letter-spacing: 0.1vw
+              text-align: left
+              text-shadow: 2px 2px 2px white
+              top: 17%
+              width: 18%
+            tap_action:
+              action: navigate
+              navigation_path: /hauptboard-floorplan/0
+            type: state-label
+            card_mod:
+              style: |
+                :host {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                }
+          - type: image
+            entity: switch.vollbild_shb_touch
+            title: Umschaltung Vollbild
+            hold_action:
+              action: more-info
+            tap_action:
+              action: toggle
+            image: /local/lovelace/hauptboard/icon/button_re_back_Icon.png
+            state_filter:
+              'off': brightness(80%) saturate(0.8)
+              'on': brightness(100%) saturate(1.2)
+            state_image:
+              'off': /local/lovelace/hauptboard/icon/button_re_vollbild_off_blue.png
+              'on': /local/lovelace/hauptboard/icon/button_re_vollbild_on_blue.png
+            style:
+              left: 97%
+              top: 7%
+              width: 2%
+          - type: custom:mushroom-alarm-control-panel-card
+            entity: alarm_control_panel.home_alarm
+            states:
+              - armed_away
+            show_keypad: true
+            name: Alarmpanel
+            secondary_info: state
+            primary_info: name
+            style:
+              left: 89%
+              top: 49%
+              width: 20%
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-background: black;
+                  border: 6px double rgb(54,54,60)
+                }
