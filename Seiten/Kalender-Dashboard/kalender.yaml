@@ -1,0 +1,194 @@
+  - title: Kalender
+    path: kalender
+    animated_background: none
+    type: custom:grid-layout
+    layout:
+      grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% auto
+      grid-template-rows: auto
+      align-items: middle
+      grid-template-areas: |
+        "head1 head1 head1 head1 head1 head1 head1 head1 head1 head1"
+        "Erin Erin Erin But1 Kal Kal Kal Kal Kal But2"
+        "Erin2 Erin2 Erin2 But3 Kal Kal Kal Kal Kal But4"
+    theme: Mein Black Blue Glass
+    badges: []
+    cards:
+      - type: custom:banner-card
+        heading:
+          - Kalender
+        link: /hauptboard-floorplan/0
+        view_layout:
+          grid-area: head1
+        card_mod:
+          style: |
+            ha-card {
+              border: none;
+              background: transparent
+            }
+      - type: custom:atomic-calendar-revive
+        name: Ereignisliste
+        enableModeChange: true
+        entities:
+          - calendar.geburtstag_geburtstag
+          - calendar.unsere_familie_unsere_familie
+        firstDayOfWeek: 1
+        maxDaysToShow: 30
+        refreshInterval: 60
+        showDate: true
+        showCurrentEventLine: false
+        sortByStartTime: false
+        dimFinishedEvents: true
+        showLastCalendarWeek: false
+        disableCalEventLink: true
+        disableCalLink: true
+        showNoEventsForToday: false
+        showProgressBar: true
+        showWeekDay: true
+        disableEventLink: true
+        disableLocationLink: true
+        showEventIcon: false
+        showFullDayProgress: false
+        showHiddenText: false
+        showLoader: false
+        showLocation: false
+        showDescription: true
+        disableCalLocationLink: true
+        dateColor: rgb(119,158,203)
+        timeColor: rgb(119,221,119)
+        eventTitleColor: '#cc5500'
+        locationLinkColor: rgb(253, 253, 150)
+        locationIconColor: rgb(253, 253, 150)
+        dayWrapperLineColor: rgba(253, 253, 150, .35)
+        descColor: '#00FF00'
+        eventCalNameColor: '#1E90FF'
+        calGridColor: rgba(253, 253, 150, .35)
+        calEventBackgroundColor: rgb(194, 59, 34)
+        calEventSatColor: rgba(12, 56, 100, .05)
+        calEventSunColor: rgba(12, 56, 100, .15)
+        calActiveEventBackgroundColor: rgba(128, 206, 225, .15)
+        defaultCalColor: '#00FF00'
+        calDayColor: rgb(119,221,119)
+        nameColor: rgb(119,221,119)
+        calWeekDayColor: '#cc5500'
+        calDateColor: rgb(119,221,119)
+        view_layout:
+          grid-area: Erin
+        card_mod:
+          style: |
+            ha-card {
+              border: none;
+              background: transparent
+            }
+      - type: custom:atomic-calendar-revive
+        name: Unsere Kalender
+        enableModeChange: true
+        entities:
+          - calendar.geburtstag_geburtstag
+          - calendar.unsere_familie_unsere_familie
+        firstDayOfWeek: 1
+        maxDaysToShow: 60
+        refreshInterval: 60
+        showDate: true
+        showCurrentEventLine: true
+        sortByStartTime: true
+        dimFinishedEvents: false
+        showLastCalendarWeek: true
+        disableCalEventLink: false
+        disableCalLink: true
+        showNoEventsForToday: false
+        showProgressBar: true
+        showWeekDay: true
+        showWeekNumber: true
+        disableEventLink: false
+        disableLocationLink: false
+        showEventIcon: true
+        showFullDayProgress: true
+        showHiddenText: true
+        dateColor: rgb(119,158,203)
+        timeColor: rgb(119,221,119)
+        eventTitleColor: '#cc5500'
+        locationLinkColor: rgb(253, 253, 150)
+        locationIconColor: rgb(253, 253, 150)
+        dayWrapperLineColor: rgba(253, 253, 150, .35)
+        descColor: '#00FF00'
+        eventCalNameColor: '#1E90FF'
+        calGridColor: rgba(253, 253, 150, .35)
+        calEventBackgroundColor: rgb(194, 59, 34)
+        calEventSatColor: rgba(12, 56, 100, .05)
+        calEventSunColor: rgba(12, 56, 100, .15)
+        calActiveEventBackgroundColor: rgba(128, 206, 225, .15)
+        defaultCalColor: '#00FF00'
+        calDayColor: rgb(119,221,119)
+        nameColor: rgb(119,221,119)
+        calWeekDayColor: '#cc5500'
+        calDateColor: rgb(119,221,119)
+        cardHeight: 100%
+        calShowDescription: true
+        defaultMode: Calendar
+        showDeclined: true
+        showLocation: true
+        showLoader: true
+        hideDuplicates: false
+        disableCalLocationLink: true
+        view_layout:
+          grid-area: Kal
+        card_mod:
+          style: |
+            ha-card {
+              border: none;
+              background: transparent
+            }
+      - type: custom:atomic-calendar-revive
+        name: Müllkalender
+        enableModeChange: true
+        entities:
+          - calendar.ics
+          - calendar.weihnachtsbeleuchtung_weihnachtsbeleuchtung
+        firstDayOfWeek: 1
+        maxDaysToShow: 7
+        refreshInterval: 60
+        showDate: true
+        showCurrentEventLine: false
+        sortByStartTime: false
+        dimFinishedEvents: true
+        showLastCalendarWeek: false
+        disableCalEventLink: true
+        disableCalLink: true
+        showNoEventsForToday: false
+        showProgressBar: true
+        showWeekDay: true
+        disableEventLink: true
+        disableLocationLink: true
+        showEventIcon: false
+        showFullDayProgress: false
+        showHiddenText: false
+        showLoader: false
+        showLocation: false
+        showDescription: true
+        disableCalLocationLink: true
+        dateColor: rgb(119,158,203)
+        timeColor: rgb(119,221,119)
+        eventTitleColor: '#cc5500'
+        locationLinkColor: rgb(253, 253, 150)
+        locationIconColor: rgb(253, 253, 150)
+        dayWrapperLineColor: rgba(253, 253, 150, .35)
+        descColor: '#00FF00'
+        eventCalNameColor: '#1E90FF'
+        calGridColor: rgba(253, 253, 150, .35)
+        calEventBackgroundColor: rgb(194, 59, 34)
+        calEventSatColor: rgba(12, 56, 100, .05)
+        calEventSunColor: rgba(12, 56, 100, .15)
+        calActiveEventBackgroundColor: rgba(128, 206, 225, .15)
+        defaultCalColor: '#00FF00'
+        calDayColor: rgb(119,221,119)
+        nameColor: rgb(119,221,119)
+        calWeekDayColor: '#cc5500'
+        calDateColor: rgb(119,221,119)
+        view_layout:
+          grid-area: Erin2
+        card_mod:
+          style: |
+            ha-card {
+              border: none;
+              background: transparent
+            }
