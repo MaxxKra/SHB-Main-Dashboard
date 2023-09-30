@@ -1,0 +1,517 @@
+type: picture-elements
+image: /local/lovelace/hauptboard/bgbilder/background.png
+elements:
+  - type: conditional
+    conditions:
+      - entity: sensor.es_spielt_musik
+        state: Ja
+    elements:
+      - type: image
+        image: /local/lovelace/icon/GIFs/equalizer_v2.gif
+        style:
+          top: 5%
+          left: 50%
+          width: 100%
+      - type: image
+        image: /local/lovelace/icon/GIFs/equalizer_v2.gif
+        style:
+          top: 95%
+          left: 50%
+          width: 100%
+      - type: custom:button-card
+        entity: input_button.mediaplayer_pause
+        show_icon: false
+        show_name: false
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        entity_picture: /local/lovelace/icon/GIFs/player_pause_v1.gif
+        size: 100%
+        styles:
+          card:
+            - border: none
+            - background: transparent
+        tap_action:
+          action: call-service
+          service: input_button.press
+          service_data:
+            entity_id: input_button.mediaplayer_pause
+        style:
+          top: 78%
+          left: 50%
+          width: 12%
+      - type: custom:button-card
+        entity: input_button.mediaplayer_stop
+        show_icon: false
+        show_name: false
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        entity_picture: /local/lovelace/icon/GIFs/player_stop_v1.gif
+        size: 100%
+        styles:
+          card:
+            - border: none
+            - background: transparent
+        tap_action:
+          action: call-service
+          service: input_button.press
+          service_data:
+            entity_id: input_button.mediaplayer_stop
+        style:
+          top: 22%
+          left: 50%
+          width: 8%
+  - type: conditional
+    conditions:
+      - entity: media_player.spotify_markus_kraml
+        state: playing
+    elements:
+      - type: custom:button-card
+        entity: input_button.mediaplayer_next
+        show_icon: false
+        show_name: false
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        entity_picture: /local/lovelace/icon/GIFs/player_next_v1.gif
+        size: 100%
+        styles:
+          card:
+            - border: none
+            - background: transparent
+        tap_action:
+          action: call-service
+          service: input_button.press
+          service_data:
+            entity_id: input_button.mediaplayer_next
+        style:
+          top: 78%
+          left: 62%
+          width: 8%
+      - type: custom:button-card
+        entity: input_button.mediaplayer_back
+        show_icon: false
+        show_name: false
+        show_entity_picture: true
+        aspect_ratio: 1/1
+        entity_picture: /local/lovelace/icon/GIFs/player_back_v1.gif
+        size: 100%
+        styles:
+          card:
+            - border: none
+            - background: transparent
+        tap_action:
+          action: call-service
+          service: input_button.press
+          service_data:
+            entity_id: input_button.mediaplayer_back
+        style:
+          top: 78%
+          left: 38%
+          width: 8%
+      - type: conditional
+        conditions:
+          - entity: input_select.media_player_auswahl
+            state: Arbeitszimmer
+        elements:
+          - type: custom:button-card
+            entity: switch.arbeitszimmer_echo_shuffle_switch
+            show_icon: false
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            state:
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-on_v1.gif
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-off_v1.gif
+            styles:
+              card:
+                - border: none
+                - background: transparent
+            tap_action:
+              action: toggle
+            style:
+              top: 78%
+              left: 26%
+              width: 8%
+      - type: conditional
+        conditions:
+          - entity: input_select.media_player_auswahl
+            state: Esszimmer
+        elements:
+          - type: custom:button-card
+            entity: switch.esszimmer_echo_shuffle_switch
+            show_icon: false
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            state:
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-on_v1.gif
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-off_v1.gif
+            styles:
+              card:
+                - border: none
+                - background: transparent
+            tap_action:
+              action: toggle
+            style:
+              top: 78%
+              left: 26%
+              width: 8%
+      - type: conditional
+        conditions:
+          - entity: input_select.media_player_auswahl
+            state: Badezimmer
+        elements:
+          - type: custom:button-card
+            entity: switch.badezimmer_echo_shuffle_switch
+            show_icon: false
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            state:
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-on_v1.gif
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-off_v1.gif
+            styles:
+              card:
+                - border: none
+                - background: transparent
+            tap_action:
+              action: toggle
+            style:
+              top: 78%
+              left: 26%
+              width: 8%
+      - type: conditional
+        conditions:
+          - entity: input_select.media_player_auswahl
+            state: Wohnzimmer
+        elements:
+          - type: custom:button-card
+            entity: switch.wohnzimmer_echo_shuffle_switch
+            show_icon: false
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            state:
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-on_v1.gif
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-off_v1.gif
+            styles:
+              card:
+                - border: none
+                - background: transparent
+            tap_action:
+              action: toggle
+            style:
+              top: 78%
+              left: 26%
+              width: 8%
+      - type: conditional
+        conditions:
+          - entity: input_select.media_player_auswahl
+            state: Küche
+        elements:
+          - type: custom:button-card
+            entity: switch.kuchen_echo_shuffle_switch
+            show_icon: false
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            state:
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-on_v1.gif
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-off_v1.gif
+            styles:
+              card:
+                - border: none
+                - background: transparent
+            tap_action:
+              action: toggle
+            style:
+              top: 78%
+              left: 26%
+              width: 8%
+      - type: conditional
+        conditions:
+          - entity: input_select.media_player_auswahl
+            state: Vorraum
+        elements:
+          - type: custom:button-card
+            entity: switch.vorraum_echo_shuffle_switch
+            show_icon: false
+            show_name: false
+            show_entity_picture: true
+            aspect_ratio: 1/1
+            size: 100%
+            state:
+              - value: 'on'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-on_v1.gif
+              - value: 'off'
+                entity_picture: /local/lovelace/icon/GIFs/player_shuffle-off_v1.gif
+            styles:
+              card:
+                - border: none
+                - background: transparent
+            tap_action:
+              action: toggle
+            style:
+              top: 78%
+              left: 26%
+              width: 8%
+  - type: custom:button-card
+    entity: input_button.mediaplayer_start
+    show_icon: false
+    show_name: false
+    show_entity_picture: true
+    aspect_ratio: 1/1
+    entity_picture: /local/lovelace/icon/GIFs/player_play_v1.gif
+    size: 100%
+    styles:
+      card:
+        - border: none
+        - background: transparent
+    tap_action:
+      action: call-service
+      service: input_button.press
+      service_data:
+        entity_id: input_button.mediaplayer_start
+    style:
+      top: 50%
+      left: 50%
+      width: 20%
+  - type: conditional
+    conditions:
+      - entity: media_player.esszimmer_echo
+        state: playing
+    elements:
+      - type: custom:mini-media-player
+        entity: media_player.esszimmer_echo
+        name: Esszimmer Echo
+        artwork: material
+        source: icon
+        volume_stateless: false
+        info: scroll
+        style:
+          left: 81%
+          top: 22%
+          width: 30%
+  - type: conditional
+    conditions:
+      - entity: media_player.arbeitszimmer_echo
+        state: playing
+    elements:
+      - type: custom:mini-media-player
+        entity: media_player.arbeitszimmer_echo
+        name: Arbeitszimmer Echo
+        artwork: material
+        source: icon
+        volume_stateless: false
+        info: scroll
+        style:
+          left: 81%
+          top: 36%
+          width: 30%
+  - type: conditional
+    conditions:
+      - entity: media_player.wohnzimmer_echo
+        state: playing
+    elements:
+      - type: custom:mini-media-player
+        entity: media_player.wohnzimmer_echo
+        name: Wohnzimmer Echo
+        artwork: material
+        source: icon
+        volume_stateless: false
+        info: scroll
+        style:
+          left: 81%
+          top: 50%
+          width: 30%
+  - type: conditional
+    conditions:
+      - entity: media_player.badezimmer_echo
+        state: playing
+    elements:
+      - type: custom:mini-media-player
+        entity: media_player.badezimmer_echo
+        name: Badezimmer Echo
+        artwork: material
+        source: icon
+        volume_stateless: false
+        info: scroll
+        style:
+          left: 81%
+          top: 64%
+          width: 30%
+  - type: conditional
+    conditions:
+      - entity: media_player.kuchen_echo
+        state: playing
+    elements:
+      - type: custom:mini-media-player
+        entity: media_player.kuchen_echo
+        name: Küchen Echo
+        artwork: material
+        source: icon
+        volume_stateless: false
+        info: scroll
+        style:
+          left: 81%
+          top: 78%
+          width: 30%
+  - type: conditional
+    conditions:
+      - entity: media_player.vorraum_echo
+        state: playing
+    elements:
+      - type: custom:mini-media-player
+        entity: media_player.vorraum_echo
+        name: Vorraum Echo
+        artwork: material
+        source: icon
+        volume_stateless: false
+        info: scroll
+        style:
+          left: 81%
+          top: 92%
+          width: 30%
+  - type: custom:mushroom-number-card
+    entity: input_number.media_player_volume
+    name: Lautstärke?
+    icon_type: none
+    style:
+      '--mush-card-primary-font-size': 1.5vw
+      '--mush-card-secondary-font-size': 0.8vw
+      '--primary-text-color': '#00b0ff'
+      left: 20%
+      top: 56%
+      width: 30%
+    card_mod:
+      style: |
+        ha-card {
+          background: transparent;
+          border: none
+        }
+  - type: conditional
+    conditions:
+      - entity: input_select.medien_auswahl
+        state: Spotify
+    elements:
+      - type: custom:mushroom-select-card
+        name: Welche Playlist?
+        entity: input_select.spotify_playlist_auswahl
+        fill_container: true
+        secondary_info: none
+        icon_type: none
+        style:
+          '--mush-card-primary-font-size': 1.5vw
+          '--primary-text-color': '#00b0ff'
+          left: 20%
+          top: 43%
+          width: 30%
+        card_mod:
+          style: |
+            ha-card {
+              background: transparent;
+              border: none
+            }
+  - type: conditional
+    conditions:
+      - entity: input_select.medien_auswahl
+        state: Radio
+    elements:
+      - type: custom:mushroom-select-card
+        name: Welcher Sender?
+        entity: input_select.sender_auswahl
+        fill_container: true
+        secondary_info: none
+        icon_type: none
+        style:
+          '--mush-card-primary-font-size': 1.5vw
+          '--primary-text-color': '#00b0ff'
+          left: 20%
+          top: 43%
+          width: 30%
+        card_mod:
+          style: |
+            ha-card {
+              background: transparent;
+              border: none
+            }
+  - type: custom:mushroom-select-card
+    name: Welcher Echo?
+    entity: input_select.media_player_auswahl
+    fill_container: true
+    secondary_info: none
+    icon_type: none
+    style:
+      '--mush-card-primary-font-size': 1.5vw
+      '--primary-text-color': '#00b0ff'
+      left: 20%
+      top: 30%
+      width: 30%
+    card_mod:
+      style: |
+        ha-card {
+          background: transparent;
+          border: none
+        }
+  - type: custom:mushroom-select-card
+    name: Radio oder Spotify?
+    entity: input_select.medien_auswahl
+    fill_container: false
+    secondary_info: none
+    icon_type: none
+    style:
+      '--mush-card-primary-font-size': 1.5vw
+      '--primary-text-color': '#00b0ff'
+      left: 20%
+      top: 17%
+      width: 30%
+    card_mod:
+      style: |
+        ha-card {
+          background: transparent;
+          border: none;
+        }
+  - type: image
+    entity: switch.vollbild_shb_touch
+    title: Umschaltung Vollbild
+    hold_action:
+      action: more-info
+    tap_action:
+      action: toggle
+    image: /local/lovelace/hauptboard/icon/button_re_back_Icon.png
+    state_filter:
+      'off': brightness(80%) saturate(0.8)
+      'on': brightness(100%) saturate(1.2)
+    state_image:
+      'on': /local/lovelace/hauptboard/icon/button_re_vollbild_off_blue.png
+      'off': /local/lovelace/hauptboard/icon/button_re_vollbild_on_blue.png
+    style:
+      left: 95%
+      top: 11%
+      width: 2%
+  - type: image
+    title: Zum Hauptboard
+    hold_action:
+      action: none
+    tap_action:
+      action: navigate
+      navigation_path: /hauptboard-floorplan/0
+    image: /local/lovelace/hauptboard/icon/button_re_back_Icon.png
+    style:
+      left: 91%
+      top: 11%
+      width: 2%
