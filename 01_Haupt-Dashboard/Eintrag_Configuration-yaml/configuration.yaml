@@ -1,0 +1,16 @@
+#-----------------------------------------------------------  
+# Lovelace Dashboard
+#-----------------------------------------------------------
+
+lovelace_gen:
+
+lovelace:
+  mode: storage
+  dashboards:
+    hauptboard-floorplan:
+      mode: yaml
+      filename: lovelace/hauptboard-floorplan.yaml
+      title: Haupt Board
+      icon: mdi:account-voice
+      show_in_sidebar: true
+      require_admin: false
