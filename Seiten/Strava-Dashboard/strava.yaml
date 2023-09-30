@@ -1,0 +1,992 @@
+  - theme: ios-dark-mode-dark-green
+    title: Strava
+    path: strava
+    animated_background: weather
+    type: panel
+    badges: []
+    cards:
+      - type: picture-elements
+        image: /local/lovelace/hauptboard/bgbilder/background_50.png
+        elements:
+          - type: custom:button-card
+            entity: sensor.training_kalender
+            aspect_ratio: 11/1
+            show_name: true
+            show_icon: false
+            hold_action:
+              action: none
+            tap_action:
+              action: navigate
+              navigation_path: /hauptboard-floorplan/0
+            name: |
+              [[[ 
+                if (states['calendar.training_training'].state == "on")
+                  return `<div style='display: flex;display: -webkit-flex;'>
+                  <marquee>
+                  <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+                  Heute steht ${states['sensor.training_kalender'].state}&nbsp auf dem Trainingsplan!
+                  </span>
+                  </marquee>`;
+                else
+                  return `
+                  <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+                  Heute steht ${states['sensor.training_kalender'].state}&nbsp auf dem Trainingsplan!
+                  </span>`
+              ]]]
+            styles:
+              name:
+                - font-size: 2.5vw
+                - font-family: Minecraft
+                - width: 100%
+                - padding-top: 2%
+              card:
+                - background: transparent
+                - border: none
+                - margin-top: '-2%'
+            style:
+              left: 50%
+              top: 6%
+              width: 100%
+          - type: custom:home-feed-card
+            title: 'Trainingsplan:'
+            card_id: training_feed
+            show_empty: false
+            calendars:
+              - calendar.training_training
+            more_info_on_tap: true
+            state_color: true
+            calendar_days_forward: 5
+            calendar_days_back: 0
+            history_days_back: 0
+            calendar_time_format: datetime
+            style:
+              left: 20%
+              top: 30%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  background: transparent;
+                  border: transparent;
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            name: 'Letztes Training:'
+            show_icon: false
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - justify-self: start
+                - padding-left: 10px
+                - font-size: 1.5em
+            style:
+              left: 20%
+              top: 58%
+              width: 35%
+          - type: custom:button-card
+            entity: sensor.strava_0_0
+            show_name: true
+            aspect_ratio: 7/1
+            size: 80%
+            name: |
+              [[[ 
+               return states['sensor.strava_0_0'].attributes.title;
+              ]]]
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n"'
+                - grid-template-columns: 1fr 6fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 20%
+              top: 63%
+              width: 35%
+          - type: custom:button-card
+            entity: sensor.strava_0_1
+            name: Dauer
+            show_state: true
+            state_color: true
+            size: 20%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - color: white
+              icon:
+                - color: grey
+            style:
+              left: 4%
+              top: 70%
+              width: 7%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_0_2
+            name: Durchschnitt
+            show_state: true
+            state_color: true
+            size: 20%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - color: white
+              icon:
+                - color: grey
+            style:
+              left: 11%
+              top: 70%
+              width: 7%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_0_3
+            name: Distanz
+            show_state: true
+            state_color: true
+            size: 20%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - color: white
+              icon:
+                - color: grey
+            style:
+              left: 18%
+              top: 70%
+              width: 7%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_0_4
+            name: Tempo
+            show_state: true
+            state_color: true
+            size: 20%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - color: white
+              icon:
+                - color: grey
+            style:
+              left: 25%
+              top: 70%
+              width: 7%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_0_5
+            name: Steigung
+            show_state: true
+            state_color: true
+            size: 20%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - color: white
+              icon:
+                - color: grey
+            style:
+              left: 32%
+              top: 70%
+              width: 7%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            color_type: blank-card
+            styles:
+              card:
+                - height: 3px
+                - background-color: white
+            style:
+              left: 20%
+              top: 76%
+              width: 35%
+          - type: custom:button-card
+            name: 'Vorletztes Training:'
+            show_icon: false
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - justify-self: start
+                - padding-left: 10px
+                - font-size: 1.5em
+            style:
+              left: 20%
+              top: 80%
+              width: 35%
+          - type: custom:button-card
+            entity: sensor.strava_1_0
+            show_name: true
+            aspect_ratio: 7/1
+            size: 80%
+            name: |
+              [[[ 
+               return states['sensor.strava_1_0'].attributes.title;
+              ]]]
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n"'
+                - grid-template-columns: 1fr 6fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 20%
+              top: 85%
+              width: 35%
+          - type: custom:button-card
+            entity: sensor.strava_1_1
+            name: Dauer
+            show_state: true
+            state_color: true
+            size: 20%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - color: white
+              icon:
+                - color: grey
+            style:
+              left: 4%
+              top: 92%
+              width: 7%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_1_2
+            name: Durchschnitt
+            show_state: true
+            state_color: true
+            size: 20%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - color: white
+              icon:
+                - color: grey
+            style:
+              left: 11%
+              top: 92%
+              width: 7%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_1_3
+            name: Distanz
+            show_state: true
+            state_color: true
+            size: 20%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - color: white
+              icon:
+                - color: grey
+            style:
+              left: 18%
+              top: 92%
+              width: 7%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_1_4
+            name: Tempo
+            show_state: true
+            state_color: true
+            size: 20%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - color: white
+              icon:
+                - color: grey
+            style:
+              left: 25%
+              top: 92%
+              width: 7%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_1_5
+            name: Steigung
+            show_state: true
+            state_color: true
+            size: 20%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - color: white
+              icon:
+                - color: grey
+            style:
+              left: 32%
+              top: 92%
+              width: 7%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            aspect_ratio: 13/18
+            show_entity_picture: true
+            entity_picture: /local/lovelace/icon/person/Maxx_Avatar.gif
+            size: 95%
+            styles:
+              card:
+                - background-color: transparent
+                - border: none
+            tap_action:
+              action: call-service
+              service: input_button.press
+              data:
+                entity_id: input_button.training_video_wahlen
+            style:
+              left: 53%
+              top: 30%
+              width: 22%
+          - type: custom:button-card
+            name: 'Alle Läufe:'
+            show_icon: false
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - justify-self: start
+                - padding-left: 10px
+                - font-size: 1.5em
+            style:
+              left: 86%
+              top: 12%
+              width: 35%
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_all_run_activity_count
+            show_name: true
+            show_state: true
+            name: Alle Läufe
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 17%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_all_run_distance
+            show_name: true
+            show_state: true
+            name: Gesamte Distanz
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 22%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_all_run_moving_time
+            show_name: true
+            show_state: true
+            name: Gesamte Zeit
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 27%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_ytd_run_activity_count
+            show_name: true
+            show_state: true
+            name: Läufe dieses Jahr
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 32%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_ytd_run_distance
+            show_name: true
+            show_state: true
+            name: Distanz dieses Jahr
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 37%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_ytd_run_moving_time
+            show_name: true
+            show_state: true
+            name: Zeit dieses Jahr
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 42%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            color_type: blank-card
+            styles:
+              card:
+                - height: 3px
+                - background-color: white
+            style:
+              left: 83%
+              top: 50%
+              width: 28%
+          - type: custom:button-card
+            name: 'Alle Radfahrten:'
+            show_icon: false
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - justify-self: start
+                - padding-left: 10px
+                - font-size: 1.5em
+            style:
+              left: 86%
+              top: 58%
+              width: 35%
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_all_ride_activity_count
+            show_name: true
+            show_state: true
+            name: Alle Läufe
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 63%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_all_ride_distance
+            show_name: true
+            show_state: true
+            name: Gesamte Distanz
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 68%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_all_ride_moving_time
+            show_name: true
+            show_state: true
+            name: Gesamte Zeit
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 73%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_ytd_ride_activity_count
+            show_name: true
+            show_state: true
+            name: Läufe dieses Jahr
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 78%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_ytd_ride_distance
+            show_name: true
+            show_state: true
+            name: Distanz dieses Jahr
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 83%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            entity: sensor.strava_stats_summary_ytd_ride_moving_time
+            show_name: true
+            show_state: true
+            name: Zeit dieses Jahr
+            aspect_ratio: 7/1
+            size: 80%
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              grid:
+                - grid-template-areas: '"i n s"'
+                - grid-template-columns: 1fr 3fr 3fr
+                - font-size: 1em
+              name:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+                - color: white
+              state:
+                - font-size: 1em
+                - align-self: middle
+                - justify-self: start
+              img_cell:
+                - justify-content: start
+                - align-items: middle
+                - margin: none
+              icon:
+                - color: grey
+            style:
+              left: 86%
+              top: 88%
+              width: 35%
+            card_mod:
+              style: |
+                ha-card {
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                }
+          - type: custom:button-card
+            name: Video des Tages
+            show_icon: false
+            styles:
+              card:
+                - background: transparent
+                - border: none
+              name:
+                - justify-self: middle
+                - padding-left: 10px
+                - font-size: 1.5em
+            style:
+              left: 53%
+              top: 58%
+              width: 35%
+          - type: custom:config-template-card
+            variables:
+              video_id: states['input_text.training_video_heute'].state
+            entities:
+              - input_text.training_video_heute
+            card:
+              type: iframe
+              url: ${'https://www.youtube.com/embed/'+ video_id }
+              aspect_ratio: 75%
+              card_mod:
+                style: |
+                  ha-card {
+                    border-radius: 0px;
+                    background: transparent;
+                  }
+            style:
+              left: 53%
+              top: 78%
+              width: 25%
+        card_mod:
+          style: |
+            ha-card {
+              border-radius: 0px;
+            }
