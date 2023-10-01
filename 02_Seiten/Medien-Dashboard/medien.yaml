@@ -1,3 +1,38 @@
+
+
+#    888b     d888               888 d8b                      # 
+#    8888b   d8888               888 Y8P                      # 
+#    88888b.d88888               888                          # 
+#    888Y88888P888  .d88b.   .d88888 888  .d88b.  88888b.     # 
+#    888 Y888P 888 d8P  Y8b d88" 888 888 d8P  Y8b 888 "88b    # 
+#    888  Y8P  888 88888888 888  888 888 88888888 888  888    # 
+#    888   "   888 Y8b.     Y88b 888 888 Y8b.     888  888    # 
+#    888       888  "Y8888   "Y88888 888  "Y8888  888  888    # 
+#                                                             # 
+#                                                             # 
+#                                                             # 
+#     .d8888b.           d8b 888                              # 
+#    d88P  Y88b          Y8P 888                              # 
+#    Y88b.                   888                              # 
+#     "Y888b.    .d88b.  888 888888 .d88b.                    # 
+#        "Y88b. d8P  Y8b 888 888   d8P  Y8b                   # 
+#          "888 88888888 888 888   88888888                   # 
+#    Y88b  d88P Y8b.     888 Y88b. Y8b.                       # 
+#     "Y8888P"   "Y8888  888  "Y888 "Y8888                    # 
+#                                                             # 
+#                                                             # 
+#                                                             # 
+
+
+#----------------------------------------------------------------
+#  Auszug aus der RAW-Konfigurationsdatei "Dashboard-Seiten"                                                   
+#----------------------------------------------------------------
+
+
+#----------------------------------------------------------------
+#  Seiten Grundeinstellungen                                                   
+#----------------------------------------------------------------
+
   - theme: Mein Black Blue
     title: Medien
     path: medien
@@ -7,26 +42,51 @@
     type: panel
     badges: []
     cards:
+
+#----------------------------------------------------------------
+#  Beginn Picture Elements Karte                                                   
+#----------------------------------------------------------------
+
       - type: picture-elements
         image: /local/lovelace/hauptboard/bgbilder/background.png
         elements:
+
+#----------------------------------------------------------------
+#  Bedingungen Karte                                                   
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: sensor.es_spielt_musik
                 state: Ja
             elements:
+
+#----------------------------------------------------------------
+#  Hintergrund Bild "Equalizer" Oben                                                   
+#----------------------------------------------------------------
+
               - type: image
                 image: /local/lovelace/icon/GIFs/equalizer_v2.gif
                 style:
                   top: 5%
                   left: 50%
                   width: 100%
+
+#----------------------------------------------------------------
+#  Hintergrund Bild "Equalizer" Unten                                                  
+#----------------------------------------------------------------
+
               - type: image
                 image: /local/lovelace/icon/GIFs/equalizer_v2.gif
                 style:
                   top: 95%
                   left: 50%
                   width: 100%
+
+#----------------------------------------------------------------
+#  Custom Button Karten                                             
+#----------------------------------------------------------------
+
               - type: custom:button-card
                 entity: input_button.mediaplayer_pause
                 show_icon: false
@@ -48,6 +108,7 @@
                   top: 78%
                   left: 50%
                   width: 12%
+
               - type: custom:button-card
                 entity: input_button.mediaplayer_stop
                 show_icon: false
@@ -69,11 +130,21 @@
                   top: 22%
                   left: 50%
                   width: 8%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte                                                  
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: media_player.spotify_markus_kraml
                 state: playing
             elements:
+
+#----------------------------------------------------------------
+#  Custom Button Karten                                             
+#----------------------------------------------------------------
+
               - type: custom:button-card
                 entity: input_button.mediaplayer_next
                 show_icon: false
@@ -95,6 +166,7 @@
                   top: 78%
                   left: 62%
                   width: 8%
+
               - type: custom:button-card
                 entity: input_button.mediaplayer_back
                 show_icon: false
@@ -116,11 +188,21 @@
                   top: 78%
                   left: 38%
                   width: 8%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte                                                  
+#----------------------------------------------------------------
+
               - type: conditional
                 conditions:
                   - entity: input_select.media_player_auswahl
                     state: Arbeitszimmer
                 elements:
+
+#----------------------------------------------------------------
+#  Custom Button Karten                                             
+#----------------------------------------------------------------
+
                   - type: custom:button-card
                     entity: switch.arbeitszimmer_echo_shuffle_switch
                     show_icon: false
@@ -143,11 +225,21 @@
                       top: 78%
                       left: 26%
                       width: 8%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte                                                  
+#----------------------------------------------------------------
+
               - type: conditional
                 conditions:
                   - entity: input_select.media_player_auswahl
                     state: Esszimmer
                 elements:
+
+#----------------------------------------------------------------
+#  Custom Button Karten                                             
+#----------------------------------------------------------------
+
                   - type: custom:button-card
                     entity: switch.esszimmer_echo_shuffle_switch
                     show_icon: false
@@ -170,11 +262,21 @@
                       top: 78%
                       left: 26%
                       width: 8%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte                                                  
+#----------------------------------------------------------------
+
               - type: conditional
                 conditions:
                   - entity: input_select.media_player_auswahl
                     state: Badezimmer
                 elements:
+
+#----------------------------------------------------------------
+#  Custom Button Karten                                             
+#----------------------------------------------------------------
+
                   - type: custom:button-card
                     entity: switch.badezimmer_echo_shuffle_switch
                     show_icon: false
@@ -197,11 +299,21 @@
                       top: 78%
                       left: 26%
                       width: 8%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte                                                  
+#----------------------------------------------------------------
+
               - type: conditional
                 conditions:
                   - entity: input_select.media_player_auswahl
                     state: Wohnzimmer
                 elements:
+
+#----------------------------------------------------------------
+#  Custom Button Karten                                             
+#----------------------------------------------------------------
+
                   - type: custom:button-card
                     entity: switch.wohnzimmer_echo_shuffle_switch
                     show_icon: false
@@ -224,11 +336,21 @@
                       top: 78%
                       left: 26%
                       width: 8%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte                                                  
+#----------------------------------------------------------------
+
               - type: conditional
                 conditions:
                   - entity: input_select.media_player_auswahl
                     state: Küche
                 elements:
+
+#----------------------------------------------------------------
+#  Custom Button Karten                                             
+#----------------------------------------------------------------
+
                   - type: custom:button-card
                     entity: switch.kuchen_echo_shuffle_switch
                     show_icon: false
@@ -251,11 +373,21 @@
                       top: 78%
                       left: 26%
                       width: 8%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte                                                  
+#----------------------------------------------------------------
+
               - type: conditional
                 conditions:
                   - entity: input_select.media_player_auswahl
                     state: Vorraum
                 elements:
+
+#----------------------------------------------------------------
+#  Custom Button Karten                                             
+#----------------------------------------------------------------
+
                   - type: custom:button-card
                     entity: switch.vorraum_echo_shuffle_switch
                     show_icon: false
@@ -278,6 +410,11 @@
                       top: 78%
                       left: 26%
                       width: 8%
+
+#----------------------------------------------------------------
+#  Custom Button Karten - Play Button
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: input_button.mediaplayer_start
             show_icon: false
@@ -299,11 +436,21 @@
               top: 50%
               left: 50%
               width: 20%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte - Esszimmer Echo
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: media_player.esszimmer_echo
                 state: playing
             elements:
+
+#----------------------------------------------------------------
+#  Mini Media Player Karte - Esszimmer                                            
+#----------------------------------------------------------------
+
               - type: custom:mini-media-player
                 entity: media_player.esszimmer_echo
                 name: Esszimmer Echo
@@ -315,11 +462,21 @@
                   left: 81%
                   top: 22%
                   width: 30%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte - Arbeitszimmer Echo
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: media_player.arbeitszimmer_echo
                 state: playing
             elements:
+
+#----------------------------------------------------------------
+#  Mini Media Player Karte - Arbeitszimmer                                           
+#----------------------------------------------------------------
+
               - type: custom:mini-media-player
                 entity: media_player.arbeitszimmer_echo
                 name: Arbeitszimmer Echo
@@ -331,11 +488,21 @@
                   left: 81%
                   top: 36%
                   width: 30%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte - Wohnzimmer Echo
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: media_player.wohnzimmer_echo
                 state: playing
             elements:
+
+#----------------------------------------------------------------
+#  Mini Media Player Karte - Wohnzimmer                                            
+#----------------------------------------------------------------
+
               - type: custom:mini-media-player
                 entity: media_player.wohnzimmer_echo
                 name: Wohnzimmer Echo
@@ -347,11 +514,21 @@
                   left: 81%
                   top: 50%
                   width: 30%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte - Badezimmer Echo
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: media_player.badezimmer_echo
                 state: playing
             elements:
+
+#----------------------------------------------------------------
+#  Mini Media Player Karte - Badezimmer                                           
+#----------------------------------------------------------------
+
               - type: custom:mini-media-player
                 entity: media_player.badezimmer_echo
                 name: Badezimmer Echo
@@ -363,11 +540,21 @@
                   left: 81%
                   top: 64%
                   width: 30%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte - Küchen Echo
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: media_player.kuchen_echo
                 state: playing
             elements:
+
+#----------------------------------------------------------------
+#  Mini Media Player Karte - Küche                                           
+#----------------------------------------------------------------
+
               - type: custom:mini-media-player
                 entity: media_player.kuchen_echo
                 name: Küchen Echo
@@ -379,11 +566,21 @@
                   left: 81%
                   top: 78%
                   width: 30%
+
+#----------------------------------------------------------------
+#  Bedingungs Karte - Vorraum Echo
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: media_player.vorraum_echo
                 state: playing
             elements:
+
+#----------------------------------------------------------------
+#  Mini Media Player Karte - Vorraum                                            
+#----------------------------------------------------------------
+
               - type: custom:mini-media-player
                 entity: media_player.vorraum_echo
                 name: Vorraum Echo
@@ -395,6 +592,11 @@
                   left: 81%
                   top: 92%
                   width: 30%
+
+#----------------------------------------------------------------
+#  Auswahlspalte - Lautstärke Regler
+#----------------------------------------------------------------
+
           - type: custom:mushroom-number-card
             entity: input_number.media_player_volume
             name: Lautstärke?
@@ -412,11 +614,25 @@
                   background: transparent;
                   border: none
                 }
+
+#----------------------------------------------------------------
+#  Auswahlspalte - Spotify Playlist
+#----------------------------------------------------------------
+
+#----------------------------------------------------------------
+#  Bedingungs Karte - Spotify
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: input_select.medien_auswahl
                 state: Spotify
             elements:
+
+#----------------------------------------------------------------
+#  Auswahlliste - Spotify Playlist
+#----------------------------------------------------------------
+
               - type: custom:mushroom-select-card
                 name: Welche Playlist?
                 entity: input_select.spotify_playlist_auswahl
@@ -435,11 +651,25 @@
                       background: transparent;
                       border: none
                     }
+
+#----------------------------------------------------------------
+#  Auswahlspalte - Radio Sender
+#----------------------------------------------------------------
+
+#----------------------------------------------------------------
+#  Bedingungs Karte - Radio
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: input_select.medien_auswahl
                 state: Radio
             elements:
+
+#----------------------------------------------------------------
+#  Auswahlliste - Radio Sender
+#----------------------------------------------------------------
+
               - type: custom:mushroom-select-card
                 name: Welcher Sender?
                 entity: input_select.sender_auswahl
@@ -458,6 +688,11 @@
                       background: transparent;
                       border: none
                     }
+
+#----------------------------------------------------------------
+#  Auswahlspalte - Geräte Auswahl
+#----------------------------------------------------------------
+
           - type: custom:mushroom-select-card
             name: Welcher Echo?
             entity: input_select.media_player_auswahl
@@ -476,6 +711,11 @@
                   background: transparent;
                   border: none
                 }
+
+#----------------------------------------------------------------
+#  Auswahlspalte - Medien Typ
+#----------------------------------------------------------------
+
           - type: custom:mushroom-select-card
             name: Radio oder Spotify?
             entity: input_select.medien_auswahl
@@ -494,6 +734,11 @@
                   background: transparent;
                   border: none;
                 }
+
+#----------------------------------------------------------------
+#  Steuerleiste - Vollbild
+#----------------------------------------------------------------
+
           - type: image
             entity: switch.vollbild_shb_touch
             title: Umschaltung Vollbild
@@ -512,6 +757,29 @@
               left: 95%
               top: 11%
               width: 2%
+
+#----------------------------------------------------------------
+#  Steuerleiste - Integration Refresh
+#----------------------------------------------------------------
+
+          - type: image
+            title: Zum Hauptboard
+            hold_action:
+              action: none
+            tap_action:
+              action: call-service
+              service: input_button.press
+              service_data:
+                entity_id: button.alexa_integration_refresh
+            image: /local/lovelace/hauptboard/icon/button_re_refresh_Icon_blau.png
+            style:
+              left: 91%
+              top: 11%
+
+#----------------------------------------------------------------
+#  Steuerleiste - Navigation
+#----------------------------------------------------------------
+
           - type: image
             title: Zum Hauptboard
             hold_action:
@@ -521,6 +789,6 @@
               navigation_path: /hauptboard-floorplan/0
             image: /local/lovelace/hauptboard/icon/button_re_back_Icon.png
             style:
-              left: 91%
+              left: 87%
               top: 11%
               width: 2%
