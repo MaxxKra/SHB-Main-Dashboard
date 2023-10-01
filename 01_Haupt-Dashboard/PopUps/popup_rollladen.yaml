@@ -1,0 +1,862 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.                                        # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b                                       # 
+#    888    888 888     888 888    888      888     888 888    888                                       # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P                                       # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"                                        # 
+#    888        888     888 888             888     888 888                                              # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888                                              # 
+#    888         "Y88888P"  888              "Y88888P"  888                                              # 
+#                                                                                                        # 
+#                                                                                                        # 
+#                                                                                                        # 
+#    8888888b.   .d88888b.  888      888      888             d8888 8888888b.  8888888888 888b    888    # 
+#    888   Y88b d88P" "Y88b 888      888      888            d88888 888  "Y88b 888        8888b   888    # 
+#    888    888 888     888 888      888      888           d88P888 888    888 888        88888b  888    # 
+#    888   d88P 888     888 888      888      888          d88P 888 888    888 8888888    888Y88b 888    # 
+#    8888888P"  888     888 888      888      888         d88P  888 888    888 888        888 Y88b888    # 
+#    888 T88b   888     888 888      888      888        d88P   888 888    888 888        888  Y88888    # 
+#    888  T88b  Y88b. .d88P 888      888      888       d8888888888 888  .d88P 888        888   Y8888    # 
+#    888   T88b  "Y88888P"  88888888 88888888 88888888 d88P     888 8888888P"  8888888888 888    Y888    # 
+#                                                                                                        # 
+#                                                                                                        # 
+#                                                                                                        # 
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+title: Rollläden
+entity: input_select.rollladen_auswahl
+dismissable: true
+style: |-
+  --mdc-theme-surface: rgba(15,10,10,0.95);
+  --popup-border-radius: 0px;
+  --popup-min-height: 900px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+size: wide
+card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+  type: vertical-stack
+  cards:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+    - type: vertical-stack
+      cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift                                          
+#----------------------------------------------------------------
+
+        - type: markdown
+          content: '## <center> Rollladensteuerung'
+          card_mod:
+            style: |
+              ha-card {
+                background: transparent;
+                color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                font-family: arial black;
+                font-size: 2vw;
+                border: none
+              }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel                                                  
+#----------------------------------------------------------------
+
+        - type: horizontal-stack
+          cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+            - type: markdown
+              content: '>'
+              card_mod:
+                style: |
+                  ha-card {
+                    background: transparent;
+                    border: none
+                  }
+
+#----------------------------------------------------------------
+#  Entitäten Karte - Auswahlliste                                    
+#----------------------------------------------------------------
+
+            - type: entities
+              entities:
+                - entity: input_select.rollladen_auswahl
+              card_mod:
+                style: |
+                  ha-card {
+                    background: transparent;
+                    border: none
+                  }
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+            - type: markdown
+              content: '>'
+              card_mod:
+                style: |
+                  ha-card {
+                    background: transparent;
+                    border: none
+                  }
+
+#----------------------------------------------------------------
+#  Bedingungen Karte - Alle Rollladen
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: input_select.rollladen_auswahl
+              state: Alle
+          card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+            type: vertical-stack
+            cards:
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel                                                  
+#----------------------------------------------------------------
+
+              - type: horizontal-stack
+                cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+                  - type: markdown
+                    content: '>'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Shutter Karte
+#----------------------------------------------------------------
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.rollladen_alle
+                        name: Alle Rollläden
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+                  - type: vertical-stack
+                    cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+                      - type: markdown
+                        content: '>'
+                        card_mod:
+                          style: |
+                            ha-card {
+                              background: transparent;
+                              color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                              font-family: arial black;
+                              font-size: 2vw;
+                              border: none
+                            }
+
+#----------------------------------------------------------------
+#  Custom Button Karten
+#----------------------------------------------------------------
+
+                      - type: custom:button-card
+                        name: ALLE LÜFTEN
+                        tap_action:
+                          action: call-service
+                          service: input_button.press
+                          service_data:
+                            entity_id: input_button.rollladen_alle_luften
+                        styles:
+                          name:
+                            - color: >
+                                [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+
+                      - type: custom:button-card
+                        name: WOHNBEREICH LÜFTEN
+                        tap_action:
+                          action: call-service
+                          service: input_button.press
+                          service_data:
+                            entity_id: input_button.rollladen_wohnbereich_luften
+                        styles:
+                          name:
+                            - color: >
+                                [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+
+                      - type: custom:button-card
+                        name: SCHLAFRÄUME LÜFTEN
+                        tap_action:
+                          action: call-service
+                          service: input_button.press
+                          service_data:
+                            entity_id: input_button.rollladen_schlafraume_luften
+                        styles:
+                          name:
+                            - color: >
+                                [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+                  - type: markdown
+                    content: '>'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel                                                  
+#----------------------------------------------------------------
+
+              - type: horizontal-stack
+                cards:
+
+#----------------------------------------------------------------
+#  Shutter Karten
+#----------------------------------------------------------------
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.arbeitszimmer
+                        name: Arbeitszimmer
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.schlafzimmer
+                        name: Schlafzimmer
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.kuche
+                        name: Küche Fenster
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.terrassentuere
+                        name: Gartentüre
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.terrassenfenster
+                        name: Gartenfenster
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Bedingungen Karte - Wohnbereich Rollladen
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: input_select.rollladen_auswahl
+              state: Wohnbereich
+          card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+            type: vertical-stack
+            cards:
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel                                                  
+#----------------------------------------------------------------
+
+              - type: horizontal-stack
+                cards:
+                  - type: markdown
+                    content: '>'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Shutter Karten
+#----------------------------------------------------------------
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.rollladen_wohnbereich
+                        name: Wohnbereich Gesamt
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+                  - type: vertical-stack
+                    cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+                      - type: markdown
+                        content: '>'
+                        card_mod:
+                          style: |
+                            ha-card {
+                              background: transparent;
+                              color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                              font-family: arial black;
+                              font-size: 2vw;
+                              border: none
+                            }
+
+#----------------------------------------------------------------
+#  Custom Button Karte
+#----------------------------------------------------------------
+
+                      - type: custom:button-card
+                        name: WOHNBEREICH LÜFTEN
+                        tap_action:
+                          action: call-service
+                          service: input_button.press
+                          service_data:
+                            entity_id: input_button.rollladen_wohnbereich_luften
+                        styles:
+                          name:
+                            - color: >
+                                [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+                  - type: markdown
+                    content: '>'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel                                             
+#----------------------------------------------------------------
+
+              - type: horizontal-stack
+                cards:
+                  - type: markdown
+                    content: '>'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Shutter Karten
+#----------------------------------------------------------------
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.kuche
+                        name: Küche Fenster
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.terrassentuere
+                        name: Gartentüre
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.terrassenfenster
+                        name: Gartenfenster
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+                  - type: markdown
+                    content: '>'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Bedingungen Karte - Schlafräume Rollladen
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: input_select.rollladen_auswahl
+              state: Schlafräume
+          card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+            type: vertical-stack
+            cards:
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel                                             
+#----------------------------------------------------------------
+
+              - type: horizontal-stack
+                cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+                  - type: markdown
+                    content: '>'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Shutter Karte
+#----------------------------------------------------------------
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.rollladen_schlafraume
+                        name: Schlafräume Gesamt
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+                  - type: vertical-stack
+                    cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+                      - type: markdown
+                        content: '>'
+                        card_mod:
+                          style: |
+                            ha-card {
+                              background: transparent;
+                              color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                              font-family: arial black;
+                              font-size: 2vw;
+                              border: none
+                            }
+
+#----------------------------------------------------------------
+#  Custom Button Karte
+#----------------------------------------------------------------
+
+                      - type: custom:button-card
+                        name: SCHLAFRÄUME LÜFTEN
+                        tap_action:
+                          action: call-service
+                          service: input_button.press
+                          service_data:
+                            entity_id: input_button.rollladen_schlafraume_luften
+                        styles:
+                          name:
+                            - color: >
+                                [[[ return states['sensor.dashboard_primar_farbe'].state; ]]]
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+                  - type: markdown
+                    content: '>'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel                                             
+#----------------------------------------------------------------
+
+              - type: horizontal-stack
+                cards:
+                  - type: markdown
+                    content: '>'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Shutter Karten
+#----------------------------------------------------------------
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.arbeitszimmer
+                        name: Arbeitszimmer
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+                  - type: custom:shutter-card
+                    title: null
+                    entities:
+                      - entity: cover.schlafzimmer
+                        name: Schlafzimmer
+                        titel_position: top
+                    card_mod:
+                      style: |
+                        ha-card {
+                          --ha-card-background: transperant;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                          text-shadow: 2px 2px 4px #000000;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+                  - type: markdown
+                    content: '>'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: none
+                        }
+
+#----------------------------------------------------------------
+#  Bedingungen Karte - Arbeitszimmer Rollladen
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: input_select.rollladen_auswahl
+              state: Arbeitszimmer
+          card:
+            type: custom:shutter-card
+            title: null
+            entities:
+              - entity: cover.arbeitszimmer
+                name: Arbeitszimmer
+                titel_position: top
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-background: transperant;
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  text-shadow: 2px 2px 4px #000000;
+                  border: none    
+                }
+
+#----------------------------------------------------------------
+#  Bedingungen Karte - Schlafzimmer Rollladen
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: input_select.rollladen_auswahl
+              state: Schlafzimmer
+          card:
+
+#----------------------------------------------------------------
+#  Shutter Karte
+#----------------------------------------------------------------
+
+            type: custom:shutter-card
+            title: null
+            entities:
+              - entity: cover.schlafzimmer
+                name: Schlafzimmer
+                titel_position: top
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-background: transperant;
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  text-shadow: 2px 2px 4px #000000;
+                  border: none    
+                }
+
+#----------------------------------------------------------------
+#  Bedingungen Karte - Küchenfenster Rollladen
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: input_select.rollladen_auswahl
+              state: Küchenfenster
+          card:
+
+#----------------------------------------------------------------
+#  Shutter Karte
+#----------------------------------------------------------------
+
+            type: custom:shutter-card
+            title: null
+            entities:
+              - entity: cover.kuche
+                name: Küchenfenster
+                titel_position: top
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-background: transperant;
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  text-shadow: 2px 2px 4px #000000;
+                  border: none    
+                }
+
+#----------------------------------------------------------------
+#  Bedingungen Karte - Gartentür Rollladen
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: input_select.rollladen_auswahl
+              state: Gartentüre
+          card:
+
+#----------------------------------------------------------------
+#  Shutter Karte
+#----------------------------------------------------------------
+
+            type: custom:shutter-card
+            title: null
+            entities:
+              - entity: cover.terrassentuere
+                name: Gartentüre
+                titel_position: top
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-background: transperant;
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  text-shadow: 2px 2px 4px #000000;
+                  border: none    
+                }
+
+#----------------------------------------------------------------
+#  Bedingungen Karte - Wohnzimmerfenster Rollladen
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: input_select.rollladen_auswahl
+              state: Wohnzimmerfenster
+          card:
+
+#----------------------------------------------------------------
+#  Shutter Karte
+#----------------------------------------------------------------
+
+            type: custom:shutter-card
+            title: null
+            entities:
+              - entity: cover.terrassenfenster
+                name: Gartenfenster
+                titel_position: top
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-background: transperant;
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  text-shadow: 2px 2px 4px #000000;
+                  border: none    
+                }
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+        - type: markdown
+          content: |+
+            >
+
+
+
+
+
+            
+          card_mod:
+            style: |
+              ha-card {
+                --ha-card-background: transperant;
+                color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                text-shadow: 2px 2px 4px #000000;
+                border: none    
+              }
+view_layout:
+  grid-area: pop15
