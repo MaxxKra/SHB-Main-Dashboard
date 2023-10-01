@@ -1,0 +1,217 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.       # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b      # 
+#    888    888 888     888 888    888      888     888 888    888      # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P      # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"       # 
+#    888        888     888 888             888     888 888             # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888             # 
+#    888         "Y88888P"  888              "Y88888P"  888             # 
+#                                                                       # 
+#                                                                       # 
+#                                                                       # 
+#    888       888               d8b          888          .d8888b.     # 
+#    888   o   888               Y8P          888         d88P  Y88b    # 
+#    888  d8b  888                            888              .d88P    # 
+#    888 d888b 888  .d88b.       888 .d8888b  888888         .d88P"     # 
+#    888d88888b888 d88""88b      888 88K      888            888"       # 
+#    88888P Y88888 888  888      888 "Y8888b. 888            888        # 
+#    8888P   Y8888 Y88..88P      888      X88 Y88b.                     # 
+#    888P     Y888  "Y88P"       888  88888P'  "Y888         888        # 
+#                                                                       # 
+#                                                                       # 
+#                                                                       # 
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+dismissable: true
+entity: sensor.maxx_in_der_zone
+title: Wo sind sie denn?
+style: |-
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+size: wide
+card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
+  type: vertical-stack
+  cards:
+
+#----------------------------------------------------------------
+#  Raster Karte (2 Spalten)
+#----------------------------------------------------------------
+
+    - square: false
+      type: grid
+      columns: 2
+      cards:
+
+#----------------------------------------------------------------
+#  Landkarte
+#----------------------------------------------------------------
+
+        - type: map
+          entities:
+            - entity: device_tracker.iphone_von_maxx
+          title: Maxx
+          aspect_ratio: '10:7'
+          dark_mode: true
+          card_mod:
+            style: |
+              ha-card {
+                border: transparent;
+                background: transparent;
+                }
+
+#----------------------------------------------------------------
+#  Landkarte
+#----------------------------------------------------------------
+
+        - type: map
+          entities:
+            - entity: device_tracker.iphone_von_monika
+          title: Moni
+          dark_mode: true
+          aspect_ratio: '10:7'
+          card_mod:
+            style: |
+              ha-card {
+                border: transparent;
+                background: transparent;
+                }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel
+#----------------------------------------------------------------
+
+    - type: horizontal-stack
+      cards:
+
+#----------------------------------------------------------------
+#  Entitäten Karte
+#----------------------------------------------------------------
+
+        - type: entities
+          entities:
+            - entity: device_tracker.iphone_von_maxx
+              icon: mdi:map-marker-radius-outline
+              name: Maxx ist?
+            - entity: sensor.iphone_von_maxx_battery_level
+              name: 'IPhone Batterie:'
+              secondary_info: none
+          state_color: true
+          title: IPhone Maxx
+          card_mod:
+            style: |
+              ha-card {
+                background: transparent;
+                border: none;
+                font-family: Arial Rounded MT;
+                font-size: 1.2em;
+              }
+
+#----------------------------------------------------------------
+#  Entitäten Karte
+#----------------------------------------------------------------
+
+        - type: entities
+          entities:
+            - entity: sensor.position_maxx_nord
+              name: NORD
+            - entity: sensor.position_maxx_west
+              name: WEST
+          title: 'Koordinaten:'
+          card_mod:
+            style: |
+              ha-card {
+                background: transparent;
+                border: none;
+                font-family: Arial Rounded MT;
+                font-size: 1.2em;
+                --card-mod-icon-color: {{ states['sensor.dashboard_primar_farbe'].state }};
+              }
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+        - type: markdown
+          content: '>'
+          card_mod:
+            style: |
+              ha-card {
+                border: transparent;
+                background: transparent;
+                }
+
+#----------------------------------------------------------------
+#  Entitäten Karte
+#----------------------------------------------------------------
+
+        - type: entities
+          entities:
+            - entity: device_tracker.iphone_von_monika
+              icon: mdi:map-marker-radius-outline
+              name: Moni ist?
+            - entity: sensor.iphone_von_monika_battery_level
+              name: 'IPhone Batterie:'
+              secondary_info: none
+          state_color: true
+          title: IPhone Moni
+          card_mod:
+            style: |
+              ha-card {
+                background: transparent;
+                border: none;
+                font-family: Arial Rounded MT;
+                font-size: 1.2em;
+              }
+
+#----------------------------------------------------------------
+#  Entitäten Karte
+#----------------------------------------------------------------
+
+        - type: entities
+          entities:
+            - entity: sensor.position_moni_nord
+              name: NORD
+            - entity: sensor.position_moni_west
+              name: WEST
+          title: 'Koordinaten:'
+          card_mod:
+            style: |
+              ha-card {
+                background: transparent;
+                border: none;
+                font-family: Arial Rounded MT;
+                font-size: 1.2em;
+                --card-mod-icon-color: {{ states['sensor.dashboard_primar_farbe'].state }};
+              }
+
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+
+view_layout:
+  grid-area: pop17
