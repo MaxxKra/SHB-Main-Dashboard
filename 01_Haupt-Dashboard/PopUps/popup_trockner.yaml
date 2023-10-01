@@ -1,35 +1,35 @@
-#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.                                                          # 
-#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b                                                         # 
-#    888    888 888     888 888    888      888     888 888    888                                                         # 
-#    888   d88P 888     888 888   d88P      888     888 888   d88P                                                         # 
-#    8888888P"  888     888 8888888P"       888     888 8888888P"                                                          # 
-#    888        888     888 888             888     888 888                                                                # 
-#    888        Y88b. .d88P 888             Y88b. .d88P 888                                                                # 
-#    888         "Y88888P"  888              "Y88888P"  888                                                                # 
-#                                                                                                                          # 
-#                                                                                                                          # 
-#                                                                                                                          # 
-#     .d8888b.                             888      d8b                                   d8b  d8b 888                     # 
-#    d88P  Y88b                            888      Y8P                                   Y8P  Y8P 888                     # 
-#    888    888                            888                                                     888                     # 
-#    888         .d88b.  .d8888b   .d8888b 88888b.  888 888d888 888d888 .d8888b  88888b.  888  888 888  .d88b.  888d888    # 
-#    888  88888 d8P  Y8b 88K      d88P"    888 "88b 888 888P"   888P"   88K      888 "88b 888  888 888 d8P  Y8b 888P"      # 
-#    888    888 88888888 "Y8888b. 888      888  888 888 888     888     "Y8888b. 888  888 888  888 888 88888888 888        # 
-#    Y88b  d88P Y8b.          X88 Y88b.    888  888 888 888     888          X88 888 d88P Y88b 888 888 Y8b.     888        # 
-#     "Y8888P88  "Y8888   88888P'  "Y8888P 888  888 888 888     888      88888P' 88888P"   "Y88888 888  "Y8888  888        # 
-#                                                                                888                                       # 
-#                                                                                888                                       # 
-#                                                                                888                                       # 
 
 
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.            # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b           # 
+#    888    888 888     888 888    888      888     888 888    888           # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P           # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"            # 
+#    888        888     888 888             888     888 888                  # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888                  # 
+#    888         "Y88888P"  888              "Y88888P"  888                  # 
+#                                                                            # 
+#                                                                            # 
+#                                                                            # 
+#    88888888888                       888                                   # 
+#        888                           888                                   # 
+#        888                           888                                   # 
+#        888  888d888 .d88b.   .d8888b 888  888 88888b.   .d88b.  888d888    # 
+#        888  888P"  d88""88b d88P"    888 .88P 888 "88b d8P  Y8b 888P"      # 
+#        888  888    888  888 888      888888K  888  888 88888888 888        # 
+#        888  888    Y88..88P Y88b.    888 "88b 888  888 Y8b.     888        # 
+#        888  888     "Y88P"   "Y8888P 888  888 888  888  "Y8888  888        # 
+#                                                                            # 
+#                                                                            # 
+#                                                                            # 
 
 #----------------------------------------------------------------
 #  PopUp Card                                                    
 #----------------------------------------------------------------
 
 type: custom:popup-card
-entity: sensor.geschirrspuler_status
-title: Geschirrspüler
+entity: sensor.trockner_status
+title: Trockner
 style: |-
   --mdc-theme-surface: transparent;
   --popup-border-radius: 0px;
@@ -49,24 +49,23 @@ card_mod:
         padding-left: 10px;
         padding-right: 10px;
       }
-size: ''
+card:
 
 #----------------------------------------------------------------
 #  Raster Karte (1 Spalte)                                      
 #----------------------------------------------------------------
 
-card:
   square: false
   columns: 1
   type: grid
+  cards:
 
 #----------------------------------------------------------------
 #  Überschrift (Markdown Card)                              
 #----------------------------------------------------------------
 
-  cards:
     - type: markdown
-      content: '# <center>Geschirrspüler'
+      content: '# <center>Trockner'
       card_mod:
         style: |
           ha-card {
@@ -80,13 +79,7 @@ card:
 
     - type: entities
       entities:
-        - entity: sensor.geschirrspuler_status
-          name: Status Geschirrspüler
-        - entity: sensor.geschirrspuler_ture
-          name: Status Türe
-          icon: mdi:door
-        - entity: light.geschirrspuler
-          name: Status LED
+        - entity: sensor.trockner_status
       card_mod:
         style: |
           ha-card {
@@ -116,9 +109,9 @@ card:
 
     - type: entities
       entities:
-        - entity: sensor.geschirrspueler_power
+        - entity: sensor.trockner_power
           name: Aktuelle Leistung
-        - entity: sensor.geschirrspueler_energy
+        - entity: sensor.trockner_energy
           name: Gesamt Verbrauch
       card_mod:
         style: |
@@ -151,7 +144,7 @@ card:
       graph: line
       type: sensor
       detail: 1
-      entity: sensor.geschirrspueler_energy
+      entity: sensor.trockner_energy
       name: Verbrauch
       card_mod:
         style: |
@@ -165,4 +158,4 @@ card:
 #----------------------------------------------------------------
 
 view_layout:
-  grid-area: pop5
+  grid-area: pop7
