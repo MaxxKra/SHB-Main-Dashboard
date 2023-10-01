@@ -1,0 +1,163 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.     # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b    # 
+#    888    888 888     888 888    888      888     888 888    888    # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P    # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"     # 
+#    888        888     888 888             888     888 888           # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888           # 
+#    888         "Y88888P"  888              "Y88888P"  888           # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+#    888       888          888    888                                # 
+#    888   o   888          888    888                                # 
+#    888  d8b  888          888    888                                # 
+#    888 d888b 888  .d88b.  888888 888888 .d88b.  888d888             # 
+#    888d88888b888 d8P  Y8b 888    888   d8P  Y8b 888P"               # 
+#    88888P Y88888 88888888 888    888   88888888 888                 # 
+#    8888P   Y8888 Y8b.     Y88b.  Y88b. Y8b.     888                 # 
+#    888P     Y888  "Y8888   "Y888  "Y888 "Y8888  888                 # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+title: Unser Wetter
+dismissable: true
+entity: sensor.garten_temperatur
+style: |-
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+size: wide
+card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
+  type: vertical-stack
+  cards:
+
+#----------------------------------------------------------------
+#  Custom Banner Karte - Überschrift
+#----------------------------------------------------------------
+
+    - type: custom:banner-card
+      heading: Unser Wetter
+      link: /touch-pc/0
+      card_mod:
+        style: |
+          ha-card {
+            border: none;
+            background: transparent
+          }
+
+#----------------------------------------------------------------
+#  Raster Karte (2 Spalten)
+#----------------------------------------------------------------
+
+    - square: false
+      columns: 2
+      type: grid
+      cards:
+
+#----------------------------------------------------------------
+#  Wetter Radar Karte
+#----------------------------------------------------------------
+
+        - type: custom:weather-radar-card
+          frame_count: 50
+          frame_delay: 100
+          zoom_level: 8
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent
+              }
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
+        - type: vertical-stack
+          cards:
+
+#----------------------------------------------------------------
+#  Custom Wetter Karte
+#----------------------------------------------------------------
+
+            - type: custom:weather-card
+              entity: weather.openweathermap
+              current: true
+              details: true
+              forecast: true
+              number_of_forecasts: '5'
+              hourly_forecast: false
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel
+#----------------------------------------------------------------
+
+            - type: horizontal-stack
+              cards:
+                - hours_to_show: 24
+                  graph: line
+                  type: sensor
+                  entity: sensor.garten_temperatur
+                  detail: 1
+                  card_mod:
+                    style: |
+                      ha-card {
+                        border: none;
+                        background: transparent
+                      }
+
+#----------------------------------------------------------------
+#  Sensor Karte                                            
+#----------------------------------------------------------------
+
+                - hours_to_show: 24
+                  graph: line
+                  type: sensor
+                  entity: sensor.garten_feuchtigkeit
+                  detail: 1
+                  card_mod:
+                    style: |
+                      ha-card {
+                        border: none;
+                        background: transparent
+                      }
+
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+
+view_layout:
+  grid-area: pop11
