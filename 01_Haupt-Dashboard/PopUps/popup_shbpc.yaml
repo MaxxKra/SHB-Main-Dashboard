@@ -1,0 +1,289 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.     # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b    # 
+#    888    888 888     888 888    888      888     888 888    888    # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P    # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"     # 
+#    888        888     888 888             888     888 888           # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888           # 
+#    888         "Y88888P"  888              "Y88888P"  888           # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+#     .d8888b.  888    888 888888b.        8888888b.   .d8888b.       # 
+#    d88P  Y88b 888    888 888  "88b       888   Y88b d88P  Y88b      # 
+#    Y88b.      888    888 888  .88P       888    888 888    888      # 
+#     "Y888b.   8888888888 8888888K.       888   d88P 888             # 
+#        "Y88b. 888    888 888  "Y88b      8888888P"  888             # 
+#          "888 888    888 888    888      888        888    888      # 
+#    Y88b  d88P 888    888 888   d88P      888        Y88b  d88P      # 
+#     "Y8888P"  888    888 8888888P"       888         "Y8888P"       # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+title: S-H-B--PC
+size: normal
+timeout: 10000
+entity: sensor.s_h_b_pc_zustand
+style: |-
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+card:
+
+#----------------------------------------------------------------
+#  Raster Karte (1 Spalte)                                                 
+#----------------------------------------------------------------
+
+  square: false
+  columns: 1
+  type: grid
+  cards:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                             
+#----------------------------------------------------------------
+
+    - type: vertical-stack
+      cards:
+
+#----------------------------------------------------------------
+#  Entitäten Karte                                          
+#----------------------------------------------------------------
+
+        - type: entity
+          state_color: false
+          entity: sensor.s_h_b_pc_zustand
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent
+              }
+
+#----------------------------------------------------------------
+#  Bedingungs Karte                                            
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: sensor.s_h_b_pc_cpu_usage
+              state_not: unavailable
+          card:
+
+#----------------------------------------------------------------
+#  Bild Entität Karte                                           
+#----------------------------------------------------------------
+
+            type: picture-entity
+            show_state: false
+            show_name: false
+            camera_view: auto
+            entity: switch.display_s_h_b_pc
+            camera_image: camera.s_h_b_pc_screen_0
+            card_mod:
+              style: |
+                ha-card {
+                  border: none;
+                  background: transparent
+                }
+
+#----------------------------------------------------------------
+#  Bedingungs Karte                                            
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: sensor.s_h_b_pc_cpu_usage
+              state_not: unavailable
+          card:
+
+#----------------------------------------------------------------
+#  Entitäten Karte                                          
+#----------------------------------------------------------------
+
+            type: entities
+            entities:
+              - entity: switch.display_s_h_b_pc
+                name: Display
+                icon: mdi:monitor
+              - entity: sensor.s_h_b_pc_system_uptime
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-background: transperant;
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  border: none;
+                  --paper-item-icon-color: white;
+                  --secondary-text-color: white
+                }
+
+#----------------------------------------------------------------
+#  Entitäten Karte                                          
+#----------------------------------------------------------------
+
+        - type: entities
+          entities:
+            - entity: sensor.az_buro_9_1min
+              name: Büro aktuelle Leistung
+            - entity: sensor.verbrauch_az_buro
+              name: Büro gesamt Verbrauch
+          card_mod:
+            style: |
+              ha-card {
+                --ha-card-background: transperant;
+                color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                border: none;
+                --paper-item-icon-color: white;
+                --secondary-text-color: white
+              }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel
+#----------------------------------------------------------------
+
+        - type: horizontal-stack
+          cards:
+
+#----------------------------------------------------------------
+#  Custom Button Karten                                      
+#----------------------------------------------------------------
+
+            - type: custom:button-card
+              entity: input_button.shb_buro_start
+              show_name: true
+              show_icon: true
+              size: 30%
+              tap_action:
+                action: call-service
+                service: input_button.press
+                service_data:
+                  entity_id: input_button.shb_buro_start
+              name: EIN
+              icon: mdi:power
+              styles:
+                name:
+                  - color: var(--paper-item-icon-color)
+                icon:
+                  - color: var(--paper-item-icon-active-color)
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+            - type: custom:button-card
+              how_name: true
+              show_icon: true
+              size: 30%
+              tap_action:
+                action: call-service
+                service: mqtt.publish
+                service_data:
+                  topic: S-H-B--PC_Ruhezustand
+                target: {}
+              name: AUS
+              icon: mdi:television-off
+              styles:
+                name:
+                  - color: var(--paper-item-icon-color)
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+            - type: custom:button-card
+              show_name: true
+              show_icon: true
+              size: 30%
+              tap_action:
+                action: call-service
+                service: mqtt.publish
+                service_data:
+                  topic: S-H-B--PC_Neustart
+                target: {}
+              name: NEU
+              icon: mdi:refresh
+              styles:
+                name:
+                  - color: var(--paper-item-icon-color)
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+            - type: custom:button-card
+              show_name: true
+              show_icon: true
+              size: 30%
+              tap_action:
+                action: call-service
+                service: mqtt.publish
+                service_data:
+                  topic: S-H-B--PC_Vivaldi
+                target: {}
+              name: Vivaldi
+              icon: mdi:google-chrome
+              styles:
+                name:
+                  - color: var(--paper-item-icon-color)
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+            - type: custom:button-card
+              show_name: true
+              show_icon: true
+              size: 30%
+              tap_action:
+                action: call-service
+                service: mqtt.publish
+                service_data:
+                  topic: S-H-B--PC_Firefox
+                target: {}
+              name: Firefox
+              icon: mdi:firefox
+              styles:
+                name:
+                  - color: var(--paper-item-icon-color)
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+
+view_layout:
+  grid-area: pop3
