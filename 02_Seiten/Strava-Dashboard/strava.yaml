@@ -715,7 +715,7 @@
             entity: sensor.strava_stats_summary_all_ride_activity_count
             show_name: true
             show_state: true
-            name: Alle Läufe
+            name: Alle Fahrten
             aspect_ratio: 7/1
             size: 80%
             styles:
@@ -835,7 +835,7 @@
             entity: sensor.strava_stats_summary_ytd_ride_activity_count
             show_name: true
             show_state: true
-            name: Läufe dieses Jahr
+            name: Fahrten dieses Jahr
             aspect_ratio: 7/1
             size: 80%
             styles:
