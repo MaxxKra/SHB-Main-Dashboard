@@ -768,13 +768,14 @@
               action: none
             tap_action:
               action: call-service
-              service: input_button.press
+              service: button.press
               service_data:
                 entity_id: button.alexa_integration_refresh
             image: /local/lovelace/hauptboard/icon/button_re_refresh_Icon_blau.png
             style:
               left: 91%
               top: 11%
+              width: 2%
 
 #----------------------------------------------------------------
 #  Steuerleiste - Navigation
