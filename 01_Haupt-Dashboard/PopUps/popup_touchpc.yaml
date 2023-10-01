@@ -1,0 +1,262 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.                           # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b                          # 
+#    888    888 888     888 888    888      888     888 888    888                          # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P                          # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"                           # 
+#    888        888     888 888             888     888 888                                 # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888                                 # 
+#    888         "Y88888P"  888              "Y88888P"  888                                 # 
+#                                                                                           # 
+#                                                                                           # 
+#                                                                                           # 
+#    88888888888 .d88888b.  888     888  .d8888b.  888    888      8888888b.   .d8888b.     # 
+#        888    d88P" "Y88b 888     888 d88P  Y88b 888    888      888   Y88b d88P  Y88b    # 
+#        888    888     888 888     888 888    888 888    888      888    888 888    888    # 
+#        888    888     888 888     888 888        8888888888      888   d88P 888           # 
+#        888    888     888 888     888 888        888    888      8888888P"  888           # 
+#        888    888     888 888     888 888    888 888    888      888        888    888    # 
+#        888    Y88b. .d88P Y88b. .d88P Y88b  d88P 888    888      888        Y88b  d88P    # 
+#        888     "Y88888P"   "Y88888P"   "Y8888P"  888    888      888         "Y8888P"     # 
+#                                                                                           # 
+#                                                                                           # 
+#                                                                                           # 
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+entity: sensor.shb_touch_zustand
+title: SHB-Touch
+size: normal
+timeout: 30000
+style: |-
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+card:
+
+#----------------------------------------------------------------
+#  Raster Karte (1 Spalte)
+#----------------------------------------------------------------
+
+  square: false
+  columns: 1
+  type: grid
+  cards:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
+    - type: vertical-stack
+      cards:
+
+#----------------------------------------------------------------
+#  Entitäten Karte
+#----------------------------------------------------------------
+
+        - type: entity
+          entity: sensor.shb_touch_zustand
+          state_color: false
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                background: transparent
+              }
+
+#----------------------------------------------------------------
+#  Bedingungs Karte
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: sensor.shb_touch_cpu_usage
+              state_not: unavailable
+          card:
+
+#----------------------------------------------------------------
+#  Bild Entität Karte                                           
+#----------------------------------------------------------------
+
+            type: picture-entity
+            entity: switch.display_shb_touch
+            show_state: false
+            show_name: false
+            camera_view: auto
+            camera_image: camera.shb_touch_screen_0
+            card_mod:
+              style: |
+                ha-card {
+                  border: none;
+                  background: transparent
+                }
+
+#----------------------------------------------------------------
+#  Bedingungs Karte                                            
+#----------------------------------------------------------------
+
+        - type: conditional
+          conditions:
+            - entity: sensor.shb_touch_cpu_usage
+              state_not: unavailable
+          card:
+
+#----------------------------------------------------------------
+#  Entitäten Karte                                          
+#----------------------------------------------------------------
+
+            type: entities
+            entities:
+              - entity: switch.display_shb_touch
+                name: Display
+                icon: mdi:monitor
+              - entity: sensor.shb_touch_system_uptime
+                name: Aktuelle Laufzeit
+                secondary_info: none
+            card_mod:
+              style: |
+                ha-card {
+                  border: none;
+                  background: transparent
+                }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel
+#----------------------------------------------------------------
+
+        - type: horizontal-stack
+          cards:
+
+#----------------------------------------------------------------
+#  Custom Button Karten                                      
+#----------------------------------------------------------------
+
+            - type: custom:button-card
+              entity: input_boolean.shb_touchpc_hauptschalter
+              show_name: false
+              show_icon: true
+              show_state: true
+              size: 30%
+              tap_action:
+                action: toggle
+              styles:
+                state:
+                  - color: var(--paper-item-icon-color)
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+            - type: custom:button-card
+              show_name: true
+              show_icon: true
+              size: 30%
+              tap_action:
+                action: call-service
+                service: mqtt.publish
+                service_data:
+                  topic: SHB-Touch_Neustart
+                target: {}
+              name: NEUSTART
+              icon: mdi:refresh
+              styles:
+                name:
+                  - color: var(--paper-item-icon-color)
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+            - type: custom:button-card
+              show_name: true
+              show_icon: true
+              size: 30%
+              tap_action:
+                action: call-service
+                service: mqtt.publish
+                service_data:
+                  topic: SHB-Touch_Vivaldi
+                target: {}
+              name: Vivaldi
+              icon: mdi:google-chrome
+              styles:
+                name:
+                  - color: var(--paper-item-icon-color)
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+            - type: custom:button-card
+              show_name: true
+              show_icon: true
+              size: 30%
+              tap_action:
+                action: call-service
+                service: mqtt.publish
+                service_data:
+                  topic: SHB-Touch_Cookie
+                target: {}
+              name: AMAZON
+              icon: mdi:cookie
+              styles:
+                name:
+                  - color: var(--paper-item-icon-color)
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+            - type: custom:button-card
+              show_name: true
+              show_icon: true
+              size: 30%
+              tap_action:
+                action: call-service
+                service: mqtt.publish
+                service_data:
+                  topic: SHB-Touch_Taste_F11
+                target: {}
+              name: VOLL
+              icon: mdi:keyboard-f11
+              styles:
+                name:
+                  - color: var(--paper-item-icon-color)
+              card_mod:
+                style: |
+                  ha-card {
+                    border: none;
+                    background: transparent
+                  }
+
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+
+view_layout:
+  grid-area: pop2
