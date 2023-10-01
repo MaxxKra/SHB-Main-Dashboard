@@ -1,2 +1,2 @@
 
-![01_Dashboard_Farbauswahl](https://github.com/MaxxKra/SHB-Main-Dashboard/assets/83531755/7cc1c695-3e5b-4bce-ab0c-50cb49636788)
+![01_Dashboard_Farbauswahl](https://github.com/MaxxKra/SHB-Main-Dashboard/01_Haupt-Dashboard/PopUps/Popup_Bilder/01_Dashboard_Farbauswahl.png){ width=500 }
