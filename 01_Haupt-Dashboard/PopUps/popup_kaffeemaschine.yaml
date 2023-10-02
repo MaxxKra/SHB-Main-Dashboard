@@ -1,0 +1,254 @@
+#    8888888b.   .d88888b.  8888888b.       888     888 8888888b.     # 
+#    888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b    # 
+#    888    888 888     888 888    888      888     888 888    888    # 
+#    888   d88P 888     888 888   d88P      888     888 888   d88P    # 
+#    8888888P"  888     888 8888888P"       888     888 8888888P"     # 
+#    888        888     888 888             888     888 888           # 
+#    888        Y88b. .d88P 888             Y88b. .d88P 888           # 
+#    888         "Y88888P"  888              "Y88888P"  888           # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+#    888    d8P            .d888  .d888                               # 
+#    888   d8P            d88P"  d88P"                                # 
+#    888  d8P             888    888                                  # 
+#    888d88K      8888b.  888888 888888 .d88b.   .d88b.               # 
+#    8888888b        "88b 888    888   d8P  Y8b d8P  Y8b              # 
+#    888  Y88b   .d888888 888    888   88888888 88888888              # 
+#    888   Y88b  888  888 888    888   Y8b.     Y8b.                  # 
+#    888    Y88b "Y888888 888    888    "Y8888   "Y8888               # 
+#                                                                     # 
+#                                                                     # 
+#                                                                     # 
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+title: Kaffeemaschine
+entity: input_boolean.kaffeemaschine_an_aus
+dismissable: true
+size: normal
+style: |-
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: 1px solid {{ states['sensor.dashboard_primar_farbe'].state }} !important;
+        background-color: rgba(15,10,10,0.7);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+card:
+
+#----------------------------------------------------------------
+#  Raster Karte (1 Spalte)                                      
+#----------------------------------------------------------------
+
+  square: false
+  columns: 1
+  type: grid
+  cards:
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel
+#----------------------------------------------------------------
+
+    - type: horizontal-stack
+      cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+        - type: markdown
+          content: '>'
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                color: var(--paper-item-icon-active-color);
+                border-radius: 0px;
+                background: transparent;
+                }
+
+#----------------------------------------------------------------
+#  Custom Button Karte                                    
+#----------------------------------------------------------------
+
+        - type: custom:button-card
+          entity: input_boolean.kaffeemaschine_an_aus
+          show_entity_picture: true
+          show_name: false
+          aspect_ratio: 1/1
+          size: 100%
+          state:
+            - value: 'off'
+              entity_picture: /local/lovelace/icon/trans/re_button_kaffee_off.png
+            - value: 'on'
+              entity_picture: /local/lovelace/icon/trans/re_button_kaffee_on.png
+          tap_action:
+            action: call-service
+            service: input_button.press
+            service_data:
+              entity_id: input_button.kaffeemaschine
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                color: var(--paper-item-icon-active-color);
+                border-radius: 0px;
+                background: transparent;
+                }
+
+#----------------------------------------------------------------
+#  Markdown Karte - Leeres Feld                                       
+#----------------------------------------------------------------
+
+        - type: markdown
+          content: '>'
+          card_mod:
+            style: |
+              ha-card {
+                border: none;
+                color: var(--paper-item-icon-active-color);
+                border-radius: 0px;
+                background: transparent;
+                }
+
+#----------------------------------------------------------------
+#  Custom Flipdown Karte - Timer                                   
+#----------------------------------------------------------------
+
+    - type: custom:flipdown-timer-card
+      entity: timer.laufzeit_kaffeemaschine
+      show_hour: true
+      show_title: false
+      show_header: true
+      theme: hass
+      localize:
+        button: Start, Stop, Beenden, Weiter, Löschen
+        header: Maschine, läuft, noch
+      styles:
+        rotor:
+          width: 50px
+          height: 60px
+          fontsize: 2em
+        button:
+          width: 82px
+          height: 30px
+          fontsize: 0.7em
+          location: bottom
+        header:
+          fontsize: 4em
+          color: red
+      show_error: false
+      card_mod:
+        style: |
+          ha-card {
+            border: none;
+            --primary-color: {{ states['sensor.dashboard_primar_farbe'].state }};
+            --dark-primary-color: {{ states['sensor.dashboard_primar_farbe'].state }};
+            --text-primary-color: #202020;
+            border-radius: 0px;
+            background: transparent;
+            }
+          :host {
+            font-size: 1.5em;
+            color: red;
+            }
+
+#----------------------------------------------------------------
+#  Entitäten Karte                                            
+#----------------------------------------------------------------
+
+    - type: entities
+      entities:
+        - entity: input_boolean.kaffeemaschine_an_aus
+      card_mod:
+        style: |
+          ha-card {
+            --ha-card-background: transperant;
+            color: {{ states['sensor.dashboard_primar_farbe'].state }};
+            border: none;
+            --paper-item-icon-color: white;
+            --secondary-text-color: white
+          }
+
+#----------------------------------------------------------------
+#  Trennlinie mit Markdown-Card                                      
+#----------------------------------------------------------------
+
+    - type: markdown
+      content: '---'
+      card_mod:
+        style: |
+          ha-card {
+            border: none;
+            background: transparent
+          }
+
+#----------------------------------------------------------------
+#  Entitäten Karte                                            
+#----------------------------------------------------------------
+
+    - type: entities
+      entities:
+        - entity: sensor.steckdose_kaffeemaschine_active_power
+          name: Aktueller Verbrauch
+      card_mod:
+        style: |
+          ha-card {
+            --ha-card-background: transperant;
+            color: {{ states['sensor.dashboard_primar_farbe'].state }};
+            border: none;
+            --paper-item-icon-color: white;
+            --secondary-text-color: white
+          }
+
+#----------------------------------------------------------------
+#  Trennlinie mit Markdown-Card                                      
+#----------------------------------------------------------------
+
+    - type: markdown
+      content: '---'
+      card_mod:
+        style: |
+          ha-card {
+            border: none;
+            background: transparent
+          }
+
+#----------------------------------------------------------------
+#  Sensor Karte                                            
+#----------------------------------------------------------------
+
+    - graph: line
+      hours_to_show: 48
+      type: sensor
+      detail: 2
+      name: Verbrauch
+      entity: sensor.steckdose_kaffeemaschine_delivered
+      card_mod:
+        style: |
+          ha-card {
+            border: none;
+            background: transparent
+          }
+
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+
+view_layout:
+  grid-area: pop19
