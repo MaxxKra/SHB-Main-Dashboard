@@ -62,6 +62,11 @@
 
 ![Wo-Ist](/../main/01_Haupt-Dashboard/PopUps/Popup_Bilder/17_Wo-ist.png)
 
+## PopUp Kaffeemaschine?
+
+![Kaffeemaschine](/../main/01_Haupt-Dashboard/PopUps/Popup_Bilder/18_Kaffeemaschine.png)
+
+
 
 
 
