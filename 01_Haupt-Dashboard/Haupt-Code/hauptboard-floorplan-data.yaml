@@ -179,7 +179,8 @@
                     ( "sensor"              , "geschirrspuler_status"                 , "Geschirrspüler"            , 59.5   , 44.04 , 2.5     , "Läuft"         , "Fertig"        , ""          , ""          , "Läuft"      , "re_gs"           , "more-info"      , "more-info"      , "call-service" , "light.toggle"  , "light.geschirrspuler"                      ),
                     ( "sensor"              , "waschmaschine_status"                  , "Waschmaschine"             , 62.38  , 44.04 , 2.5     , "Läuft"         , "Fertig"        , ""          , ""          , "Läuft"      , "re_wm"           , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
                     ( "sensor"              , "trockner_status"                       , "Trockner"                  , 74.69  , 83.03 , 2.5     , "Läuft"         , "Fertig"        , ""          , ""          , "Läuft"      , "re_tr"           , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
-                    ( "input_button"        , "dashboard_kalender"                    , "Kalender"                  , 72     , 14.16 , 5       , ""              , ""              , ""          , ""          , "on"         , "re_kalender"     , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-seiten/kalender"                 )] %}
+                    ( "input_button"        , "dashboard_kalender"                    , "Kalender"                  , 72     , 14.16 , 5       , ""              , ""              , ""          , ""          , "on"         , "re_kalender"     , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-seiten/kalender"                 ),
+                    ( "input_boolean"       , "kaffeemaschine_an_aus"                 , "Kaffeemaschine"            , 60     , 27.08 , 2.5     , "on"            , "off"           , ""          , ""          , ""           , "re_kaffee"       , "more-info"      , "more-info"      , ""             , ""              , ""                                          )] %}
 
 
 
@@ -1426,3 +1427,4 @@ cards:
   - !include popup_wo_ist.yaml # Area Position - pop17
   - !include popup_farbauswahl.yaml # Area Position - pop16
   - !include popup_flocky.yaml # Area Position - pop18
+  - !include popup_kaffeemaschine.yaml # Area Position - pop19
