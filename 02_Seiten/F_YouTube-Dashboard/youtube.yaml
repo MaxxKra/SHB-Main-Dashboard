@@ -1,0 +1,172 @@
+  - theme: Caule Black Orange Glass
+    title: YouTube
+    path: youtube
+    animated_background: none
+    type: panel
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: picture
+            image: /local/lovelace/images/Header_Groß_20220723.png
+            tap_action:
+              action: navigate
+              navigation_path: /hauptboard-floorplan/0
+            hold_action:
+              action: none
+          - type: horizontal-stack
+            cards:
+              - type: entity
+                entity: sensor.youtube_abonnenten
+                name: Aktuelle Abonnenten
+                icon: mdi:youtube-subscription
+                card_mod:
+                  style: |
+                    ha-card {
+                      border: 6px groove {{ states['sensor.dashboard_primar_farbe'].state }};
+                      background: transparent;
+                      font-family: Arial Rounded MT;
+                      }
+              - type: entity
+                entity: sensor.youtube_views
+                icon: mdi:eye-check-outline
+                name: Angesehene Videos
+                card_mod:
+                  style: |
+                    ha-card {
+                      border: 6px groove {{ states['sensor.dashboard_primar_farbe'].state }};
+                      background: transparent;
+                      font-family: Arial Rounded MT;
+                      }
+              - type: entity
+                entity: sensor.youtube_uploads
+                name: Videos Veröffentlicht
+                icon: mdi:filmstrip-box-multiple
+                card_mod:
+                  style: |
+                    ha-card {
+                      border: 6px groove {{ states['sensor.dashboard_primar_farbe'].state }};
+                      background: transparent;
+                      font-family: Arial Rounded MT;
+                      }
+          - type: markdown
+            content: '---'
+            card_mod:
+              style: |
+                ha-card {
+                  border: none;
+                  background: transparent
+                }
+          - square: false
+            columns: 3
+            type: grid
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: markdown
+                    content: '## <center> Status des letzten Videos'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          border: none;
+                          background: transparent;
+                          font-family: Arial Rounded MT;
+                          font-size: 1vw;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }}
+                        }
+                  - type: entity
+                    entity: sensor.smart_home_bastler
+                    name: Titel
+                    icon: title
+                    card_mod:
+                      style: |
+                        ha-card {
+                          border: none;
+                          background: transparent;
+                          font-family: Arial Rounded MT;
+                        }
+                  - type: entity
+                    entity: sensor.smart_home_bastler
+                    name: 'Veröffentlicht:'
+                    attribute: published
+                    icon: mdi:calendar-export
+                    card_mod:
+                      style: |
+                        ha-card {
+                          border: none;
+                          background: transparent;
+                          font-family: Arial Rounded MT;
+                        }
+                  - type: entity
+                    entity: sensor.smart_home_bastler
+                    name: 'Angesehen:'
+                    icon: mdi:eye
+                    attribute: views
+                    card_mod:
+                      style: |
+                        ha-card {
+                          border: none;
+                          background: transparent;
+                          font-family: Arial Rounded MT;
+                        }
+                  - type: entity
+                    entity: sensor.smart_home_bastler
+                    name: 'Daumen:'
+                    attribute: stars
+                    icon: mdi:thumbs-up-down-outline
+                    card_mod:
+                      style: |
+                        ha-card {
+                          border: none;
+                          background: transparent;
+                          font-family: Arial Rounded MT;
+                        }
+              - type: vertical-stack
+                cards:
+                  - type: markdown
+                    content: '## <center> Mein Letztes Video'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          border: none;
+                          background: transparent;
+                          font-family: Arial Rounded MT;
+                          font-size: 1vw;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }}
+                        }
+                  - type: custom:config-template-card
+                    entities:
+                      - sensor.smart_home_bastler
+                    card:
+                      type: iframe
+                      url: >-
+                        ${'https://www.youtube.com/embed/'+states['sensor.smart_home_bastler'].attributes.content_id}
+                      aspect_ratio: 75%
+              - type: vertical-stack
+                cards:
+                  - type: markdown
+                    content: '## <center> Geplante Videos'
+                    card_mod:
+                      style: |
+                        ha-card {
+                          border: none;
+                          background: transparent;
+                          font-family: Arial Rounded MT;
+                          font-size: 1vw;
+                          color: {{ states['sensor.dashboard_primar_farbe'].state }}
+                        }
+                  - type: markdown
+                    content: >-
+                      {% for task in state_attr('calendar.youtube_videos',
+                      'all_tasks') -%}
+
+                      ### • {{ task }}
+
+                      {% endfor %}
+                    card_mod:
+                      style: |
+                        ha-card {
+                          border: none;
+                          background: transparent;
+                          font-family: Arial Rounded MT;
+                        }

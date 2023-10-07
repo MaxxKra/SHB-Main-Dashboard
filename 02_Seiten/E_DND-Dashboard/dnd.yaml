@@ -1,0 +1,262 @@
+animated_background:
+  default_url: /local/media/videos/Mountain.mp4
+  entity: input_select.dnd_ambiente
+  state_url:
+    Pause:
+      - /local/media/videos/DnD_Background.jpeg
+    Stadt:
+      - /local/media/videos/stadt.mp4
+    Höhle:
+      - /local/media/videos/hoehle.mp4
+    Wald:
+      - /local/media/videos/wald.mp4
+    Lagerfeuer:
+      - /local/media/videos/lagerfeuer.mp4
+    Taverne:
+      - /local/media/videos/taverne.mp4
+    Dschungel:
+      - /local/media/videos/dschungel.mp4
+    Hafen:
+      - /local/media/videos/hafen.mp4
+    Kanal:
+      - /local/media/videos/kanal.mp4
+    Battle:
+      - /local/media/videos/DnD_Battle.mp4
+kiosk_mode:
+  entity_settings:
+    - entity:
+        switch.vollbild_shb_touch: 'on'
+      hide_sidebar: true
+      hide_header: true
+views:
+  - title: DnD Auswahl
+    icon: ''
+    path: dnd_auswahl
+    type: panel
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: conditional
+            conditions:
+              - entity: switch.dnd_ambiente
+                state: 'off'
+            card:
+              type: markdown
+              content: >-
+                # <center>
+                [![Image](/local/lovelace/icon/dnd_logo.png)](/hauptboard-floorplan/0)
+              card_mod:
+                style: |
+                  ha-card {
+                    background: rgba(15,10,10,0.3);
+                    border: none;
+                    border-radius: 0px;
+                    color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  }
+          - type: horizontal-stack
+            cards:
+              - type: custom:banner-card
+                heading: Zum Kalkulator
+                link: /lovelace-dnd/dnd_kalkulator
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: rgba(15,10,10,0.3);
+                      border: none;
+                      border-radius: 0px;
+                    }
+                    :host {
+                      --banner-card-heading-color-dark: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      font-family: Arial Rounded MT;
+                      text-decoration: underline;
+                      font-size: 0.8vw
+                    }
+              - type: custom:banner-card
+                heading: Zum Initiative Tracker
+                link: /lovelace-dnd/dnd_initiative
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: rgba(15,10,10,0.3);
+                      border: none;
+                      border-radius: 0px;
+                    }
+                    :host {
+                      --banner-card-heading-color-dark: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      font-family: Arial Rounded MT;
+                      text-decoration: underline;
+                      font-size: 0.8vw
+                    }
+          - type: horizontal-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: input_select.dnd_ambiente
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: transparent;
+                      border: none;
+                      color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      --primary-text-color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      --secondary-text-color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      --paper-item-icon-color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                    }
+              - type: custom:button-card
+                entity: switch.dnd_ambiente
+                name: Start/Stopp
+                show_name: true
+                show_icon: false
+                tap_action:
+                  action: toggle
+                show_state: false
+                styles:
+                  card:
+                    - background: transparent
+                    - border: none
+                  name:
+                    - color: >
+                        [[[ return
+                        states['sensor.dashboard_primar_farbe'].state; ]]]
+                    - font-family: Arial Rounded MT
+                    - font-size: 2vw
+              - type: media-control
+                entity: media_player.spotify_markus_kraml
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: transparent !important;
+                      border: none;
+                      border-radius: 0px      
+                    }
+  - theme: ios-dark-mode-dark-green
+    title: DND Kalkulator
+    path: dnd_kalkulator
+    type: panel
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:banner-card
+            heading: Begegnungs Kalkulator
+            link: /hauptboard-floorplan/0
+            card_mod:
+              style: |
+                ha-card {
+                  background: rgba(15,10,10,0.3);
+                  border: none;
+                  border-radius: 0px;
+                }
+                :host {
+                  --banner-card-heading-color-dark: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                  text-decoration: underline;
+                  font-size: 0.8vw
+                }
+          - type: horizontal-stack
+            cards:
+              - type: custom:banner-card
+                heading: Zum Ambiente
+                link: /lovelace-dnd/auswahl
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: rgba(15,10,10,0.3);
+                      border: none;
+                      border-radius: 0px;
+                    }
+                    :host {
+                      --banner-card-heading-color-dark: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      font-family: Arial Rounded MT;
+                      text-decoration: underline;
+                      font-size: 0.8vw
+                    }
+              - type: custom:banner-card
+                heading: Zum Initiative Tracker
+                link: /lovelace-dnd/dnd_initiative
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: rgba(15,10,10,0.3);
+                      border: none;
+                      border-radius: 0px;
+                    }
+                    :host {
+                      --banner-card-heading-color-dark: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      font-family: Arial Rounded MT;
+                      text-decoration: underline;
+                      font-size: 0.8vw
+                    }
+          - type: iframe
+            url: https://kastark.co.uk/rpgs/encounter-calculator-5th/
+            aspect_ratio: 50%
+  - theme: ios-dark-mode-dark-green
+    title: DnD Initiative
+    path: dnd_initiative
+    type: panel
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:banner-card
+            heading: Initiative Tracker
+            link: /hauptboard-floorplan/0
+            card_mod:
+              style: |
+                ha-card {
+                  background: rgba(15,10,10,0.3);
+                  border: none;
+                  border-radius: 0px;
+                }
+                :host {
+                  --banner-card-heading-color-dark: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                  font-family: Arial Rounded MT;
+                  text-decoration: underline;
+                  font-size: 0.8vw
+                }
+          - type: horizontal-stack
+            cards:
+              - type: custom:banner-card
+                heading: Zum Ambiente
+                link: /lovelace-dnd/auswahl
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: rgba(15,10,10,0.3);
+                      border: none;
+                      border-radius: 0px;
+                    }
+                    :host {
+                      --banner-card-heading-color-dark: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      font-family: Arial Rounded MT;
+                      text-decoration: underline;
+                      font-size: 0.8vw
+                    }
+              - type: custom:banner-card
+                heading: Zum Kalkulator
+                link: /lovelace-dnd/dnd_kalkulator
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: rgba(15,10,10,0.3);
+                      border: none;
+                      border-radius: 0px;
+                    }
+                    :host {
+                      --banner-card-heading-color-dark: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      color: {{ states['sensor.dashboard_primar_farbe'].state }};
+                      font-family: Arial Rounded MT;
+                      text-decoration: underline;
+                      font-size: 0.8vw
+                    }
+          - type: iframe
+            url: https://kastark.co.uk/rpgs/encounter-tracker/
+            aspect_ratio: 50%
