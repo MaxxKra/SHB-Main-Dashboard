@@ -5,11 +5,11 @@
 
 Folgende Seiten teilen sich eine RAW Datei:
 
-  • Medien Dashboard 
-  • Schalter Dashboard 
-  • STRAVA Dashboard 
-  • Kalender Dashboard 
-  • YouTube Dashboard 
+  • Medien Dashboard  
+  • Schalter Dashboard  
+  • STRAVA Dashboard  
+  • Kalender Dashboard  
+  • YouTube Dashboard  
   • Energie Dashboard
 
 
