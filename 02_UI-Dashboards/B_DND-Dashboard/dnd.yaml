@@ -1,3 +1,36 @@
+
+
+#    8888888b.        d8888  .d8888b.  888    888 888888b.    .d88888b.        d8888 8888888b.  8888888b.     # 
+#    888  "Y88b      d88888 d88P  Y88b 888    888 888  "88b  d88P" "Y88b      d88888 888   Y88b 888  "Y88b    # 
+#    888    888     d88P888 Y88b.      888    888 888  .88P  888     888     d88P888 888    888 888    888    # 
+#    888    888    d88P 888  "Y888b.   8888888888 8888888K.  888     888    d88P 888 888   d88P 888    888    # 
+#    888    888   d88P  888     "Y88b. 888    888 888  "Y88b 888     888   d88P  888 8888888P"  888    888    # 
+#    888    888  d88P   888       "888 888    888 888    888 888     888  d88P   888 888 T88b   888    888    # 
+#    888  .d88P d8888888888 Y88b  d88P 888    888 888   d88P Y88b. .d88P d8888888888 888  T88b  888  .d88P    # 
+#    8888888P" d88P     888  "Y8888P"  888    888 8888888P"   "Y88888P" d88P     888 888   T88b 8888888P"     # 
+#                                                                                                             # 
+#                                                                                                             # 
+#                                                                                                             # 
+#                         8888888b.        .d8888b.           8888888b.                                       # 
+#                         888  "Y88b      d88P  "88b          888  "Y88b                                      # 
+#                         888    888      Y88b. d88P          888    888                                      # 
+#                         888    888       "Y8888P"           888    888                                      # 
+#                         888    888      .d88P88K.d88P       888    888                                      # 
+#                         888    888      888"  Y888P"        888    888                                      # 
+#                         888  .d88P      Y88b .d8888b        888  .d88P                                      # 
+#                         8888888P"        "Y8888P" Y88b      8888888P"                                       # 
+#                                                                                                             # 
+#                                                                                                             #  
+
+
+#----------------------------------------------------------------
+#  Anfang der RAW-Konfiguration                                                    
+#----------------------------------------------------------------
+
+#----------------------------------------------------------------
+#  Animierter Hintergrund (Videos lokal gespeichert)                                                   
+#----------------------------------------------------------------
+
 animated_background:
   default_url: /local/media/videos/Mountain.mp4
   entity: input_select.dnd_ambiente
@@ -22,6 +55,11 @@ animated_background:
       - /local/media/videos/kanal.mp4
     Battle:
       - /local/media/videos/DnD_Battle.mp4
+
+#----------------------------------------------------------------
+#  Kiosk Mode (Vollbild)                                                   
+#----------------------------------------------------------------
+
 kiosk_mode:
   entity_settings:
     - entity:
@@ -29,19 +67,39 @@ kiosk_mode:
       hide_sidebar: true
       hide_header: true
 views:
+
+#----------------------------------------------------------------
+#  Seiten Grundeinstellungen                                                   
+#---------------------------------------------------------------- 
+
   - title: DnD Auswahl
     icon: ''
     path: dnd_auswahl
     type: panel
     badges: []
     cards:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
       - type: vertical-stack
         cards:
+
+#----------------------------------------------------------------
+#  Bedingungs Karte
+#----------------------------------------------------------------
+
           - type: conditional
             conditions:
               - entity: switch.dnd_ambiente
                 state: 'off'
             card:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Bild und Link
+#----------------------------------------------------------------
+
               type: markdown
               content: >-
                 # <center>
@@ -54,8 +112,18 @@ views:
                     border-radius: 0px;
                     color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel
+#----------------------------------------------------------------
+
           - type: horizontal-stack
             cards:
+
+#----------------------------------------------------------------
+#  Custom Banner Karte - Überschrift und Link
+#----------------------------------------------------------------
+
               - type: custom:banner-card
                 heading: Zum Kalkulator
                 link: /lovelace-dnd/dnd_kalkulator
@@ -73,6 +141,11 @@ views:
                       text-decoration: underline;
                       font-size: 0.8vw
                     }
+
+#----------------------------------------------------------------
+#  Custom Banner Karte - Überschrift und Link
+#----------------------------------------------------------------
+
               - type: custom:banner-card
                 heading: Zum Initiative Tracker
                 link: /lovelace-dnd/dnd_initiative
@@ -90,8 +163,18 @@ views:
                       text-decoration: underline;
                       font-size: 0.8vw
                     }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel
+#----------------------------------------------------------------
+
           - type: horizontal-stack
             cards:
+
+#----------------------------------------------------------------
+#  Entitäten Karte - Ambiente Auswahl
+#----------------------------------------------------------------
+
               - type: entities
                 entities:
                   - entity: input_select.dnd_ambiente
@@ -105,6 +188,11 @@ views:
                       --secondary-text-color: {{ states['sensor.dashboard_primar_farbe'].state }};
                       --paper-item-icon-color: {{ states['sensor.dashboard_primar_farbe'].state }};
                     }
+
+#----------------------------------------------------------------
+#  Custom Button Karte
+#----------------------------------------------------------------
+
               - type: custom:button-card
                 entity: switch.dnd_ambiente
                 name: Start/Stopp
@@ -132,14 +220,39 @@ views:
                       border: none;
                       border-radius: 0px      
                     }
+                    
+
+########  ##    ## ########     ##    ##    ###    ##       ##    ## ##     ## ##          ###    ########  #######  ########  
+##     ## ###   ## ##     ##    ##   ##    ## ##   ##       ##   ##  ##     ## ##         ## ##      ##    ##     ## ##     ## 
+##     ## ####  ## ##     ##    ##  ##    ##   ##  ##       ##  ##   ##     ## ##        ##   ##     ##    ##     ## ##     ## 
+##     ## ## ## ## ##     ##    #####    ##     ## ##       #####    ##     ## ##       ##     ##    ##    ##     ## ########  
+##     ## ##  #### ##     ##    ##  ##   ######### ##       ##  ##   ##     ## ##       #########    ##    ##     ## ##   ##   
+##     ## ##   ### ##     ##    ##   ##  ##     ## ##       ##   ##  ##     ## ##       ##     ##    ##    ##     ## ##    ##  
+########  ##    ## ########     ##    ## ##     ## ######## ##    ##  #######  ######## ##     ##    ##     #######  ##     ## 
+
+
+#----------------------------------------------------------------
+#  Seiten Grundeinstellungen                                                   
+#---------------------------------------------------------------- 
+
   - theme: ios-dark-mode-dark-green
     title: DND Kalkulator
     path: dnd_kalkulator
     type: panel
     badges: []
     cards:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
       - type: vertical-stack
         cards:
+
+#----------------------------------------------------------------
+#  Custom Banner Karte - Überschrift und Link
+#----------------------------------------------------------------
+
           - type: custom:banner-card
             heading: Begegnungs Kalkulator
             link: /hauptboard-floorplan/0
@@ -157,8 +270,18 @@ views:
                   text-decoration: underline;
                   font-size: 0.8vw
                 }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel
+#----------------------------------------------------------------
+
           - type: horizontal-stack
             cards:
+
+#----------------------------------------------------------------
+#  Custom Banner Karte - Überschrift und Link
+#----------------------------------------------------------------
+
               - type: custom:banner-card
                 heading: Zum Ambiente
                 link: /lovelace-dnd/auswahl
@@ -176,6 +299,11 @@ views:
                       text-decoration: underline;
                       font-size: 0.8vw
                     }
+
+#----------------------------------------------------------------
+#  Custom Banner Karte - Überschrift und Link
+#----------------------------------------------------------------
+
               - type: custom:banner-card
                 heading: Zum Initiative Tracker
                 link: /lovelace-dnd/dnd_initiative
@@ -193,17 +321,47 @@ views:
                       text-decoration: underline;
                       font-size: 0.8vw
                     }
+
+#----------------------------------------------------------------
+#  iframe Karte - Eingebettete Website
+#----------------------------------------------------------------
+
           - type: iframe
             url: https://kastark.co.uk/rpgs/encounter-calculator-5th/
             aspect_ratio: 50%
+
+
+########  ##    ## ########     #### ##    ## #### ######## ####    ###    ######## #### ##     ## ######## 
+##     ## ###   ## ##     ##     ##  ###   ##  ##     ##     ##    ## ##      ##     ##  ##     ## ##       
+##     ## ####  ## ##     ##     ##  ####  ##  ##     ##     ##   ##   ##     ##     ##  ##     ## ##       
+##     ## ## ## ## ##     ##     ##  ## ## ##  ##     ##     ##  ##     ##    ##     ##  ##     ## ######   
+##     ## ##  #### ##     ##     ##  ##  ####  ##     ##     ##  #########    ##     ##   ##   ##  ##       
+##     ## ##   ### ##     ##     ##  ##   ###  ##     ##     ##  ##     ##    ##     ##    ## ##   ##       
+########  ##    ## ########     #### ##    ## ####    ##    #### ##     ##    ##    ####    ###    ######## 
+
+
+#----------------------------------------------------------------
+#  Seiten Grundeinstellungen                                                   
+#---------------------------------------------------------------- 
+
   - theme: ios-dark-mode-dark-green
     title: DnD Initiative
     path: dnd_initiative
     type: panel
     badges: []
     cards:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
       - type: vertical-stack
         cards:
+
+#----------------------------------------------------------------
+#  Custom Banner Karte - Überschrift und Link
+#----------------------------------------------------------------
+
           - type: custom:banner-card
             heading: Initiative Tracker
             link: /hauptboard-floorplan/0
@@ -221,8 +379,18 @@ views:
                   text-decoration: underline;
                   font-size: 0.8vw
                 }
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel
+#----------------------------------------------------------------
+
           - type: horizontal-stack
             cards:
+
+#----------------------------------------------------------------
+#  Custom Banner Karte - Überschrift und Link
+#----------------------------------------------------------------
+
               - type: custom:banner-card
                 heading: Zum Ambiente
                 link: /lovelace-dnd/auswahl
@@ -240,6 +408,11 @@ views:
                       text-decoration: underline;
                       font-size: 0.8vw
                     }
+
+#----------------------------------------------------------------
+#  Custom Banner Karte - Überschrift und Link
+#----------------------------------------------------------------
+
               - type: custom:banner-card
                 heading: Zum Kalkulator
                 link: /lovelace-dnd/dnd_kalkulator
@@ -257,6 +430,11 @@ views:
                       text-decoration: underline;
                       font-size: 0.8vw
                     }
+
+#----------------------------------------------------------------
+#  iframe Karte - Eingebettete Website
+#----------------------------------------------------------------
+
           - type: iframe
             url: https://kastark.co.uk/rpgs/encounter-tracker/
             aspect_ratio: 50%
