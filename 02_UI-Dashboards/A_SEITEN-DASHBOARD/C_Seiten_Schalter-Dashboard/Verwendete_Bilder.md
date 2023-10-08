@@ -1,4 +1,4 @@
-### SCHALTER DASHBOARD
+# SCHALTER DASHBOARD
 
 <img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_SCHALTER_GIF.gif" width="800">
 
