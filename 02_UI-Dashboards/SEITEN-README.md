@@ -4,11 +4,17 @@
 [Zur seiten.yaml](/../main/02_UI-Dashboards/A_SEITEN-DASHBOARD/A_Seiten_RAW-Anfang/seiten.yaml)
 
 Folgende Seiten teilen sich eine RAW Datei:
+
   • Medien Dashboard
+
   • Schalter Dashboard
+
   • STRAVA Dashboard
+
   • Kalender Dashboard
+
   • YouTube Dashboard
+
   • Energie Dashboard
 
 
