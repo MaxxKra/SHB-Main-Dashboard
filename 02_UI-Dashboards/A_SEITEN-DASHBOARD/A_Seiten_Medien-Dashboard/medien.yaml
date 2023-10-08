@@ -45,7 +45,6 @@
 #  Beginn Picture Elements Karte                                                   
 #----------------------------------------------------------------
 
-
       - type: picture-elements
         image: /local/lovelace/hauptboard/bgbilder/background.png
         elements:

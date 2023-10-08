@@ -1,3 +1,35 @@
+#    8888888b.        d8888  .d8888b.  888    888 888888b.    .d88888b.        d8888 8888888b.  8888888b.     # 
+#    888  "Y88b      d88888 d88P  Y88b 888    888 888  "88b  d88P" "Y88b      d88888 888   Y88b 888  "Y88b    # 
+#    888    888     d88P888 Y88b.      888    888 888  .88P  888     888     d88P888 888    888 888    888    # 
+#    888    888    d88P 888  "Y888b.   8888888888 8888888K.  888     888    d88P 888 888   d88P 888    888    # 
+#    888    888   d88P  888     "Y88b. 888    888 888  "Y88b 888     888   d88P  888 8888888P"  888    888    # 
+#    888    888  d88P   888       "888 888    888 888    888 888     888  d88P   888 888 T88b   888    888    # 
+#    888  .d88P d8888888888 Y88b  d88P 888    888 888   d88P Y88b. .d88P d8888888888 888  T88b  888  .d88P    # 
+#    8888888P" d88P     888  "Y8888P"  888    888 8888888P"   "Y88888P" d88P     888 888   T88b 8888888P"     # 
+#                                                                                                             # 
+#                                                                                                             # 
+#                                                                                                             # 
+#    Y88b   d88P  .d88888b.  888     888 88888888888 888     888 888888b.   8888888888                        # 
+#     Y88b d88P  d88P" "Y88b 888     888     888     888     888 888  "88b  888                               # 
+#      Y88o88P   888     888 888     888     888     888     888 888  .88P  888                               # 
+#       Y888P    888     888 888     888     888     888     888 8888888K.  8888888                           # 
+#        888     888     888 888     888     888     888     888 888  "Y88b 888                               # 
+#        888     888     888 888     888     888     888     888 888    888 888                               # 
+#        888     Y88b. .d88P Y88b. .d88P     888     Y88b. .d88P 888   d88P 888                               # 
+#        888      "Y88888P"   "Y88888P"      888      "Y88888P"  8888888P"  8888888888                        # 
+#                                                                                                             # 
+#                                                                                                             # 
+
+
+#----------------------------------------------------------------
+#  Vortsetzung der RAW-Konfigurationsdatei "seiten.yaml"                                                   
+#----------------------------------------------------------------
+
+
+#----------------------------------------------------------------
+#  Seiten Grundeinstellungen                                                   
+#---------------------------------------------------------------- 
+
   - theme: Caule Black Orange Glass
     title: YouTube
     path: youtube
@@ -5,8 +37,18 @@
     type: panel
     badges: []
     cards:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel                                               
+#---------------------------------------------------------------- 
+
       - type: vertical-stack
         cards:
+
+#----------------------------------------------------------------
+#  Bild Karte - Header                                                 
+#---------------------------------------------------------------- 
+
           - type: picture
             image: /local/lovelace/images/Header_Groß_20220723.png
             tap_action:
@@ -14,8 +56,18 @@
               navigation_path: /hauptboard-floorplan/0
             hold_action:
               action: none
+
+#----------------------------------------------------------------
+#  Horizontaler Stapel                                               
+#---------------------------------------------------------------- 
+
           - type: horizontal-stack
             cards:
+
+#----------------------------------------------------------------
+#  Entitäten Karten                                                   
+#---------------------------------------------------------------- 
+
               - type: entity
                 entity: sensor.youtube_abonnenten
                 name: Aktuelle Abonnenten
@@ -27,6 +79,7 @@
                       background: transparent;
                       font-family: Arial Rounded MT;
                       }
+
               - type: entity
                 entity: sensor.youtube_views
                 icon: mdi:eye-check-outline
@@ -38,6 +91,7 @@
                       background: transparent;
                       font-family: Arial Rounded MT;
                       }
+
               - type: entity
                 entity: sensor.youtube_uploads
                 name: Videos Veröffentlicht
@@ -49,6 +103,11 @@
                       background: transparent;
                       font-family: Arial Rounded MT;
                       }
+
+#----------------------------------------------------------------
+#  Markdown Karte - Trennlinie                                                 
+#---------------------------------------------------------------- 
+
           - type: markdown
             content: '---'
             card_mod:
@@ -57,12 +116,27 @@
                   border: none;
                   background: transparent
                 }
+
+#----------------------------------------------------------------
+#  Raster Karte (3 Spalten)                                                 
+#---------------------------------------------------------------- 
+
           - square: false
             columns: 3
             type: grid
             cards:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel - Linke Spalte                                                
+#---------------------------------------------------------------- 
+
               - type: vertical-stack
                 cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift
+#---------------------------------------------------------------- 
+
                   - type: markdown
                     content: '## <center> Status des letzten Videos'
                     card_mod:
@@ -74,6 +148,11 @@
                           font-size: 1vw;
                           color: {{ states['sensor.dashboard_primar_farbe'].state }}
                         }
+
+#----------------------------------------------------------------
+#  Entitäten Karten                                                   
+#---------------------------------------------------------------- 
+
                   - type: entity
                     entity: sensor.smart_home_bastler
                     name: Titel
@@ -85,6 +164,7 @@
                           background: transparent;
                           font-family: Arial Rounded MT;
                         }
+
                   - type: entity
                     entity: sensor.smart_home_bastler
                     name: 'Veröffentlicht:'
@@ -97,6 +177,7 @@
                           background: transparent;
                           font-family: Arial Rounded MT;
                         }
+
                   - type: entity
                     entity: sensor.smart_home_bastler
                     name: 'Angesehen:'
@@ -109,6 +190,7 @@
                           background: transparent;
                           font-family: Arial Rounded MT;
                         }
+                        
                   - type: entity
                     entity: sensor.smart_home_bastler
                     name: 'Daumen:'
@@ -121,8 +203,18 @@
                           background: transparent;
                           font-family: Arial Rounded MT;
                         }
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#---------------------------------------------------------------- 
+
               - type: vertical-stack
                 cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift
+#---------------------------------------------------------------- 
+
                   - type: markdown
                     content: '## <center> Mein Letztes Video'
                     card_mod:
@@ -134,16 +226,36 @@
                           font-size: 1vw;
                           color: {{ states['sensor.dashboard_primar_farbe'].state }}
                         }
+
+#----------------------------------------------------------------
+#  Custom Config Template Karte
+#----------------------------------------------------------------
+
                   - type: custom:config-template-card
                     entities:
                       - sensor.smart_home_bastler
                     card:
+
+#----------------------------------------------------------------
+#  iframe Karte - Eingebettetes Video
+#----------------------------------------------------------------
+
                       type: iframe
                       url: >-
                         ${'https://www.youtube.com/embed/'+states['sensor.smart_home_bastler'].attributes.content_id}
                       aspect_ratio: 75%
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#---------------------------------------------------------------- 
+
               - type: vertical-stack
                 cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift
+#---------------------------------------------------------------- 
+
                   - type: markdown
                     content: '## <center> Geplante Videos'
                     card_mod:
@@ -155,6 +267,11 @@
                           font-size: 1vw;
                           color: {{ states['sensor.dashboard_primar_farbe'].state }}
                         }
+
+#----------------------------------------------------------------
+#  Markdown Karte - Einträge ToDo Liste
+#---------------------------------------------------------------- 
+
                   - type: markdown
                     content: >-
                       {% for task in state_attr('calendar.youtube_videos',

@@ -1,3 +1,35 @@
+#    8888888b.        d8888  .d8888b.  888    888 888888b.    .d88888b.        d8888 8888888b.  8888888b.     # 
+#    888  "Y88b      d88888 d88P  Y88b 888    888 888  "88b  d88P" "Y88b      d88888 888   Y88b 888  "Y88b    # 
+#    888    888     d88P888 Y88b.      888    888 888  .88P  888     888     d88P888 888    888 888    888    # 
+#    888    888    d88P 888  "Y888b.   8888888888 8888888K.  888     888    d88P 888 888   d88P 888    888    # 
+#    888    888   d88P  888     "Y88b. 888    888 888  "Y88b 888     888   d88P  888 8888888P"  888    888    # 
+#    888    888  d88P   888       "888 888    888 888    888 888     888  d88P   888 888 T88b   888    888    # 
+#    888  .d88P d8888888888 Y88b  d88P 888    888 888   d88P Y88b. .d88P d8888888888 888  T88b  888  .d88P    # 
+#    8888888P" d88P     888  "Y8888P"  888    888 8888888P"   "Y88888P" d88P     888 888   T88b 8888888P"     # 
+#                                                                                                             # 
+#                                                                                                             # 
+#                                                                                                             # 
+#    888b     d888 Y88b   d88P      8888888888 888b    888 8888888888 8888888b.   .d8888b. Y88b   d88P        # 
+#    8888b   d8888  Y88b d88P       888        8888b   888 888        888   Y88b d88P  Y88b Y88b d88P         # 
+#    88888b.d88888   Y88o88P        888        88888b  888 888        888    888 888    888  Y88o88P          # 
+#    888Y88888P888    Y888P         8888888    888Y88b 888 8888888    888   d88P 888          Y888P           # 
+#    888 Y888P 888     888          888        888 Y88b888 888        8888888P"  888  88888    888            # 
+#    888  Y8P  888     888          888        888  Y88888 888        888 T88b   888    888    888            # 
+#    888   "   888     888          888        888   Y8888 888        888  T88b  Y88b  d88P    888            # 
+#    888       888     888          8888888888 888    Y888 8888888888 888   T88b  "Y8888P88    888            # 
+#                                                                                                             # 
+#                                                                                                             # 
+
+
+#----------------------------------------------------------------
+#  Vortsetzung der RAW-Konfigurationsdatei "seiten.yaml"                                                   
+#----------------------------------------------------------------
+
+
+#----------------------------------------------------------------
+#  Seiten Grundeinstellungen                                                   
+#---------------------------------------------------------------- 
+
   - title: MY ENERGY
     path: my-energy
     animated_background: none
@@ -17,11 +49,21 @@
     theme: Caule Black Orange Glass
     badges: []
     cards:
+
+#----------------------------------------------------------------
+#  Beginn Picture Elements Karte                                                   
+#----------------------------------------------------------------
+
       - type: picture-elements
         image: /local/lovelace/my_energy/klein/Hintergrund_leer_Nacht_frei.png
         style:
           pointer-events: none
         elements:
+
+#----------------------------------------------------------------
+#  Bilder (nur Anzeige)
+#----------------------------------------------------------------
+
           - type: image
             image: /local/lovelace/my_energy/klein/AZ_Anzeige.png
             style:
@@ -29,6 +71,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/AZ_Leitung.gif
             style:
@@ -36,6 +79,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/SZ_Anzeige.png
             style:
@@ -43,6 +87,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/SZ_Leitung.gif
             style:
@@ -50,6 +95,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/TR_Anzeige.png
             style:
@@ -57,6 +103,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/TR_Leitung.gif
             style:
@@ -64,6 +111,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/VR_Anzeige.png
             style:
@@ -71,6 +119,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/VR_Leitung.gif
             style:
@@ -78,6 +127,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/WM_Anzeige.png
             style:
@@ -85,6 +135,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/WZ_Anzeige.png
             style:
@@ -92,6 +143,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/WZ_Leitung.gif
             style:
@@ -99,6 +151,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/WM_Leitung.gif
             style:
@@ -106,6 +159,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/GS_Anzeige.png
             style:
@@ -113,6 +167,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/GS_Leitung.gif
             style:
@@ -120,6 +175,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/EH_Anzeige.png
             style:
@@ -127,6 +183,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/EH_Leitung.gif
             style:
@@ -134,6 +191,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/Hauptleitung.gif
             style:
@@ -141,6 +199,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/E-VT_VR.png
             style:
@@ -148,6 +207,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/Einspeisung_Anzeige.png
             style:
@@ -155,6 +215,7 @@
               left: 50%
               width: 100%
               pointer-events: none
+
           - type: image
             image: /local/lovelace/my_energy/klein/Hintergrund_Mauer_Nacht.png
             style:
@@ -162,6 +223,11 @@
               left: 50%
               width: 100%
               pointer-events: none
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Sensor Anzeige                                                  
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.e_herd_1min
             show_name: false
@@ -191,6 +257,11 @@
                 - width: 35%
                 - margin-top: '-10%'
                 - padding-top: 0.6vw
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Sensor Anzeige                                                  
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.geschirrspuler_4_1min
             show_name: false
@@ -220,6 +291,11 @@
                 - width: 35%
                 - margin-top: '-10%'
                 - padding-top: 0.6vw
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Sensor Anzeige                                                  
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.kuche_wohnzimmer_6_1min
             show_name: false
@@ -249,6 +325,11 @@
                 - width: 35%
                 - margin-top: '-10%'
                 - padding-top: 0.6vw
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Sensor Anzeige                                                  
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.waschmaschine_5_1min
             show_name: false
@@ -278,6 +359,11 @@
                 - width: 35%
                 - margin-top: '-10%'
                 - padding-top: 0.6vw
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Sensor Anzeige                                                  
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.vr_bad_wc_8_1min
             show_name: false
@@ -307,6 +393,11 @@
                 - width: 35%
                 - margin-top: '-10%'
                 - padding-top: 0.6vw
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Sensor Anzeige                                                  
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.trockner_power
             show_name: false
@@ -336,6 +427,11 @@
                 - width: 35%
                 - margin-top: '-10%'
                 - padding-top: 0.6vw
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Sensor Anzeige                                                  
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.az_buro_9_1min
             show_name: false
@@ -365,6 +461,11 @@
                 - width: 35%
                 - margin-top: '-10%'
                 - padding-top: 0.6vw
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Sensor Anzeige                                                  
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.schlafraume_7_1min
             show_name: false
@@ -394,6 +495,11 @@
                 - width: 35%
                 - margin-top: '-10%'
                 - padding-top: 0.6vw
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Sensor Anzeige Einspeisung (Raster)
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.eingangsspanung_400v
             show_icon: false
@@ -462,6 +568,11 @@
               --ha-card-background: trasparent;
               border: transparent
               }
+
+#----------------------------------------------------------------
+#  Energy Data Karten                                                
+#----------------------------------------------------------------
+
       - type: energy-date-selection
         view_layout:
           grid-area: head1
@@ -472,6 +583,7 @@
               border: transparent;
               --ha-card-color: orange
               }
+
       - type: energy-usage-graph
         view_layout:
           grid-area: seit1
@@ -481,7 +593,13 @@
               --ha-card-background: trasparent;
               border: transparent
               }
-      - color_thresholds:
+
+#----------------------------------------------------------------
+#  Custom Mini Graph Karte - Verbrauchsanzeige                                                
+#----------------------------------------------------------------
+
+      - type: custom:mini-graph-card
+        color_thresholds:
           - color: '#4dd2ff'
             value: 400
           - color: '#50ff1a'
@@ -500,7 +618,6 @@
         name: Leistung
         tap_action:
           action: more-info
-        type: custom:mini-graph-card
         view_layout:
           grid-area: head4
         card_mod:
@@ -539,6 +656,11 @@
               margin: auto !important;
               width: 68%;
             }
+
+#----------------------------------------------------------------
+#  Energy Data Karten                                                
+#----------------------------------------------------------------
+
       - type: energy-devices-graph
         view_layout:
           grid-area: seit2
@@ -548,6 +670,11 @@
               --ha-card-background: trasparent;
               border: transparent
               }
+
+#----------------------------------------------------------------
+#  Picture Elements Karte - Vollbild Schalter                                             
+#----------------------------------------------------------------
+
       - type: picture-elements
         elements:
           - type: image
@@ -578,6 +705,11 @@
               border: transparent;
               --ha-card-color: orange
               }
+
+#----------------------------------------------------------------
+#  Custom Banner Karte - Überschrift                                              
+#----------------------------------------------------------------
+
       - type: custom:banner-card
         heading: Unser Energie Dashboard
         color: orange
@@ -591,6 +723,11 @@
               border: transparent;
               --ha-card-color: orange
               }
+
+#----------------------------------------------------------------
+#  Custom PopUp Karte - Verbrauch Geschirrspüler
+#----------------------------------------------------------------
+
       - type: custom:popup-card
         title: Verbraucher Statistik
         dismissable: true
@@ -616,8 +753,18 @@
                 padding-right: 10px;
               }
         card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
           type: vertical-stack
           cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift
+#----------------------------------------------------------------
+
             - type: markdown
               content: >-
                 ## <center> {{ state_attr("sensor.verbrauch_geschirrspuler",
@@ -628,6 +775,11 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Entitäten Karte - Zeitraum Auswahl
+#----------------------------------------------------------------
+
             - type: entities
               entities:
                 - entity: input_select.energy_zeitraum
@@ -637,13 +789,28 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Heute
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
+
+#----------------------------------------------------------------
+#  Statistik Karte
+#----------------------------------------------------------------
+
                   - type: statistic
                     entity: sensor.verbrauch_geschirrspuler
                     period:
@@ -657,6 +824,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: hour
                     type: statistics-graph
@@ -678,6 +850,11 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
@@ -697,6 +874,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -718,11 +900,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Dieser Monat
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -737,6 +929,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -764,6 +961,11 @@
                 background: transparent;
                 border: transparent
               }
+
+#----------------------------------------------------------------
+#  Custom PopUp Karte - Verbrauch Arbeitszimmer Büro
+#----------------------------------------------------------------
+
       - type: custom:popup-card
         title: Verbraucher Statistik
         dismissable: true
@@ -789,8 +991,18 @@
               }
         entity: sensor.az_buro_9_1min
         card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
           type: vertical-stack
           cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift
+#----------------------------------------------------------------
+
             - type: markdown
               content: >-
                 ## <center> {{ state_attr("sensor.verbrauch_az_buro",
@@ -801,6 +1013,11 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Entitäten Karte - Zeitraum Auswahl
+#----------------------------------------------------------------
+
             - type: entities
               entities:
                 - entity: input_select.energy_zeitraum
@@ -810,11 +1027,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Heute
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -830,6 +1057,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: hour
                     type: statistics-graph
@@ -851,11 +1083,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Diese Woche
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -870,6 +1112,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -891,11 +1138,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Dieser Monat
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -910,6 +1167,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -937,6 +1199,11 @@
                 background: transparent;
                 border: transparent
               }
+
+#----------------------------------------------------------------
+#  Custom PopUp Karte - Verbrauch Vorraum / Bad / WC /AR / Keller
+#----------------------------------------------------------------
+
       - type: custom:popup-card
         title: Verbraucher Statistik
         dismissable: true
@@ -962,8 +1229,18 @@
               }
         entity: sensor.vr_bad_wc_8_1min
         card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
           type: vertical-stack
           cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift
+#----------------------------------------------------------------
+
             - type: markdown
               content: >-
                 ## <center> {{ state_attr("sensor.verbrauch_vr_bad_ar_keller",
@@ -974,6 +1251,11 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Entitäten Karte - Zeitraum Auswahl
+#----------------------------------------------------------------
+
             - type: entities
               entities:
                 - entity: input_select.energy_zeitraum
@@ -983,11 +1265,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Heute
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1003,6 +1295,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: hour
                     type: statistics-graph
@@ -1024,11 +1321,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Diese Woche
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1064,11 +1371,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Dieser Monat
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1083,6 +1400,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -1110,6 +1432,11 @@
                 background: transparent;
                 border: transparent
               }
+
+#----------------------------------------------------------------
+#  Custom PopUp Karte - Verbrauch Schalfräume
+#----------------------------------------------------------------
+
       - type: custom:popup-card
         title: Verbraucher Statistik
         dismissable: true
@@ -1135,8 +1462,18 @@
               }
         entity: sensor.schlafraume_7_1min
         card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
           type: vertical-stack
           cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift
+#----------------------------------------------------------------
+
             - type: markdown
               content: >-
                 ## <center> {{ state_attr("sensor.verbrauch_schlafraume",
@@ -1147,6 +1484,11 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Entitäten Karte - Zeitraum Auswahl
+#----------------------------------------------------------------
+
             - type: entities
               entities:
                 - entity: input_select.energy_zeitraum
@@ -1156,11 +1498,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Heute
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1176,6 +1528,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: hour
                     type: statistics-graph
@@ -1197,11 +1554,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Diese Woche
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1216,6 +1583,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -1237,11 +1609,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Dieser Monat
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1256,6 +1638,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -1283,6 +1670,11 @@
                 background: transparent;
                 border: transparent
               }
+
+#----------------------------------------------------------------
+#  Custom PopUp Karte - Verbrauch Wohnzimmer / Küche / Garten
+#----------------------------------------------------------------
+
       - type: custom:popup-card
         title: Verbraucher Statistik
         dismissable: true
@@ -1308,8 +1700,18 @@
               }
         entity: sensor.kuche_wohnzimmer_6_1min
         card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
           type: vertical-stack
           cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift
+#----------------------------------------------------------------
+
             - type: markdown
               content: >-
                 ## <center> {{ state_attr("sensor.verbrauch_wz_kue",
@@ -1320,6 +1722,11 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Entitäten Karte - Zeitraum Auswahl
+#----------------------------------------------------------------
+
             - type: entities
               entities:
                 - entity: input_select.energy_zeitraum
@@ -1329,11 +1736,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Heute
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1349,6 +1766,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: hour
                     type: statistics-graph
@@ -1370,11 +1792,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Diese Woche
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1389,6 +1821,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -1410,11 +1847,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Dieser Monat
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1429,6 +1876,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -1456,6 +1908,11 @@
                 background: transparent;
                 border: transparent
               }
+
+#----------------------------------------------------------------
+#  Custom PopUp Karte - Verbrauch Trockner
+#----------------------------------------------------------------
+
       - type: custom:popup-card
         title: Verbraucher Statistik
         dismissable: true
@@ -1481,6 +1938,11 @@
               }
         entity: sensor.trockner_power
         card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
           type: vertical-stack
           cards:
             - type: markdown
@@ -1493,6 +1955,11 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Entitäten Karte - Zeitraum Auswahl
+#----------------------------------------------------------------
+
             - type: entities
               entities:
                 - entity: input_select.energy_zeitraum
@@ -1502,11 +1969,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Heute
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1522,6 +1999,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: hour
                     type: statistics-graph
@@ -1543,11 +2025,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Diese Woche
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1562,6 +2054,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -1583,11 +2080,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Dieser Monat
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1602,6 +2109,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -1629,6 +2141,11 @@
                 background: transparent;
                 border: transparent
               }
+
+#----------------------------------------------------------------
+#  Custom PopUp Karte - Verbrauch Waschmaschine
+#----------------------------------------------------------------
+
       - type: custom:popup-card
         title: Verbraucher Statistik
         dismissable: true
@@ -1654,8 +2171,18 @@
               }
         entity: sensor.waschmaschine_5_1min
         card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
           type: vertical-stack
           cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift
+#----------------------------------------------------------------
+
             - type: markdown
               content: >-
                 ## <center> {{ state_attr("sensor.verbrauch_waschmaschine",
@@ -1666,6 +2193,11 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Entitäten Karte - Zeitraum Auswahl
+#----------------------------------------------------------------
+
             - type: entities
               entities:
                 - entity: input_select.energy_zeitraum
@@ -1675,11 +2207,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Heute
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1695,6 +2237,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: hour
                     type: statistics-graph
@@ -1716,11 +2263,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Diese Woche
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1735,6 +2292,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -1756,11 +2318,21 @@
                     background: transparent;
                     border: transparent
                   }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
             - type: conditional
               conditions:
                 - entity: input_select.energy_zeitraum
                   state: Dieser Monat
               card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
                 type: vertical-stack
                 cards:
                   - type: statistic
@@ -1775,6 +2347,11 @@
                           background: transparent;
                           border: transparent
                         }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
                   - chart_type: bar
                     period: day
                     type: statistics-graph
@@ -1802,6 +2379,11 @@
                 background: transparent;
                 border: transparent
               }
+
+#----------------------------------------------------------------
+#  Custom PopUp Karte - Verbrauch E-Herd
+#----------------------------------------------------------------
+
       - type: custom:popup-card
         title: Verbraucher Statistik
         dismissable: true
@@ -1809,156 +2391,6 @@
         style: |-
           --mdc-theme-surface: rgba(15,10,10,0.9);
           --popup-border-radius: 0px;
-        card:
-          type: vertical-stack
-          cards:
-            - type: markdown
-              content: >-
-                ## <center> {{ state_attr("sensor.verbrauch_e_herd",
-                "friendly_name" ) }}
-              card_mod:
-                style: |
-                  ha-card {
-                    background: transparent;
-                    border: transparent
-                  }
-            - type: entities
-              entities:
-                - entity: input_select.energy_zeitraum
-              card_mod:
-                style: |
-                  ha-card {
-                    background: transparent;
-                    border: transparent
-                  }
-            - type: conditional
-              conditions:
-                - entity: input_select.energy_zeitraum
-                  state: Heute
-              card:
-                type: vertical-stack
-                cards:
-                  - type: statistic
-                    entity: sensor.verbrauch_e_herd
-                    period:
-                      calendar:
-                        period: day
-                    stat_type: mean
-                    unit: kWh
-                    card_mod:
-                      style: |
-                        ha-card {
-                          background: transparent;
-                          border: transparent
-                        }
-                  - chart_type: bar
-                    period: hour
-                    type: statistics-graph
-                    entities:
-                      - sensor.verbrauch_e_herd
-                    days_to_show: 1
-                    stat_types:
-                      - change
-                    hide_legend: true
-                    card_mod:
-                      style: |
-                        ha-card {
-                          background: transparent;
-                          border: transparent
-                        }
-              card_mod:
-                style: |
-                  ha-card {
-                    background: transparent;
-                    border: transparent
-                  }
-            - type: conditional
-              conditions:
-                - entity: input_select.energy_zeitraum
-                  state: Diese Woche
-              card:
-                type: vertical-stack
-                cards:
-                  - type: statistic
-                    entity: sensor.verbrauch_e_herd
-                    period:
-                      calendar:
-                        period: week
-                    stat_type: change
-                    card_mod:
-                      style: |
-                        ha-card {
-                          background: transparent;
-                          border: transparent
-                        }
-                  - chart_type: bar
-                    period: day
-                    type: statistics-graph
-                    entities:
-                      - sensor.verbrauch_e_herd
-                    days_to_show: 7
-                    stat_types:
-                      - change
-                    hide_legend: true
-                    card_mod:
-                      style: |
-                        ha-card {
-                          background: transparent;
-                          border: transparent
-                        }
-              card_mod:
-                style: |
-                  ha-card {
-                    background: transparent;
-                    border: transparent
-                  }
-            - type: conditional
-              conditions:
-                - entity: input_select.energy_zeitraum
-                  state: Dieser Monat
-              card:
-                type: vertical-stack
-                cards:
-                  - type: statistic
-                    entity: sensor.verbrauch_e_herd
-                    period:
-                      calendar:
-                        period: month
-                    stat_type: change
-                    card_mod:
-                      style: |
-                        ha-card {
-                          background: transparent;
-                          border: transparent
-                        }
-                  - chart_type: bar
-                    period: day
-                    type: statistics-graph
-                    entities:
-                      - sensor.verbrauch_e_herd
-                    days_to_show: 31
-                    stat_types:
-                      - change
-                    hide_legend: true
-                    card_mod:
-                      style: |
-                        ha-card {
-                          background: transparent;
-                          border: transparent
-                        }
-              card_mod:
-                style: |
-                  ha-card {
-                    background: transparent;
-                    border: transparent
-                  }
-          card_mod:
-            style: |
-              ha-card {
-                background: transparent;
-                border: transparent
-              }
-        entity: sensor.e_herd_1min
         card_mod:
           style:
             ha-dialog$: |
@@ -1974,4 +2406,214 @@
                 padding-top: 10px;
                 padding-left: 10px;
                 padding-right: 10px;
+              }
+        entity: sensor.e_herd_1min
+        card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
+          type: vertical-stack
+          cards:
+
+#----------------------------------------------------------------
+#  Markdown Karte - Überschrift
+#----------------------------------------------------------------
+
+            - type: markdown
+              content: >-
+                ## <center> {{ state_attr("sensor.verbrauch_e_herd",
+                "friendly_name" ) }}
+              card_mod:
+                style: |
+                  ha-card {
+                    background: transparent;
+                    border: transparent
+                  }
+
+#----------------------------------------------------------------
+#  Entitäten Karte - Zeitraum Auswahl
+#----------------------------------------------------------------
+
+            - type: entities
+              entities:
+                - entity: input_select.energy_zeitraum
+              card_mod:
+                style: |
+                  ha-card {
+                    background: transparent;
+                    border: transparent
+                  }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
+            - type: conditional
+              conditions:
+                - entity: input_select.energy_zeitraum
+                  state: Heute
+              card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
+                type: vertical-stack
+                cards:
+                  - type: statistic
+                    entity: sensor.verbrauch_e_herd
+                    period:
+                      calendar:
+                        period: day
+                    stat_type: mean
+                    unit: kWh
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: transparent
+                        }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
+                  - chart_type: bar
+                    period: hour
+                    type: statistics-graph
+                    entities:
+                      - sensor.verbrauch_e_herd
+                    days_to_show: 1
+                    stat_types:
+                      - change
+                    hide_legend: true
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: transparent
+                        }
+              card_mod:
+                style: |
+                  ha-card {
+                    background: transparent;
+                    border: transparent
+                  }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
+            - type: conditional
+              conditions:
+                - entity: input_select.energy_zeitraum
+                  state: Diese Woche
+              card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
+                type: vertical-stack
+                cards:
+                  - type: statistic
+                    entity: sensor.verbrauch_e_herd
+                    period:
+                      calendar:
+                        period: week
+                    stat_type: change
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: transparent
+                        }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
+                  - chart_type: bar
+                    period: day
+                    type: statistics-graph
+                    entities:
+                      - sensor.verbrauch_e_herd
+                    days_to_show: 7
+                    stat_types:
+                      - change
+                    hide_legend: true
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: transparent
+                        }
+              card_mod:
+                style: |
+                  ha-card {
+                    background: transparent;
+                    border: transparent
+                  }
+
+#----------------------------------------------------------------
+#  Bedingungskarte
+#----------------------------------------------------------------
+
+            - type: conditional
+              conditions:
+                - entity: input_select.energy_zeitraum
+                  state: Dieser Monat
+              card:
+
+#----------------------------------------------------------------
+#  Vertikaler Stapel
+#----------------------------------------------------------------
+
+                type: vertical-stack
+                cards:
+                  - type: statistic
+                    entity: sensor.verbrauch_e_herd
+                    period:
+                      calendar:
+                        period: month
+                    stat_type: change
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: transparent
+                        }
+
+#----------------------------------------------------------------
+#  Statistic Graph Karte
+#----------------------------------------------------------------
+
+                  - chart_type: bar
+                    period: day
+                    type: statistics-graph
+                    entities:
+                      - sensor.verbrauch_e_herd
+                    days_to_show: 31
+                    stat_types:
+                      - change
+                    hide_legend: true
+                    card_mod:
+                      style: |
+                        ha-card {
+                          background: transparent;
+                          border: transparent
+                        }
+              card_mod:
+                style: |
+                  ha-card {
+                    background: transparent;
+                    border: transparent
+                  }
+          card_mod:
+            style: |
+              ha-card {
+                background: transparent;
+                border: transparent
               }
