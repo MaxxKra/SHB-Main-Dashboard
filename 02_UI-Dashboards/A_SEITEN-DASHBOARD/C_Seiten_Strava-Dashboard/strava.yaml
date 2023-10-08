@@ -1,3 +1,36 @@
+#    8888888b.        d8888  .d8888b.  888    888 888888b.    .d88888b.        d8888 8888888b.  8888888b.     # 
+#    888  "Y88b      d88888 d88P  Y88b 888    888 888  "88b  d88P" "Y88b      d88888 888   Y88b 888  "Y88b    # 
+#    888    888     d88P888 Y88b.      888    888 888  .88P  888     888     d88P888 888    888 888    888    # 
+#    888    888    d88P 888  "Y888b.   8888888888 8888888K.  888     888    d88P 888 888   d88P 888    888    # 
+#    888    888   d88P  888     "Y88b. 888    888 888  "Y88b 888     888   d88P  888 8888888P"  888    888    # 
+#    888    888  d88P   888       "888 888    888 888    888 888     888  d88P   888 888 T88b   888    888    # 
+#    888  .d88P d8888888888 Y88b  d88P 888    888 888   d88P Y88b. .d88P d8888888888 888  T88b  888  .d88P    # 
+#    8888888P" d88P     888  "Y8888P"  888    888 8888888P"   "Y88888P" d88P     888 888   T88b 8888888P"     # 
+#                                                                                                             # 
+#                                                                                                             # 
+#                                                                                                             # 
+#     .d8888b. 88888888888 8888888b.         d8888 888     888     d8888                                      # 
+#    d88P  Y88b    888     888   Y88b       d88888 888     888    d88888                                      # 
+#    Y88b.         888     888    888      d88P888 888     888   d88P888                                      # 
+#     "Y888b.      888     888   d88P     d88P 888 Y88b   d88P  d88P 888                                      # 
+#        "Y88b.    888     8888888P"     d88P  888  Y88b d88P  d88P  888                                      # 
+#          "888    888     888 T88b     d88P   888   Y88o88P  d88P   888                                      # 
+#    Y88b  d88P    888     888  T88b   d8888888888    Y888P  d8888888888                                      # 
+#     "Y8888P"     888     888   T88b d88P     888     Y8P  d88P     888                                      # 
+#                                                                                                             # 
+#                                                                                                             # 
+#                                                                                                             #
+
+
+#----------------------------------------------------------------
+#  Vortsetzung der RAW-Konfigurationsdatei "seiten.yaml"                                                   
+#----------------------------------------------------------------
+
+
+#----------------------------------------------------------------
+#  Seiten Grundeinstellungen                                                   
+#---------------------------------------------------------------- 
+
   - theme: ios-dark-mode-dark-green
     title: Strava
     path: strava
@@ -5,9 +38,20 @@
     type: panel
     badges: []
     cards:
+
+#----------------------------------------------------------------
+#  Beginn Picture Elements Karte                                                   
+#----------------------------------------------------------------
+
+
       - type: picture-elements
         image: /local/lovelace/hauptboard/bgbilder/background_50.png
         elements:
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Überschrift                                                 
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.training_kalender
             aspect_ratio: 11/1
@@ -47,6 +91,11 @@
               left: 50%
               top: 6%
               width: 100%
+
+#----------------------------------------------------------------
+#  Custom Home Feed Karte - Kalender Trainingsplan                                                  
+#----------------------------------------------------------------
+
           - type: custom:home-feed-card
             title: 'Trainingsplan:'
             card_id: training_feed
@@ -71,6 +120,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Überschrift Letztes Training
+#----------------------------------------------------------------
+
           - type: custom:button-card
             name: 'Letztes Training:'
             show_icon: false
@@ -86,6 +140,11 @@
               left: 20%
               top: 58%
               width: 35%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_0_0
             show_name: true
@@ -117,6 +176,11 @@
               left: 20%
               top: 63%
               width: 35%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Vertikale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_0_1
             name: Dauer
@@ -141,6 +205,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Vertikale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_0_2
             name: Durchschnitt
@@ -165,6 +234,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Vertikale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_0_3
             name: Distanz
@@ -189,6 +263,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Vertikale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_0_4
             name: Tempo
@@ -213,6 +292,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Vertikale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_0_5
             name: Steigung
@@ -237,6 +321,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Trennlinie
+#----------------------------------------------------------------
+
           - type: custom:button-card
             color_type: blank-card
             styles:
@@ -247,6 +336,11 @@
               left: 20%
               top: 76%
               width: 35%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Überschrift Vorletztes Training
+#----------------------------------------------------------------
+
           - type: custom:button-card
             name: 'Vorletztes Training:'
             show_icon: false
@@ -262,6 +356,11 @@
               left: 20%
               top: 80%
               width: 35%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_1_0
             show_name: true
@@ -293,6 +392,11 @@
               left: 20%
               top: 85%
               width: 35%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Vertikale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_1_1
             name: Dauer
@@ -317,6 +421,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Vertikale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_1_2
             name: Durchschnitt
@@ -341,6 +450,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Vertikale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_1_3
             name: Distanz
@@ -365,6 +479,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Vertikale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_1_4
             name: Tempo
@@ -389,6 +508,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Vertikale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_1_5
             name: Steigung
@@ -413,6 +537,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Animierter Avatar
+#----------------------------------------------------------------
+
           - type: custom:button-card
             aspect_ratio: 13/18
             show_entity_picture: true
@@ -431,6 +560,11 @@
               left: 53%
               top: 30%
               width: 22%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Überschrift Alle Läufe
+#----------------------------------------------------------------
+
           - type: custom:button-card
             name: 'Alle Läufe:'
             show_icon: false
@@ -446,6 +580,11 @@
               left: 86%
               top: 12%
               width: 35%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_all_run_activity_count
             show_name: true
@@ -486,6 +625,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_all_run_distance
             show_name: true
@@ -526,6 +670,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_all_run_moving_time
             show_name: true
@@ -566,6 +715,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_ytd_run_activity_count
             show_name: true
@@ -606,6 +760,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_ytd_run_distance
             show_name: true
@@ -646,6 +805,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_ytd_run_moving_time
             show_name: true
@@ -686,6 +850,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Trennlinie
+#----------------------------------------------------------------
+
           - type: custom:button-card
             color_type: blank-card
             styles:
@@ -696,6 +865,11 @@
               left: 83%
               top: 50%
               width: 28%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Überschrift Alle Radfahrten
+#----------------------------------------------------------------
+
           - type: custom:button-card
             name: 'Alle Radfahrten:'
             show_icon: false
@@ -711,6 +885,11 @@
               left: 86%
               top: 58%
               width: 35%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_all_ride_activity_count
             show_name: true
@@ -751,6 +930,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_all_ride_distance
             show_name: true
@@ -791,6 +975,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_all_ride_moving_time
             show_name: true
@@ -831,6 +1020,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_ytd_ride_activity_count
             show_name: true
@@ -871,6 +1065,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_ytd_ride_distance
             show_name: true
@@ -911,6 +1110,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Horizontale Darstellung Sensor
+#----------------------------------------------------------------
+
           - type: custom:button-card
             entity: sensor.strava_stats_summary_ytd_ride_moving_time
             show_name: true
@@ -951,6 +1155,11 @@
                   color: {{ states['sensor.dashboard_primar_farbe'].state }};
                   font-family: Arial Rounded MT;
                 }
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Überschrift Video des Tages
+#----------------------------------------------------------------
+
           - type: custom:button-card
             name: Video des Tages
             show_icon: false
@@ -966,12 +1175,22 @@
               left: 53%
               top: 58%
               width: 35%
+
+#----------------------------------------------------------------
+#  Custom Config Template Karte
+#----------------------------------------------------------------
+
           - type: custom:config-template-card
             variables:
               video_id: states['input_text.training_video_heute'].state
             entities:
               - input_text.training_video_heute
             card:
+
+#----------------------------------------------------------------
+#  iframe Karte - Eingebettetes Video
+#----------------------------------------------------------------
+
               type: iframe
               url: ${'https://www.youtube.com/embed/'+ video_id }
               aspect_ratio: 75%
