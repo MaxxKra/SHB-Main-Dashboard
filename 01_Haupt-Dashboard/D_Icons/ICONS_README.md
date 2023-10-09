@@ -5,92 +5,21 @@
 | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_decke_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_decke_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_nachttisch_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_nachttisch_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_spot_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_spot_off.png" width="100"> |
 | **schreibtisch_on** | **schreibtisch_off** | **haengeleuchte_on** | **haengeleuchte_on** | **onair_on** | **onair_off** |
 | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_schreibtisch_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_schreibtisch_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_haengeleuchte_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_haengeleuchte_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_onair_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_onair_off.png" width="100"> |
-videoleuchte_on
-videoleuchte_off
-wand_on
-wand_off
-led_on
-led_off
-birne_on
-birne_off
-pc_Eingeschaltet
-pc_Ausgeschaltet
-ventilator_on
-ventilator_off
-heizstrahler_on
-heizstrahler_off
-re_vollbild_on
-re_vollbild_off
-re_effekt_on
-re_effekt_off
-re_refresh_Icon
-re_next_page_Icon
-re_monitor_on
-re_monitor_off
-re_youtube_Icon
-echo_playing
-echo_paused
-re_tuere_on
-re_tuere_off
-flocky_cleaning
-flocky_docked
-flocky_returning
-flocky_standby
-markise_open   
-markise_closed
-re_rollladen_open
-re_rollladen_closed
-re_birthday
-re_termine
-re_Maxx_ZuHause
-re_Maxx_Arbeit
-re_Maxx_Freunde
-re_Maxx_Familie
-re_Maxx_Unterwegs
-re_Moni_ZuHause
-re_Moni_Arbeit
-re_Moni_Freunde
-re_Moni_Familie
-re_Moni_Unterwegs
-re_guten_morgen_on
-re_guten_morgen_off
-re_gute_nacht_on
-re_gute_nacht_off
-re_Maxx_Walking
-re_Maxx_Running
-re_Maxx_Strava
-re_garagentor_on
-re_garagentor_off
-re_garagenlicht_on
-re_garagenlicht_off
-re_energy_Icon
-re_dnd_Icon
-re_musik_Ja
-re_musik_Nein
-re_tv_on
-re_tv_off
-re_playstation_on
-re_playstation_off
-re_medien_on
-re_medien_off
-re_so-wi_on
-re_so-wi_off
-re_heizung_on
-re_heizung_off
-re_alarm_disarmed
-re_alarm_arming
-re_alarm_pending
-re_alarm_triggered
-re_alarm_armed_away
-re_gs_Läuft
-re_gs_Fertig
-re_wm_Läuft
-re_wm_Fertig
-re_tr_Läuft
-re_tr_Fertig
-re_kalender_on
-re_kaffee_on
-re_kaffee_off
+| **videoleuchte_on** | **videoleuchte_off** | **wand_on** | **wand_off** | **led_on** | **led_off** |
+| **birne_on** | **birne_off** | **pc_Eingeschaltet** | **pc_Ausgeschaltet** | **ventilator_on** | **ventilator_off** |
+| **heizstrahler_on** | **heizstrahler_off** | **re_vollbild_on** | **re_vollbild_off** | **re_effekt_on** | **re_effekt_off** |
+| **re_refresh_Icon** | **re_next_page_Icon** | **re_monitor_on** | **re_monitor_off** | **re_youtube_Icon** | **echo_playing** |
+| **echo_paused** | **re_tuere_on** | **re_tuere_off** | **flocky_cleaning** | **flocky_docked** | **flocky_returning** |
+| **flocky_standby** | **markise_open** | **markise_closed** | **re_rollladen_open** | **re_rollladen_closed** | **re_birthday** |
+| **re_termine** | **re_Maxx_ZuHause** | **re_Maxx_Arbeit** | **re_Maxx_Freunde** | **re_Maxx_Familie** | **re_Maxx_Unterwegs** |
+| **re_Moni_ZuHause** | **re_Moni_Arbeit** | **re_Moni_Freunde** | **re_Moni_Familie** | **re_Moni_Unterwegs** | **re_guten_morgen_on** |
+| **re_guten_morgen_off** | **re_gute_nacht_on** | **re_gute_nacht_off** | **re_Maxx_Walking** | **re_Maxx_Running** | **re_Maxx_Strava** |
+| **re_garagentor_on** | **re_garagentor_off** | **re_garagenlicht_on** | **re_garagenlicht_off** | **re_energy_Icon** | **re_dnd_Icon** |
+| **re_musik_Ja** | **re_musik_Nein** | **re_tv_on** | **re_tv_off** | **re_playstation_on** | **re_playstation_off** |
+| **re_medien_on** | **re_medien_off** | **re_so-wi_on** | **re_so-wi_off** | **re_heizung_on** | **re_heizung_off** |
+| **re_alarm_disarmed** | **re_alarm_arming** | **re_alarm_pending** | **re_alarm_triggered** | **re_alarm_armed_away** | **re_gs_Läuft** |
+| **re_gs_Fertig** | **re_wm_Läuft** | **re_wm_Fertig** | **re_tr_Läuft** | **re_tr_Fertig** | **re_kalender_on** |
+| **re_kaffee_on** | **re_kaffee_off** |
 
 
 
