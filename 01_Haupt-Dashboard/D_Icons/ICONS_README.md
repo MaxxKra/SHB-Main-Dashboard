@@ -4,14 +4,10 @@
 | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_docked.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_returning.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_standby.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gs_Fertig.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gs_Läuft.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_haengeleuchte_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_heizstrahler_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_heizstrahler_on.png" width="100"> |
 
 
-
-
-decke_on
-decke_off
-nachttisch_on
-nachttisch_off
-spot_on
-spot_off
+| **ICON** | **ICON** | **ICON** | **ICON** | **ICON** | **ICON** |
+| --- | --- | --- | --- | --- | --- |
+| decke_on --- | decke_off --- | nachttisch_on --- | nachttisch_off --- | spot_on --- | spot_off --- |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_decke_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_decke_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_nachttisch_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_nachttisch_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_spot_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_spot_off.png" width="100"> |
 schreibtisch_on
 schreibtisch_off
 haengeleuchte_on
@@ -106,12 +102,7 @@ re_kaffee_on
 re_kaffee_off
 
 
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_decke_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_decke_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_nachttisch_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_nachttisch_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_spot_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_spot_off.png" width="100">
+
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_schreibtisch_on.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_schreibtisch_off.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_haengeleuchte_on.png" width="100">
