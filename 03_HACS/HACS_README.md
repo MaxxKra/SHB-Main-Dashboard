@@ -51,7 +51,7 @@
 | Honeycomb Menu | https://github.com/Sian-Lee-SA/honeycomb-menu.git |
 | Now Playing Card | https://github.com/bradcrc/now-playing-card.git |
 | Multiple Entity Row | https://github.com/benct/lovelace-multiple-entity-row.git |
-| Cover Conbtrol Button Card | https://github.com/finity69x2/cover-control-button-row.git |
+| Cover Control Button Card | https://github.com/finity69x2/cover-control-button-row.git |
 | Layout Card | https://github.com/thomasloven/lovelace-layout-card.git |
 | Light Slider Card | https://github.com/wwalczyszyn/lovelace-light-slider-card.git |
 | Mini Media Player | https://github.com/kalkih/mini-media-player.git |
