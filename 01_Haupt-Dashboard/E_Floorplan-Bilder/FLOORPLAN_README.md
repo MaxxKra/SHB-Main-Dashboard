@@ -41,3 +41,35 @@
 | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/1_Floorplan/weihnachtsbeleuchtung.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/1_Floorplan/hintergrund_leer_nacht.png" width="400"> |
 | **hintergrund_leer_tag** |
 | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/1_Floorplan/hintergrund_leer_tag.png" width="400"> |
+
+
+# FLOORPLAN OVERLAYS
+
+## Rollläden Bilder
+
+| **arbeitszimmer** | **schlafzimmer** |
+| --- | --- |
+| <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/arbeitszimmer.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/schlafzimmer.png" width="400"> |
+| **kuche** | **terrassentuere** |
+| <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/kuche.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/terrassentuere.png" width="400"> |
+| **terrassenfenster** | **markiese** |
+| <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/terrassenfenster.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/markiese.png" width="400"> |
+
+## Müllabholung Bilder
+
+| **AP_BI** | **AP_LE_BI** |
+| --- | --- |
+| <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_BI.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_LE_BI.png" width="400"> |
+| **AP_LE_RE_BI** | **AP_LE_RE** |
+| <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_LE_RE_BI.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_LE_RE.png" width="400"> |
+| **AP_LE** | **AP_RE_BI** |
+| <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_LE.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_RE_BI.png" width="400"> |
+| **AP_RE** | **AP** |
+| <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_RE.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP.png" width="400"> |
+| **BI** | **LE_BI** |
+| <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/BI.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/LE_BI.png" width="400"> |
+| **LE_RE_BI** | **LE_RE** |
+| <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/LE_RE_BI.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/LE_RE.png" width="400"> |
+| **LE** | **RE_BI** |
+| <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/LE.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/RE_BI.png" width="400"> |
+
