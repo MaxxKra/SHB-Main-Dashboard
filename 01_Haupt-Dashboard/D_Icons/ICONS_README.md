@@ -6,14 +6,10 @@
 
 | **ICON** | **ICON** | **ICON** | **ICON** | **ICON** | **ICON** |
 | --- | --- | --- | --- | --- | --- |
-| decke_on --- | decke_off --- | nachttisch_on --- | nachttisch_off --- | spot_on --- | spot_off --- |
+| decke_on | decke_off | nachttisch_on | nachttisch_off | spot_on | spot_off |
 | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_decke_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_decke_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_nachttisch_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_nachttisch_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_spot_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_spot_off.png" width="100"> |
-schreibtisch_on
-schreibtisch_off
-haengeleuchte_on
-haengeleuchte_on
-onair_on
-onair_off
+| schreibtisch_on | schreibtisch_off | haengeleuchte_on | haengeleuchte_on | onair_on | onair_off |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_schreibtisch_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_schreibtisch_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_haengeleuchte_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_haengeleuchte_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_onair_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_onair_off.png" width="100"> |
 videoleuchte_on
 videoleuchte_off
 wand_on
@@ -103,12 +99,7 @@ re_kaffee_off
 
 
 
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_schreibtisch_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_schreibtisch_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_haengeleuchte_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_haengeleuchte_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_onair_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_onair_off.png" width="100">
+
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_videoleuchte_on.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_videoleuchte_off.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_wand_on.png" width="100">
