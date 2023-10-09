@@ -49,19 +49,12 @@ flocky_cleaning
 flocky_docked
 flocky_returning
 flocky_standby
-flocky_idle
 markise_open   
-markise_closed 
-markise_opening
-markise_closing
+markise_closed
 re_rollladen_open
 re_rollladen_closed
-re_rollladen_opening
-re_rollladen_closing
-re_birthday_on
-re_birthday_off
-re_termine_on
-re_termine_off
+re_birthday
+re_termine
 re_Maxx_ZuHause
 re_Maxx_Arbeit
 re_Maxx_Freunde
@@ -81,10 +74,8 @@ re_Maxx_Running
 re_Maxx_Strava
 re_garagentor_on
 re_garagentor_off
-re_garagentor_fehler
 re_garagenlicht_on
 re_garagenlicht_off
-re_garagenlicht_fehler
 re_energy_Icon
 re_dnd_Icon
 re_musik_Ja
@@ -158,19 +149,12 @@ re_kaffee_off
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_docked.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_returning.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_standby.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_idle.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_markise_open.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_markise_closed.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_markise_opening.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_markise_closing.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_rollladen_open.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_rollladen_closed.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_rollladen_opening.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_rollladen_closing.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_birthday_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_birthday_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_termine_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_termine_off.png" width="100">
+<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_birthday.png" width="100">
+<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_termine.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_ZuHause.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Arbeit.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Freunde.png" width="100">
@@ -190,10 +174,8 @@ re_kaffee_off
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Strava.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagentor_on.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagentor_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagentor_fehler.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagenlicht_on.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagenlicht_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagenlicht_fehler.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_energy_Icon.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_dnd_Icon.png" width="100">
 <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_musik_Ja.png" width="100">
