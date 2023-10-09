@@ -6,107 +6,32 @@
 | **schreibtisch_on** | **schreibtisch_off** | **haengeleuchte_on** | **haengeleuchte_on** | **onair_on** | **onair_off** |
 | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_schreibtisch_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_schreibtisch_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_haengeleuchte_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_haengeleuchte_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_onair_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_onair_off.png" width="100"> |
 | **videoleuchte_on** | **videoleuchte_off** | **wand_on** | **wand_off** | **led_on** | **led_off** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_videoleuchte_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_videoleuchte_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_wand_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_wand_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_led_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_led_off.png" width="100"> |
 | **birne_on** | **birne_off** | **pc_Eingeschaltet** | **pc_Ausgeschaltet** | **ventilator_on** | **ventilator_off** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_birne_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_birne_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_pc_Eingeschaltet.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_pc_Ausgeschaltet.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_ventilator_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_ventilator_off.png" width="100"> |
 | **heizstrahler_on** | **heizstrahler_off** | **re_vollbild_on** | **re_vollbild_off** | **re_effekt_on** | **re_effekt_off** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_heizstrahler_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_heizstrahler_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_vollbild_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_vollbild_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_effekt_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_effekt_off.png" width="100"> |
 | **re_refresh_Icon** | **re_next_page_Icon** | **re_monitor_on** | **re_monitor_off** | **re_youtube_Icon** | **echo_playing** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_refresh_Icon.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_next_page_Icon.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_monitor_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_monitor_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_youtube_Icon.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_echo_playing.png" width="100"> |
 | **echo_paused** | **re_tuere_on** | **re_tuere_off** | **flocky_cleaning** | **flocky_docked** | **flocky_returning** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_echo_paused.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tuere_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tuere_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_cleaning.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_docked.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_returning.png" width="100"> |
 | **flocky_standby** | **markise_open** | **markise_closed** | **re_rollladen_open** | **re_rollladen_closed** | **re_birthday** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_standby.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_markise_open.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_markise_closed.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_rollladen_open.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_rollladen_closed.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_birthday.png" width="100"> |
 | **re_termine** | **re_Maxx_ZuHause** | **re_Maxx_Arbeit** | **re_Maxx_Freunde** | **re_Maxx_Familie** | **re_Maxx_Unterwegs** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_termine.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_ZuHause.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Arbeit.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Freunde.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Familie.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Unterwegs.png" width="100"> |
 | **re_Moni_ZuHause** | **re_Moni_Arbeit** | **re_Moni_Freunde** | **re_Moni_Familie** | **re_Moni_Unterwegs** | **re_guten_morgen_on** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Moni_ZuHause.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Moni_Arbeit.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Moni_Freunde.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Moni_Familie.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Moni_Unterwegs.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_guten_morgen_on.png" width="100"> |
 | **re_guten_morgen_off** | **re_gute_nacht_on** | **re_gute_nacht_off** | **re_Maxx_Walking** | **re_Maxx_Running** | **re_Maxx_Strava** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_guten_morgen_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gute_nacht_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gute_nacht_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Walking.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Running.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Strava.png" width="100"> |
 | **re_garagentor_on** | **re_garagentor_off** | **re_garagenlicht_on** | **re_garagenlicht_off** | **re_energy_Icon** | **re_dnd_Icon** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagentor_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagentor_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagenlicht_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagenlicht_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_energy_Icon.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_dnd_Icon.png" width="100"> |
 | **re_musik_Ja** | **re_musik_Nein** | **re_tv_on** | **re_tv_off** | **re_playstation_on** | **re_playstation_off** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_musik_Ja.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_musik_Nein.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tv_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tv_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_playstation_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_playstation_off.png" width="100"> |
 | **re_medien_on** | **re_medien_off** | **re_so-wi_on** | **re_so-wi_off** | **re_heizung_on** | **re_heizung_off** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_medien_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_medien_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_so-wi_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_so-wi_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_heizung_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_heizung_off.png" width="100"> |
 | **re_alarm_disarmed** | **re_alarm_arming** | **re_alarm_pending** | **re_alarm_triggered** | **re_alarm_armed_away** | **re_gs_Läuft** |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_disarmed.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_arming.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_pending.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_triggered.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_armed_away.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gs_Läuft.png" width="100"> |
 | **re_gs_Fertig** | **re_wm_Läuft** | **re_wm_Fertig** | **re_tr_Läuft** | **re_tr_Fertig** | **re_kalender_on** |
 | **re_kaffee_on** | **re_kaffee_off** |
-
-
-
-
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_videoleuchte_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_videoleuchte_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_wand_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_wand_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_led_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_led_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_birne_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_birne_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_pc_Eingeschaltet.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_pc_Ausgeschaltet.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_ventilator_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_ventilator_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_heizstrahler_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_heizstrahler_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_vollbild_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_vollbild_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_effekt_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_effekt_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_refresh_Icon.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_next_page_Icon.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_monitor_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_monitor_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_youtube_Icon.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_echo_playing.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_echo_paused.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tuere_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tuere_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_cleaning.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_docked.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_returning.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_flocky_standby.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_markise_open.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_markise_closed.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_rollladen_open.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_rollladen_closed.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_birthday.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_termine.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_ZuHause.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Arbeit.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Freunde.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Familie.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Unterwegs.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Moni_ZuHause.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Moni_Arbeit.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Moni_Freunde.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Moni_Familie.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Moni_Unterwegs.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_guten_morgen_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_guten_morgen_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gute_nacht_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gute_nacht_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Walking.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Running.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_Maxx_Strava.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagentor_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagentor_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagenlicht_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_garagenlicht_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_energy_Icon.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_dnd_Icon.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_musik_Ja.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_musik_Nein.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tv_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tv_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_playstation_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_playstation_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_medien_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_medien_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_so-wi_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_so-wi_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_heizung_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_heizung_off.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_disarmed.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_arming.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_pending.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_triggered.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_armed_away.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gs_Läuft.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gs_Fertig.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_wm_Läuft.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_wm_Fertig.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tr_Läuft.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tr_Fertig.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_kalender_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_kaffee_on.png" width="100">
-<img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_kaffee_off.png" width="100">
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gs_Fertig.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_wm_Läuft.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_wm_Fertig.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tr_Läuft.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tr_Fertig.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_kalender_on.png" width="100"> |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_kaffee_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_kaffee_off.png" width="100"> |
