@@ -1,0 +1,3 @@
+| **ICON** | **ICON** | **ICON** | **ICON** | **ICON** | **ICON** |
+| --- | --- | --- | --- | --- | --- |
+| <img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |<img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |<img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |<img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |<img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |<img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |
