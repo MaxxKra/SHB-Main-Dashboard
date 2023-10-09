@@ -5,7 +5,7 @@
 
 | **TYPE** | **LINK** |
 | --- | --- |
-| Browser Mod | https://github.com/thomasloven/hass-browser_mod |
+| Browser Mod | https://github.com/thomasloven/hass-browser_mod.git |
 | lovelace gen | https://github.com/thomasloven/hass-lovelace_gen.git |
 | Microsoft ToDo | https://github.com/black-roland/homeassistant-microsoft-todo.git |
 | Waste Collection Schedule | https://github.com/mampfes/hacs_waste_collection_schedule.git |
