@@ -12,4 +12,8 @@ Hier ist der komplette Code meines Haupt Dashboard. Dieses ist mit lovelace gen 
 
 ## Zu den Seiten
 
-[Zur SEITEN-README.md](/../main/02_UI-Dashboards//SEITEN-README.md)
+[Zur SEITEN-README.md](/../main/02_UI-Dashboards/SEITEN-README.md)
+
+## Zu den verwendeten HACS Integrationen
+
+[Zur HACS_README.md](/../main/03_HACS/HACS_README.md)
