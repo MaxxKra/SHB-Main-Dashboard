@@ -1,3 +1,3 @@
-| **ICON** | **ICON** | **ICON** | **ICON** | **ICON** | **ICON** |
+
 | --- | --- | --- | --- | --- | --- |
-| <img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |<img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |<img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |<img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |<img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |<img src="/../main/02_UI-Dashboards/1_UI-Dashboard_Bilder/SEITE_MEDIEN_GIF.gif" width="100"> |
+| <img src="/../main/01_Haupt-Dashboard/D_Icons/button_birne_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_birne_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_decke_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_decke_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_echo_off.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_echo_on.png" width="100"> |
