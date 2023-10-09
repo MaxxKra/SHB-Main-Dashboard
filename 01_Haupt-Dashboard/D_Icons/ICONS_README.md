@@ -32,6 +32,6 @@
 | **re_alarm_disarmed** | **re_alarm_arming** | **re_alarm_pending** | **re_alarm_triggered** | **re_alarm_armed_away** | **re_gs_Läuft** |
 | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_disarmed.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_arming.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_pending.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_triggered.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_alarm_armed_away.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gs_Läuft.png" width="100"> |
 | **re_gs_Fertig** | **re_wm_Läuft** | **re_wm_Fertig** | **re_tr_Läuft** | **re_tr_Fertig** | **re_kalender_on** |
-| **re_kaffee_on** | **re_kaffee_off** |
 | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_gs_Fertig.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_wm_Läuft.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_wm_Fertig.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tr_Läuft.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_tr_Fertig.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_kalender_on.png" width="100"> |
+| **re_kaffee_on** | **re_kaffee_off** |
 | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_kaffee_on.png" width="100"> | <img src="/../main/01_Haupt-Dashboard/D_Icons/button_re_kaffee_off.png" width="100"> |
