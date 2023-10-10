@@ -68,11 +68,6 @@
 
 ![Kaffeemaschine](/../main/01_Haupt-Dashboard/C_PopUps/Popup_Bilder/18_Kaffeemaschine.png)
 
-## PopUp Heizung
-[Zur popup_heizung.yaml](/../main/01_Haupt-Dashboard/C_PopUps/popup_heizung.yaml)
-
-![Heizung](/../main/01_Haupt-Dashboard/C_PopUps/Popup_Bilder/04_Heizung.png)
-
 ## PopUp LED Arbeitszimmer
 [Zur popup_led_az.yaml](/../main/01_Haupt-Dashboard/C_PopUps/popup_led_az.yaml)
 
@@ -88,6 +83,11 @@
 
 ![Rollladen](/../main/01_Haupt-Dashboard/C_PopUps/Popup_Bilder/11_Rollladen.png)
 
+
+## PopUp Heizung
+[Zur popup_heizung.yaml](/../main/01_Haupt-Dashboard/C_PopUps/popup_heizung.yaml)
+
+![Heizung](/../main/01_Haupt-Dashboard/C_PopUps/Popup_Bilder/04_Heizung.png)
 
 
 
