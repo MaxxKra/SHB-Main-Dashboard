@@ -151,7 +151,6 @@ card:
           location: bottom
         header:
           fontsize: 4em
-          color: red
       show_error: false
       card_mod:
         style: |
@@ -165,7 +164,6 @@ card:
             }
           :host {
             font-size: 1.5em;
-            color: red;
             }
 
 #----------------------------------------------------------------
