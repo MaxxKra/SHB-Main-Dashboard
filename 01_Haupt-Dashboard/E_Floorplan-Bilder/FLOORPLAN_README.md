@@ -1,7 +1,7 @@
 # MEINE FLOORPLAN BILDER
 
 | **background** | **background_50** |
-| --- | --- |
+| :---: | :---: |
 | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/1_Floorplan/background.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/1_Floorplan/background_50.png" width="400"> |
 | **hintergrund_nacht** | **tageslicht** |
 | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/1_Floorplan/hintergrund_nacht.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/1_Floorplan/tageslicht.png" width="400"> |
@@ -48,7 +48,7 @@
 ## Rollläden Bilder
 
 | **arbeitszimmer** | **schlafzimmer** |
-| --- | --- |
+| :---: | :---: |
 | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/arbeitszimmer.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/schlafzimmer.png" width="400"> |
 | **kuche** | **terrassentuere** |
 | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/kuche.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/terrassentuere.png" width="400"> |
@@ -58,7 +58,7 @@
 ## Müllabholung Bilder
 
 | **AP_BI** | **AP_LE_BI** |
-| --- | --- |
+| :---: | :---: |
 | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_BI.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_LE_BI.png" width="400"> |
 | **AP_LE_RE_BI** | **AP_LE_RE** |
 | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_LE_RE_BI.png" width="400"> | <img src="/../main/01_Haupt-Dashboard/E_Floorplan-Bilder/2_Overlays/AP_LE_RE.png" width="400"> |
