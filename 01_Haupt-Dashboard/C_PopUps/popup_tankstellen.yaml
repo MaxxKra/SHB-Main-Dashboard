@@ -1,0 +1,665 @@
+
+
+#     8888888b.   .d88888b.  8888888b.       888     888 8888888b.                                                               # 
+#     888   Y88b d88P" "Y88b 888   Y88b      888     888 888   Y88b                                                              # 
+#     888    888 888     888 888    888      888     888 888    888                                                              # 
+#     888   d88P 888     888 888   d88P      888     888 888   d88P                                                              # 
+#     8888888P"  888     888 8888888P"       888     888 8888888P"                                                               # 
+#     888        888     888 888             888     888 888                                                                     # 
+#     888        Y88b. .d88P 888             Y88b. .d88P 888                                                                     # 
+#     888         "Y88888P"  888              "Y88888P"  888                                                                     # 
+#                                                                                                                                # 
+#                                                                                                                                # 
+#                                                                                                                                # 
+#     88888888888     d8888 888b    888 888    d8P   .d8888b. 88888888888 8888888888 888      888      8888888888 888b    888    # 
+#         888        d88888 8888b   888 888   d8P   d88P  Y88b    888     888        888      888      888        8888b   888    # 
+#         888       d88P888 88888b  888 888  d8P    Y88b.         888     888        888      888      888        88888b  888    # 
+#         888      d88P 888 888Y88b 888 888d88K      "Y888b.      888     8888888    888      888      8888888    888Y88b 888    # 
+#         888     d88P  888 888 Y88b888 8888888b        "Y88b.    888     888        888      888      888        888 Y88b888    # 
+#         888    d88P   888 888  Y88888 888  Y88b         "888    888     888        888      888      888        888  Y88888    # 
+#         888   d8888888888 888   Y8888 888   Y88b  Y88b  d88P    888     888        888      888      888        888   Y8888    # 
+#         888  d88P     888 888    Y888 888    Y88b  "Y8888P"     888     8888888888 88888888 88888888 8888888888 888    Y888    # 
+#                                                                                                                                # 
+#                                                                                                                                # 
+#                                                                                                                                # 
+
+#----------------------------------------------------------------
+#  PopUp Card                                                    
+#----------------------------------------------------------------
+
+type: custom:popup-card
+title: Tankstellen
+entity: input_button.popup_tankstellen
+dismissable: true
+size: wide
+style: |-
+  --popup-max-width: 1800px;
+  --popup-min-width:1200px;
+  --mdc-theme-surface: transparent;
+  --popup-border-radius: 0px;
+card_mod:
+  style:
+    ha-dialog$: |
+      div.mdc-dialog__scrim {
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-radius: 0px;
+      }
+    ha-dialog: |
+      .content{
+        border: none
+        background-color: rgba(15,10,10,0.0);
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+      } 
+card:
+
+#----------------------------------------------------------------
+#  Picture Elements Card                                                  
+#----------------------------------------------------------------
+
+  type: picture-elements
+  image: /local/Spritpreise/Tankstellen-Tafel.png
+  card_mod:
+    style: |
+      ha-card {
+        border: none;
+        background: transparent;
+      }  
+  elements:
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Überschrift - Laufschrift                                             
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_1
+      aspect_ratio: 11/1
+      show_name: true
+      show_icon: false
+      hold_action:
+        action: none
+      tap_action:
+        action: navigate
+        navigation_path: /hauptboard-floorplan/0
+      name: |
+        [[[ 
+         return `<div style='display: flex;display: -webkit-flex;'>
+            <marquee>
+            Die billigsten Tankstellen in der Umgebung...
+            </marquee>`;
+        ]]]
+      styles:
+        name:
+          - font-size: 3vw
+          - font-family: Minecraft
+          - width: 100%
+          - padding-top: 2%
+          - color: '#63ff00'
+          - text-shadow: 0px 0px 10px black
+        card:
+          - background: transparent
+          - border: none
+          - margin-top: '-2%'
+      style:
+        left: 52%
+        top: 10%
+        width: 65%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 1 - Spalte Links                                               
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.name_tankstelle_1
+      show_icon: false
+      show_name: false
+      show_entity_picture: true
+      entity_picture: /local/Spritpreise/noname.png
+      aspect_ratio: 2/1
+      size: 100%
+      state:
+        - value: aral
+          entity_picture: /local/Spritpreise/aral.png
+        - value: avanti
+          entity_picture: /local/Spritpreise/avanti.png
+        - value: avia
+          entity_picture: /local/Spritpreise/avia.png
+        - value: bp
+          entity_picture: /local/Spritpreise/bp.png
+        - value: diskont
+          entity_picture: /local/Spritpreise/diskont.png
+        - value: eni
+          entity_picture: /local/Spritpreise/eni.png
+        - value: genol
+          entity_picture: /local/Spritpreise/genol.png
+        - value: iq
+          entity_picture: /local/Spritpreise/iq.png
+        - value: jet
+          entity_picture: /local/Spritpreise/jet.png
+        - value: omv
+          entity_picture: /local/Spritpreise/omv.png
+        - value: pink
+          entity_picture: /local/Spritpreise/pink.png
+        - value: shell
+          entity_picture: /local/Spritpreise/shell.png
+        - value: turmöl
+          entity_picture: /local/Spritpreise/turmoel.png
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+      style:
+        top: 20.5%
+        left: 26.6%
+        width: 17%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 1 - Spalte Mitte                                              
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_1
+      show_icon: false
+      show_name: false
+      show_state: true
+      aspect_ratio: 3/1
+      size: 100%
+      state_display: |
+        [[[ return states['sensor.tankstelle_linz_1'].state; ]]]
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+          - color: '#63ff00'
+          - font-family: technology
+          - font-size: 7vw
+          - text-shadow: 0px 0px 10px black
+      style:
+        top: 20.5%
+        left: 48%
+        width: 24%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 1 - Spalte Rechts                                              
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_1
+      show_icon: false
+      show_name: true
+      show_state: true
+      aspect_ratio: 3/1
+      size: 100%
+      name: >
+        [[[ return
+        states['sensor.tankstelle_linz_1'].attributes.location.address; ]]]
+      state_display: |
+        [[[ 
+          return states['sensor.tankstelle_linz_1'].attributes.location.postalCode
+          + ' ' +  states['sensor.tankstelle_linz_1'].attributes.location.city ; ]]]
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+          - color: black
+          - font-family: Arial Rounded MT
+          - font-size: 2vw
+      style:
+        top: 20.5%
+        left: 73%
+        width: 24%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 2 - Spalte Links                                               
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.name_tankstelle_2
+      show_icon: false
+      show_name: false
+      show_entity_picture: true
+      entity_picture: /local/Spritpreise/noname.png
+      aspect_ratio: 2/1
+      size: 100%
+      state:
+        - value: aral
+          entity_picture: /local/Spritpreise/aral.png
+        - value: avanti
+          entity_picture: /local/Spritpreise/avanti.png
+        - value: avia
+          entity_picture: /local/Spritpreise/avia.png
+        - value: bp
+          entity_picture: /local/Spritpreise/bp.png
+        - value: diskont
+          entity_picture: /local/Spritpreise/diskont.png
+        - value: eni
+          entity_picture: /local/Spritpreise/eni.png
+        - value: genol
+          entity_picture: /local/Spritpreise/genol.png
+        - value: iq
+          entity_picture: /local/Spritpreise/iq.png
+        - value: jet
+          entity_picture: /local/Spritpreise/jet.png
+        - value: omv
+          entity_picture: /local/Spritpreise/omv.png
+        - value: pink
+          entity_picture: /local/Spritpreise/pink.png
+        - value: shell
+          entity_picture: /local/Spritpreise/shell.png
+        - value: turmöl
+          entity_picture: /local/Spritpreise/turmoel.png
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+      style:
+        top: 36.7%
+        left: 26.6%
+        width: 17%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 2 - Spalte Mitte                                              
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_2
+      show_icon: false
+      show_name: false
+      show_state: true
+      aspect_ratio: 3/1
+      size: 100%
+      state_display: |
+        [[[ return states['sensor.tankstelle_linz_2'].state; ]]]
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+          - color: yellow
+          - font-family: technology
+          - font-size: 7vw
+          - text-shadow: 0px 0px 10px black
+      style:
+        top: 36.7%
+        left: 48%
+        width: 24%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 2 - Spalte Rechts                                             
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_2
+      show_icon: false
+      show_name: true
+      show_state: true
+      aspect_ratio: 3/1
+      size: 100%
+      name: >
+        [[[ return
+        states['sensor.tankstelle_linz_2'].attributes.location.address; ]]]
+      state_display: |
+        [[[ 
+          return states['sensor.tankstelle_linz_2'].attributes.location.postalCode
+          + ' ' +  states['sensor.tankstelle_linz_2'].attributes.location.city ; ]]]
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+          - color: black
+          - font-family: Arial Rounded MT
+          - font-size: 2vw
+      style:
+        top: 36.7%
+        left: 73%
+        width: 24%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 3 - Spalte Links                                               
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.name_tankstelle_3
+      show_icon: false
+      show_name: false
+      show_entity_picture: true
+      entity_picture: /local/Spritpreise/noname.png
+      aspect_ratio: 2/1
+      size: 100%
+      state:
+        - value: aral
+          entity_picture: /local/Spritpreise/aral.png
+        - value: avanti
+          entity_picture: /local/Spritpreise/avanti.png
+        - value: avia
+          entity_picture: /local/Spritpreise/avia.png
+        - value: bp
+          entity_picture: /local/Spritpreise/bp.png
+        - value: diskont
+          entity_picture: /local/Spritpreise/diskont.png
+        - value: eni
+          entity_picture: /local/Spritpreise/eni.png
+        - value: genol
+          entity_picture: /local/Spritpreise/genol.png
+        - value: iq
+          entity_picture: /local/Spritpreise/iq.png
+        - value: jet
+          entity_picture: /local/Spritpreise/jet.png
+        - value: omv
+          entity_picture: /local/Spritpreise/omv.png
+        - value: pink
+          entity_picture: /local/Spritpreise/pink.png
+        - value: shell
+          entity_picture: /local/Spritpreise/shell.png
+        - value: turmöl
+          entity_picture: /local/Spritpreise/turmoel.png
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+      style:
+        top: 53.4%
+        left: 26.6%
+        width: 17%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 3 - Spalte Mitte                                              
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_3
+      show_icon: false
+      show_name: false
+      show_state: true
+      aspect_ratio: 3/1
+      size: 100%
+      state_display: |
+        [[[ return states['sensor.tankstelle_linz_3'].state; ]]]
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+          - color: yellow
+          - font-family: technology
+          - font-size: 7vw
+          - text-shadow: 0px 0px 10px black
+      style:
+        top: 53.4%
+        left: 48%
+        width: 24%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 3 - Spalte Rechts                                             
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_3
+      show_icon: false
+      show_name: true
+      show_state: true
+      aspect_ratio: 3/1
+      size: 100%
+      name: >
+        [[[ return
+        states['sensor.tankstelle_linz_3'].attributes.location.address; ]]]
+      state_display: |
+        [[[ 
+          return states['sensor.tankstelle_linz_3'].attributes.location.postalCode
+          + ' ' +  states['sensor.tankstelle_linz_3'].attributes.location.city ; ]]]
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+          - color: black
+          - font-family: Arial Rounded MT
+          - font-size: 2vw
+      style:
+        top: 53.4%
+        left: 73%
+        width: 24%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 4 - Spalte Links                                               
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.name_tankstelle_4
+      show_icon: false
+      show_name: false
+      show_entity_picture: true
+      entity_picture: /local/Spritpreise/noname.png
+      aspect_ratio: 2/1
+      size: 100%
+      state:
+        - value: aral
+          entity_picture: /local/Spritpreise/aral.png
+        - value: avanti
+          entity_picture: /local/Spritpreise/avanti.png
+        - value: avia
+          entity_picture: /local/Spritpreise/avia.png
+        - value: bp
+          entity_picture: /local/Spritpreise/bp.png
+        - value: diskont
+          entity_picture: /local/Spritpreise/diskont.png
+        - value: eni
+          entity_picture: /local/Spritpreise/eni.png
+        - value: genol
+          entity_picture: /local/Spritpreise/genol.png
+        - value: iq
+          entity_picture: /local/Spritpreise/iq.png
+        - value: jet
+          entity_picture: /local/Spritpreise/jet.png
+        - value: omv
+          entity_picture: /local/Spritpreise/omv.png
+        - value: pink
+          entity_picture: /local/Spritpreise/pink.png
+        - value: shell
+          entity_picture: /local/Spritpreise/shell.png
+        - value: turmöl
+          entity_picture: /local/Spritpreise/turmoel.png
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+      style:
+        top: 69.6%
+        left: 26.6%
+        width: 17%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 4 - Spalte Mitte                                              
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_4
+      show_icon: false
+      show_name: false
+      show_state: true
+      aspect_ratio: 3/1
+      size: 100%
+      state_display: |
+        [[[ return states['sensor.tankstelle_linz_4'].state; ]]]
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+          - color: yellow
+          - font-family: technology
+          - font-size: 7vw
+          - text-shadow: 0px 0px 10px black
+      style:
+        top: 69.6%
+        left: 48%
+        width: 24%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 4 - Spalte Rechts                                             
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_4
+      show_icon: false
+      show_name: true
+      show_state: true
+      aspect_ratio: 3/1
+      size: 100%
+      name: >
+        [[[ return
+        states['sensor.tankstelle_linz_4'].attributes.location.address; ]]]
+      state_display: |
+        [[[ 
+          return states['sensor.tankstelle_linz_4'].attributes.location.postalCode
+          + ' ' +  states['sensor.tankstelle_linz_4'].attributes.location.city ; ]]]
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+          - color: black
+          - font-family: Arial Rounded MT
+          - font-size: 2vw
+      style:
+        top: 69.6%
+        left: 73%
+        width: 24%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 5 - Spalte Links                                               
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.name_tankstelle_5
+      show_icon: false
+      show_name: false
+      show_entity_picture: true
+      entity_picture: /local/Spritpreise/noname.png
+      aspect_ratio: 2/1
+      size: 100%
+      state:
+        - value: aral
+          entity_picture: /local/Spritpreise/aral.png
+        - value: avanti
+          entity_picture: /local/Spritpreise/avanti.png
+        - value: avia
+          entity_picture: /local/Spritpreise/avia.png
+        - value: bp
+          entity_picture: /local/Spritpreise/bp.png
+        - value: diskont
+          entity_picture: /local/Spritpreise/diskont.png
+        - value: eni
+          entity_picture: /local/Spritpreise/eni.png
+        - value: genol
+          entity_picture: /local/Spritpreise/genol.png
+        - value: iq
+          entity_picture: /local/Spritpreise/iq.png
+        - value: jet
+          entity_picture: /local/Spritpreise/jet.png
+        - value: omv
+          entity_picture: /local/Spritpreise/omv.png
+        - value: pink
+          entity_picture: /local/Spritpreise/pink.png
+        - value: shell
+          entity_picture: /local/Spritpreise/shell.png
+        - value: turmöl
+          entity_picture: /local/Spritpreise/turmoel.png
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+      style:
+        top: 86.1%
+        left: 26.6%
+        width: 17%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 5 - Spalte Mitte                                             
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_5
+      show_icon: false
+      show_name: false
+      show_state: true
+      aspect_ratio: 3/1
+      size: 100%
+      state_display: |
+        [[[ return states['sensor.tankstelle_linz_5'].state; ]]]
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+          - color: yellow
+          - font-family: technology
+          - font-size: 7vw
+          - text-shadow: 0px 0px 10px black
+      style:
+        top: 86.1%
+        left: 48%
+        width: 24%
+
+#----------------------------------------------------------------
+#  Custom Button Karte - Tankstelle 5 - Spalte Rechts                                              
+#----------------------------------------------------------------
+
+    - type: custom:button-card
+      entity: sensor.tankstelle_linz_5
+      show_icon: false
+      show_name: true
+      show_state: true
+      aspect_ratio: 3/1
+      size: 100%
+      name: >
+        [[[ return
+        states['sensor.tankstelle_linz_5'].attributes.location.address; ]]]
+      state_display: |
+        [[[ 
+          return states['sensor.tankstelle_linz_5'].attributes.location.postalCode
+          + ' ' +  states['sensor.tankstelle_linz_5'].attributes.location.city ; ]]]
+      styles:
+        card:
+          - border-radius: 0px
+          - background: transparent
+          - border: none
+          - padding: 0px
+          - color: black
+          - font-family: Arial Rounded MT
+          - font-size: 2vw
+      style:
+        top: 86.1%
+        left: 73%
+        width: 24% 
+
+#----------------------------------------------------------------
+#  Layout Position am Dashboard
+#----------------------------------------------------------------
+
+view_layout:
+  grid-area: pop20

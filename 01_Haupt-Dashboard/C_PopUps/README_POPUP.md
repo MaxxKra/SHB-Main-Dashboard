@@ -13,6 +13,11 @@
 
 ![Post_It](/../main/01_Haupt-Dashboard/C_PopUps/Popup_Bilder/10_PostIt.png)
 
+## PopUp Tankstellen
+[Zur popup_tankstellen.yaml](/../main/01_Haupt-Dashboard/C_PopUps/popup_tankstellen.yaml)
+
+![Tankstellen](/../main/01_Haupt-Dashboard/C_PopUps/Popup_Bilder/19_Tankstellen.png)
+
 ## PopUp Müllerinnerung
 [Zur popup_muellerinnerung.yaml](/../main/01_Haupt-Dashboard/C_PopUps/popup_muellerinnerung.yaml)
 
