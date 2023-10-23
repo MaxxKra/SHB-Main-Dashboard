@@ -6,6 +6,11 @@ Hier ist der komplette Code meines Haupt Dashboard. Dieses ist mit lovelace gen 
 
 ![HAUPT-DASHBOARD](/../main/01_Haupt-Dashboard/Haupt-Bilder/HAUPT-DASHBOARD.png)
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/bastler)
+
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/kramlmaxx)
+
 ## Zu den PopUps
 
 [Zur README_POPUP.md](/../main/01_Haupt-Dashboard/C_PopUps/README_POPUP.md)
