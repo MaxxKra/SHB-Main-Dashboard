@@ -86,15 +86,15 @@
  # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
 {% set GERAETE =   [( "light"               , "wohnbereich_leds"                      , "Wohnbereich LEDs"          , 68     , 67.98 , 2       , "on"            , "off"           , ""          , ""          , ""           , "led"             , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "light"               , "terrasse_reserve"                      , "Terrasse Reserve"          , 31.06  , 49.21 , 2       , "on"            , "off"           , ""          , ""          , ""           , "birne"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
-                    ( "sensor"              , "shb_touch_zustand"                     , "SHB_Touch"                 , 59.56  , 52.02 , 2       , "Eingeschaltet" , "Ausgeschaltet" , ""          , ""          , ""           , "pc"              , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "sensor"              , "shb_touch_zustand"                     , "Touch-PC"                  , 59.56  , 52.02 , 2       , "Eingeschaltet" , "Ausgeschaltet" , ""          , ""          , ""           , "pc"              , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
                     ( "sensor"              , "s_h_b_pc_zustand"                      , "S-H-B--PC"                 , 81.94  , 49.66 , 2       , "Eingeschaltet" , "Ausgeschaltet" , ""          , ""          , ""           , "pc"              , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
                     ( "switch"              , "lueftung_sanitaer"                     , "WC Lüftung"                , 71.63  , 27.75 , 2       , "on"            , "off"           , ""          , ""          , ""           , "ventilator"      , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "switch"              , "vordach_heizung"                       , "Terrasse Heizstrahler"     , 44.38  , 64.04 , 2       , "on"            , "off"           , ""          , ""          , ""           , "heizstrahler"    , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "switch"              , "vollbild_shb_touch"                    , "Vollbild SHB-Touch"        , 96.88  , 4.04  , 2       , "on"            , "off"           , ""          , ""          , ""           , "re_vollbild"     , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "input_boolean"       , "dashboard_effekt"                      , "Dashboard Effekt"          , 93.75  , 4.04  , 2       , "on"            , "off"           , ""          , ""          , ""           , "re_effekt"       , "toggle"         , "fire-dom-event" , ""             , ""              , "input_select.mein_theme"                   ),
-                    ( "input_button"        , "dashboard_refresh"                     , "Dashboard Refresh"         , 90.63  , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_refresh"      , "call-service"   , "more-info"      , ""             , "mqtt.publish"  , "SHB-Touch_Taste_F5"                         ),
+                    ( "input_button"        , "dashboard_refresh"                     , "Dashboard Refresh"         , 90.63  , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_refresh"      , "call-service"   , "more-info"      , ""             , "mqtt.publish"  , "Touch-PC_Taste_F5"                         ),
                     ( "input_button"        , "dashboard_screensaver"                 , "Zum Screensaver"           , 87.5   , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_next_page"    , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-screensaver/0"                   ),
-                    ( "switch"              , "sleepmode"                             , "Monitor AUS"               , 84.38  , 4.04  , 2       , "on"            , "off"           , ""          , ""          , ""           , "re_monitor"      , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "input_button"        , "popup_tankstellen"                     , "Tankstellen"               , 84.38  , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "tankstellen"     , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
                     ( "input_button"        , "dashboard_youtube"                     , "Zur Youtube Seite"         , 81.25  , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_youtube"      , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-seiten/youtube"                  ),
                     ( "media_player"        , "esszimmer_echo"                        , "Esszimmer Echo"            , 62.31  , 50.22 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
                     ( "media_player"        , "wohnzimmer_echo"                       , "Wohnzimmer Echo"           , 55.13  , 88.88 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
@@ -104,7 +104,7 @@
                     ( "binary_sensor"       , "kontakt_eingang"                       , "Türkontakt Eingang"        , 76.19  , 47.3  , 2       , "on"            , "off"           , ""          , ""          , "off"        , "re_tuere"        , "call-service"   , "more-info"      , ""             , "switch.toggle" , "switch.ture_auf"                           ),
                     ( "binary_sensor"       , "kontakt_garten"                        , "Türkontakt Garten"         , 46.75  , 57.75 , 2       , "on"            , "off"           , ""          , ""          , "off"        , "re_tuere"        , "none"           , "none"           , ""             , ""              , ""                                          ),
                     ( "media_player"        , "kuchen_echo"                           , "Küchen Echo"               , 59.56  , 35.96 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
-                    ( "vacuum"              , "flocky"                                , "Flocky"                    , 50     , 85.39 , 2       , "cleaning"      , "docked"        , "returning" , "standby"   , ""           , "flocky"          , "more-info"      , "more-info"      , ""             , ""              , ""                                          )] %}
+                    ( "vacuum"              , "flocky"                                , "Flocky"                    , 50     , 85.39 , 2       , "cleaning"      , "docked"        , "returning" , "standby"   , "idle"       , "flocky"          , "more-info"      , "more-info"      , ""             , ""              , ""                                          )] %}
 
  # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
 {% set MARKISE =   [( "cover"               , "markiese"                              , "Markise"                   , 33.56  , 37.64 , 2       , "open"          , "closed"        , "opening"   , "closing"   , ""           , "markise"         , "toggle"         , "more-info"      , ""         , ""              , ""                                          )] %}
@@ -737,44 +737,49 @@ cards:
 #--------------------------------------------------------------------------------------------------
 # Müllabholung Text + EFFEKT
 #--------------------------------------------------------------------------------------------------
-      - type: custom:button-card
-        entity: sensor.mullabholung_text
-        aspect_ratio: 60/6
-        show_name: true
-        show_icon: false
-        name: |
-          [[[ 
-            if (states['{{ DASHEFFEKT }}'].state == "on")
-              return `
-              <div style='text-align: left;'>
-              <div style='display: flex;display: -webkit-flex;'>
-              <marquee>
-              <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
-              ${states['sensor.mullabholung_text'].state}&nbsp
-              </span>
-              </marquee>`;
-            else
-              return `
-              <div style='text-align: left;'>
-              <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
-              ${states['sensor.mullabholung_text'].state}&nbsp
-              </span>`
-          ]]]
-        styles:
-          name:
-            - font-size: 1.5vw
-            - font-family: {{ SCHRIFT3 }}
-            - width: 100%
-            - padding-top: 2%
-          card:
-            - background: transparent
-            - border: none
-            - margin-top: -1%
-        style:
-          pointer-events: none
-          left: 68%
-          top: 98%
-          width: 60%
+      - type: conditional
+        conditions:
+          - entity: sensor.mullabholung_heute
+            state_not: keine
+        elements:
+          - type: custom:button-card
+            entity: sensor.mullabholung_text
+            aspect_ratio: 60/6
+            show_name: true
+            show_icon: false
+            name: |
+              [[[ 
+                if (states['{{ DASHEFFEKT }}'].state == "on")
+                  return `
+                  <div style='text-align: left;'>
+                  <div style='display: flex;display: -webkit-flex;'>
+                  <marquee>
+                  <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+                  ${states['sensor.mullabholung_text'].state}&nbsp
+                  </span>
+                  </marquee>`;
+                else
+                  return `
+                  <div style='text-align: left;'>
+                  <span style='color: ${states['sensor.dashboard_primar_farbe'].state};'>
+                  ${states['sensor.mullabholung_text'].state}&nbsp
+                  </span>`
+              ]]]
+            styles:
+              name:
+                - font-size: 1.5vw
+                - font-family: {{ SCHRIFT3 }}
+                - width: 100%
+                - padding-top: 2%
+              card:
+                - background: transparent
+                - border: none
+                - margin-top: -1%
+            style:
+              pointer-events: none
+              left: 68%
+              top: 98%
+              width: 60%
 
 
 #    888888b.            888    888                                 # 
@@ -1428,3 +1433,4 @@ cards:
   - !include popup_farbauswahl.yaml # Area Position - pop16
   - !include popup_flocky.yaml # Area Position - pop18
   - !include popup_kaffeemaschine.yaml # Area Position - pop19
+  - !include popup_tankstellen.yaml # Area Position - pop20
