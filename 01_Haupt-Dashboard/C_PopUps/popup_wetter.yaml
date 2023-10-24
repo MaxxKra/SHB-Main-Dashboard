@@ -89,11 +89,14 @@ card:
           frame_count: 50
           frame_delay: 100
           zoom_level: 8
+          map_style: Dark
+          data_source: RainViewer-Rainbow
           card_mod:
             style: |
               ha-card {
                 border: none;
-                background: transparent
+                border-radius: 0px;
+                background: transparent;
               }
 
 #----------------------------------------------------------------
