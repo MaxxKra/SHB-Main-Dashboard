@@ -36,12 +36,21 @@
 {% set TRANSPIXEL = "1x1_transparent.png" %}
 {% set FAILBUTTON = "fail.png" %}
 {% set BACKGROUND = "background.png" %}
-{% set BGNACHT = "hintergrund_nacht.png" %}
-{% set BGTAG = "tageslicht.png" %}
+{% set BGNACHTS = "hintergrund_nacht.png" %}
+{% set BGNACHTW = "hintergrund_nacht_winter.png" %}
+{% set BGTAGS = "tageslicht.png" %}
+{% set BGTAGW = "tageslicht_schnee.png" %}
+{% set BGSNOW = "schnee.gif" %}
+{% set BGRAIN = "regen.gif" %}
+{% set BGFOG = "nebel.gif" %}
+{% set BGGEWIT = "gewitter.gif" %}
 
 # STANDARD SENSOREN SETTING
 {% set SONNE = "sun.sun" %}
+{% set WETTER = "weather.openweathermap" %}
 {% set TAGESLICHT = "sensor.sonnenlicht_transparenz" %}
+{% set SOMWIN = "switch.hauptschalter_heizung" %}
+{% set SOMWINTAG = "sensor.sommer_winter_tageslicht" %}
 {% set MEINDAT = "sensor.mein_dashboard_datum" %}
 {% set DASHEFFEKT = "input_boolean.dashboard_effekt" %}
 {% set WOHNTEMP = "sensor.raumtemperatur_wohnzimmer_ist" %}
@@ -68,6 +77,7 @@
                     ( "light"               , "kueche_barlicht"                       , "Küche Barlicht"            , 50.56  , 47.87 , 2       , "on"            , "off"           , ""          , ""          , ""           , "spot"            , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "switch"              , "on_air"                                , "Büro OnAir"                , 79     , 68.76 , 2       , "on"            , "off"           , ""          , ""          , ""           , "onair"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "switch"              , "videoleuchte"                          , "Büro Videoleuchte"         , 88     , 49.66 , 2       , "on"            , "off"           , ""          , ""          , ""           , "videoleuchte"    , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "weihnachtsbeleuchtung"                 , "Weihnachtsbeleuchutng"     , 31.06  , 49.21 , 2       , "on"            , "off"           , ""          , ""          , ""           , "birne"           , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "light"               , "terrassenlicht"                        , "Terrasse Wandleuchte"      , 42     , 44.61 , 2       , "on"            , "off"           , ""          , ""          , ""           , "wand"            , "toggle"         , "more-info"      , ""             , ""              , ""                                          )] %}
 
  # LISTE              # DOMAIN              , # ENTITY                                , # NAME                      , # LEFT , # TOP , # WIDTH , # AKTIV         , # INAKTIV       , # STATUSC   , # STATUSD   , # STATUSE    , # BUTTON          , # TAP            , # HOLD           , # DOUBLE       , # SERVICE       , # POPUP                                    
@@ -92,7 +102,7 @@
                     ( "switch"              , "vordach_heizung"                       , "Terrasse Heizstrahler"     , 44.38  , 64.04 , 2       , "on"            , "off"           , ""          , ""          , ""           , "heizstrahler"    , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "switch"              , "vollbild_shb_touch"                    , "Vollbild SHB-Touch"        , 96.88  , 4.04  , 2       , "on"            , "off"           , ""          , ""          , ""           , "re_vollbild"     , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "input_boolean"       , "dashboard_effekt"                      , "Dashboard Effekt"          , 93.75  , 4.04  , 2       , "on"            , "off"           , ""          , ""          , ""           , "re_effekt"       , "toggle"         , "fire-dom-event" , ""             , ""              , "input_select.mein_theme"                   ),
-                    ( "input_button"        , "dashboard_refresh"                     , "Dashboard Refresh"         , 90.63  , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_refresh"      , "call-service"   , "more-info"      , ""             , "mqtt.publish"  , "Touch-PC_Taste_F5"                         ),
+                    ( "input_button"        , "dashboard_refresh"                     , "Dashboard Refresh"         , 90.63  , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_refresh"      , "call-service"   , "more-info"      , ""             , "mqtt.publish"  , "SHB-Touch_Taste_F5"                        ),
                     ( "input_button"        , "dashboard_screensaver"                 , "Zum Screensaver"           , 87.5   , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_next_page"    , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-screensaver/0"                   ),
                     ( "input_button"        , "popup_tankstellen"                     , "Tankstellen"               , 84.38  , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "tankstellen"     , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
                     ( "input_button"        , "dashboard_youtube"                     , "Zur Youtube Seite"         , 81.25  , 4.04  , 2       , ""              , ""              , ""          , ""          , "Icon"       , "re_youtube"      , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-seiten/youtube"                  ),
@@ -103,6 +113,7 @@
                     ( "media_player"        , "badezimmer_echo"                       , "Badezimmer Echo"           , 68.06  , 27.75 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
                     ( "binary_sensor"       , "kontakt_eingang"                       , "Türkontakt Eingang"        , 76.19  , 47.3  , 2       , "on"            , "off"           , ""          , ""          , "off"        , "re_tuere"        , "call-service"   , "more-info"      , ""             , "switch.toggle" , "switch.ture_auf"                           ),
                     ( "binary_sensor"       , "kontakt_garten"                        , "Türkontakt Garten"         , 46.75  , 57.75 , 2       , "on"            , "off"           , ""          , ""          , "off"        , "re_tuere"        , "none"           , "none"           , ""             , ""              , ""                                          ),
+                    ( "binary_sensor"       , "kontakt_sz_ture"                       , "Türkontakt Schlafzimmer"   , 79     , 75.84 , 2       , "on"            , "off"           , ""          , ""          , "off"        , "re_tuere"        , "none"           , "none"           , ""             , ""              , ""                                          ),
                     ( "media_player"        , "kuchen_echo"                           , "Küchen Echo"               , 59.56  , 35.96 , 2       , "playing"       , "paused"        , ""          , ""          , "paused"     , "echo"            , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
                     ( "vacuum"              , "flocky"                                , "Flocky"                    , 50     , 85.39 , 2       , "cleaning"      , "docked"        , "returning" , "standby"   , "idle"       , "flocky"          , "more-info"      , "more-info"      , ""             , ""              , ""                                          )] %}
 
@@ -173,7 +184,7 @@
                     ( "switch"              , "spielen"                               , "Spielen"                   , 9.5    , 74.16 , 5       , "on"            , "off"           , ""          , ""          , "off"        , "re_playstation"  , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "switch"              , "medien_hauptschalter"                  , "Alle Medien AUS"           , 21.5   , 74.16 , 5       , "on"            , "off"           , ""          , ""          , "off"        , "re_medien"       , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "switch"              , "hauptschalter_heizung"                 , "Heizung Sommer/Winter"     , 6      , 89.89 , 4       , "on"            , "off"           , ""          , ""          , "off"        , "re_so-wi"        , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
-                    ( "sensor"              , "temperatur_ist_heizkoerper_vorraum"    , "Heizung Übersicht"         , 12.5   , 89.89 , 4       , "on"            , "off"           , ""          , ""          , "off"        , "re_heizung"      , "more-info"      , "more-info"      , ""             , ""              , ""                                          ),
+                    ( "switch"              , "heizung"                               , "Heizung Übersicht"         , 12.5   , 89.89 , 4       , "on"            , "off"           , ""          , ""          , ""           , "re_heizung"      , "fire-dom-event" , "toggle"         , ""             , ""              , "sensor.temperatur_ist_heizkoerper_vorraum" ),
                     ( "switch"              , "zusatzheizung"                         , "Zusatzheizung"             , 19     , 89.89 , 4       , "on"            , "off"           , ""          , ""          , "off"        , "re_heizung"      , "toggle"         , "more-info"      , ""             , ""              , ""                                          ),
                     ( "alarm_control_panel" , "home_alarm"                            , "Alarmanlage"               , 15.5   , 14.16 , 5       , "disarmed"      , "arming"        , "pending"   , "triggered" , "armed_away" , "re_alarm"        , "navigate"       , "more-info"      , ""             , ""              , "/lovelace-seiten/schalter"                 ),
                     ( "sensor"              , "geschirrspuler_status"                 , "Geschirrspüler"            , 59.5   , 44.04 , 2.5     , "Läuft"         , "Fertig"        , ""          , ""          , "Läuft"      , "re_gs"           , "more-info"      , "more-info"      , "call-service" , "light.toggle"  , "light.geschirrspuler"                      ),
@@ -425,8 +436,17 @@ cards:
 #-------------------------------------------------------------------------------------------------- 
 # HINTERGRUNDBILD NACHT
 #-------------------------------------------------------------------------------------------------- 
-      - type: image
-        image: {{ BGBILDERPFAD }}{{ BGNACHT }}
+
+      - type: custom:config-template-card
+        entities:
+          - {{ SOMWIN }}
+        element:
+          type: image
+          entity: {{ SOMWIN }}
+          image: {{ BGBILDERPFAD }}{{ TRANSPIXEL }}
+          state_image:
+            'on': {{ BGBILDERPFAD }}{{ BGNACHTW }}
+            'off': {{ BGBILDERPFAD }}{{ BGNACHTS }}
         style:
           pointer-events: none
           top: 50%
@@ -446,18 +466,21 @@ cards:
 #-------------------------------------------------------------------------------------------------- 
 # HINTERGRUNDBILD TAG
 #-------------------------------------------------------------------------------------------------- 
+
       - type: custom:config-template-card
         variables:
           TRANSPARENZ: states['{{ TAGESLICHT }}'].state
         entities:
           - {{ SONNE }}
           - {{ TAGESLICHT }}
+          - {{ SOMWINTAG }}
         element:
           type: image
-          entity: {{ SONNE }}
+          entity: {{ SOMWINTAG }}
           image: {{ BGBILDERPFAD }}{{ TRANSPIXEL }}
           state_image:
-            above_horizon: {{ BGBILDERPFAD }}{{ BGTAG }}
+            'WINTAG': {{ BGBILDERPFAD }}{{ BGTAGW }}
+            'SOMTAG': {{ BGBILDERPFAD }}{{ BGTAGS }}
         tap_action:
           action: none
         hold_action:
@@ -470,7 +493,34 @@ cards:
           left: 50%
           width: 100%
 
+#-------------------------------------------------------------------------------------------------- 
+# Wetter Overlay
+#-------------------------------------------------------------------------------------------------- 
 
+      - type: custom:config-template-card
+        entities:
+          - {{ WETTER }}
+        element:
+          type: image
+          entity: {{ WETTER }}
+          image: {{ BGBILDERPFAD }}{{ TRANSPIXEL }}
+          state_image:
+            'snowy': {{ BGBILDERPFAD }}{{ BGSNOW }}
+            'snowy-rainy': {{ BGBILDERPFAD }}{{ BGSNOW }}
+            'rainy': {{ BGBILDERPFAD }}{{ BGRAIN }}
+            'pouring': {{ BGBILDERPFAD }}{{ BGRAIN }}
+            'lightning-rainy': {{ BGBILDERPFAD }}{{ BGGEWIT }}
+            'fog': {{ BGBILDERPFAD }}{{ BGFOG }}
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        style:
+          mix-blend-mode: lighten
+          pointer-events: none
+          top: 50%
+          left: 50%
+          width: 100%
 
 
 
