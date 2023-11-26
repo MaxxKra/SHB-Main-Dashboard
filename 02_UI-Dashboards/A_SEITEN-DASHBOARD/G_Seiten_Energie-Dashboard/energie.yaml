@@ -45,7 +45,8 @@
         "seit2 seit2 seit2 haupt haupt haupt haupt haupt haupt haupt"
         "seit3 seit3 seit3 haupt haupt haupt haupt haupt haupt haupt"
         "seit4 seit4 seit4 haupt haupt haupt haupt haupt haupt haupt"
-        "pop pop pop pop pop pop pop pop pop pop"
+        "pop1 pop1 pop2 pop2 pop3 pop3 pop4 pop4 pop5 pop5"
+        "pop6 pop6 pop7 pop7 pop8 pop8 pop9 pop9 pop10 pop10"
     theme: Caule Black Orange Glass
     badges: []
     cards:
@@ -733,6 +734,8 @@
         dismissable: true
         entity: sensor.geschirrspuler_4_1min
         size: normal
+        view_layout:
+          grid-area: pop1
         style: |-
           --mdc-theme-surface: rgba(15,10,10,0.9);
           --popup-border-radius: 0px;
@@ -970,6 +973,8 @@
         title: Verbraucher Statistik
         dismissable: true
         size: normal
+        view_layout:
+          grid-area: pop2
         style: |-
           --mdc-theme-surface: rgba(15,10,10,0.9);
           --popup-border-radius: 0px;
@@ -1208,6 +1213,8 @@
         title: Verbraucher Statistik
         dismissable: true
         size: normal
+        view_layout:
+          grid-area: pop3
         style: |-
           --mdc-theme-surface: rgba(15,10,10,0.9);
           --popup-border-radius: 0px;
@@ -1441,6 +1448,8 @@
         title: Verbraucher Statistik
         dismissable: true
         size: normal
+        view_layout:
+          grid-area: pop4
         style: |-
           --mdc-theme-surface: rgba(15,10,10,0.9);
           --popup-border-radius: 0px;
@@ -1679,6 +1688,8 @@
         title: Verbraucher Statistik
         dismissable: true
         size: normal
+        view_layout:
+          grid-area: pop5
         style: |-
           --mdc-theme-surface: rgba(15,10,10,0.9);
           --popup-border-radius: 0px;
@@ -1917,6 +1928,8 @@
         title: Verbraucher Statistik
         dismissable: true
         size: normal
+        view_layout:
+          grid-area: pop6
         style: |-
           --mdc-theme-surface: rgba(15,10,10,0.9);
           --popup-border-radius: 0px;
@@ -2150,6 +2163,8 @@
         title: Verbraucher Statistik
         dismissable: true
         size: normal
+        view_layout:
+          grid-area: pop7
         style: |-
           --mdc-theme-surface: rgba(15,10,10,0.9);
           --popup-border-radius: 0px;
@@ -2388,6 +2403,8 @@
         title: Verbraucher Statistik
         dismissable: true
         size: normal
+        view_layout:
+          grid-area: pop8
         style: |-
           --mdc-theme-surface: rgba(15,10,10,0.9);
           --popup-border-radius: 0px;
