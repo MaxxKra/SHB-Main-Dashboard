@@ -32,6 +32,7 @@
 
 ## DL_Buttons_Raum-Gruppen
 | **arbeitszimmer_off** | **arbeitszimmer_on** | **esszimmer_off** | **esszimmer_on** | **garten_off** | **garten_on**  |
+| :---: | :---: | :---: | :---: | :---: | :---: |
 | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_arbeitszimmer_off.png" width="100">  | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_arbeitszimmer_on.png" width="100">  | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_esszimmer_off.png" width="100">  | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_esszimmer_on.png" width="100">  | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_garten_off.png" width="100">  | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_garten_on.png" width="100">   |
 | **kueche_off** | **kueche_on** | **sanitaer_off** | **sanitaer_on** | **schlafzimmer_off** | **schlafzimmer_on**  |
 | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_kueche_off.png" width="100">  | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_kueche_on.png" width="100">  | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_sanitaer_off.png" width="100">  | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_sanitaer_on.png" width="100">  | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_schlafzimmer_off.png" width="100">  | <img src="/../main/04_ICONS/DL_Buttons_Raum-Gruppen/re_button_schlafzimmer_on.png" width="100">   |
