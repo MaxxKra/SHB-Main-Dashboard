@@ -6,7 +6,7 @@
 | **Media ** | **Musik ** | **PS4 ** | **Disney ** | **LIWEST ** | **NETFLIX **  |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | <img src="/../main/04_ICONS/DL_Button_GIF/media_button.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/Musik_circle_green.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/PS4_blue_circle.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_disney.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_liwest.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_netflix.gif" width="100">   |
-| <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_playstation.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_prime.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_rot.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_spotify.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_youtube.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/TV_circle_orange.gif" width="100">   |
+| **PLAYSTATION ** | **PRIME ** | **ROT ** | **SPOTIFY ** | **YOUTUBE ** | **TV **  |
 | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_playstation.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_prime.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_rot.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_spotify.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_youtube.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/TV_circle_orange.gif" width="100">   |
 
 
