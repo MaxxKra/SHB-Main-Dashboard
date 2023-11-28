@@ -3,7 +3,7 @@
 ## Die ZIP Ordner mit den Buttons sind zum Download bei den Icons
 
 ## DL_Button_GIF
-| **Media ** | **Musik ** | **PS4 ** | **Disney ** | **LIWEST ** | **NETFLIX **  |
+| **Media** | **Musik ** | **PS4 ** | **Disney ** | **LIWEST ** | **NETFLIX **  |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | <img src="/../main/04_ICONS/DL_Button_GIF/media_button.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/Musik_circle_green.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/PS4_blue_circle.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_disney.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_liwest.gif" width="100">  | <img src="/../main/04_ICONS/DL_Button_GIF/raute_player_netflix.gif" width="100">   |
 | **PLAYSTATION ** | **PRIME ** | **ROT ** | **SPOTIFY ** | **YOUTUBE ** | **TV **  |
