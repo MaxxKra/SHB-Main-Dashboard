@@ -22,3 +22,11 @@ Hier ist der komplette Code meines Haupt Dashboard. Dieses ist mit lovelace gen 
 ## Zu den verwendeten HACS Integrationen
 
 [Zur HACS_README.md](/../main/03_HACS/HACS_README.md)
+
+## Zu den verwendeten Icons
+
+[Zur ICON_README.md](/../main/04_ICONS/ICON_README.md)
+
+## Zu den verwendeten Templates
+
+[Zur TEMPLATE_README.md](/../main/05_TEMPLATES/TEMPLATE_README.md)
