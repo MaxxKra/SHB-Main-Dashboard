@@ -12,11 +12,9 @@
 | <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Waldsee-2.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Waldsee-2.png" width="400"></a> | <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Waldsee-3.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Waldsee-3.png" width="400"></a> |
 | **WALDSEE** | **WASSERFALL-FLUSS-2** |
 | <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Waldsee.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Waldsee.png" width="400"></a> | <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Wasserfall-Fluss-2.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Wasserfall-Fluss-2.png" width="400"></a> |
-| **WASSERFALL-FLUSS-3** | **WASSERFALL-WALD-2** |
-| <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Wasserfall-Fluss-3.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Wasserfall-Fluss-3.png" width="400"></a> | <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Wasserfall-Wald-2.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Wasserfall-Wald-2.png" width="400"></a> |
+| **WASSERFALL-FLUSS** | **WASSERFALL-WALD-2** |
+| <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Wasserfall-Fluss.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Wasserfall-Fluss.png" width="400"></a> | <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Wasserfall-Wald-2.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Wasserfall-Wald-2.png" width="400"></a> |
 | **WASSERFALL-WALD** | **WEIHNACHTEN** |
 | <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Wasserfall-Wald.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Wasserfall-Wald.png" width="400"></a> | <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Weihnachten.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Weihnachten.png" width="400"></a> |
 | **WINTERLANDSCHAFT** | **LEER** |
 | <a href="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Winterlandschaft.mp4" target="_blank">  <img src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/Winterlandschaft.png" width="400"></a> |  |
-
-
