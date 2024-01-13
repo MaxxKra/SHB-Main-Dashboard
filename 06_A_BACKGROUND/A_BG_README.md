@@ -3,10 +3,7 @@
 
 | **background** | **background_50** |
 | :---: | :---: |
-| <video width="400" controls>
-  <source src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Advent.mp4" type="video/mp4">
-  Dein Browser unterstützt das Video-Tag nicht.
-</video> | <video width="400" controls>
-  <source src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Bergsee.mp4" type="video/mp4">
-  Dein Browser unterstützt das Video-Tag nicht.
-</video> |
+| <video src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Advent.mp4" width="400"> | <video src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Bergsee.mp4" width="400"> |
+| **Advent** | **Bergsee** |
+| <video src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Feuerstelle.mp4" width="400"> | <video src="/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Feuerwerk.mp4" width="400"> |
+| **Feuerstelle** | **Feuerwerk** |
