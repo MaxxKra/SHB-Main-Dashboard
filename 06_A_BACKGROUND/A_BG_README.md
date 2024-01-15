@@ -1,6 +1,50 @@
 # INFORMATIONEN ZUM ANIMIERTEN HINTERGRUND
 
+Hier zeige ich meinen selbst erstellten Template Sensor für die Steuerung eines animierten Hintergrunds in Home Assistant.
+Der Sensor basiert auf verschiedenen Parametern, darunter die Position der Sonne über und unter dem Horizont sowie aktuelle Wetterdaten. 
+Die Hauptintention hinter diesem Sensor besteht darin, sicherzustellen, dass während der Nacht, also wenn die Sonne unter dem Horizont liegt, keine Bilder mit Sonnenlicht im Hintergrund angezeigt werden.
+
+
 ![ABACKGRAOUND](/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/a_backgound_tag_nacht.gif)
+
+<details>
+
+<summary>HIER GIBTS DAS TEMPLATE</summary>
+
+### Animated Background Tag Nacht Sensor
+
+Dieses Template ist für den Sensor Folder (eine Ausgelagerte Datei) erstellt worden.
+Beim Einfügen in die `configuration.yaml` müssen Formatierungen vorgenommen werden.
+
+```yaml
+#########################################################################################
+#---------------------------------------------------------------------------------------#
+##--------------- TAG NACHT Änderung für den animierten Hintergrund -------------------##
+#---------------------------------------------------------------------------------------#
+#########################################################################################
+
+sensor:
+
+#-----------------------------------------------------------
+# Tag/Nacht Änderung
+#-----------------------------------------------------------
+- name: A-Background Tag Nacht
+  unique_id: a_background_tag_nacht
+  icon: theme-light-dark
+  state: >
+    {%- set SUN = states['sun.sun'].state %}
+    {%- set WEATHER = states['sensor.openweathermap_condition'].state %}
+    {%- set DAY = "above_horizon" %}
+    {%- set NIGHT = "below_horizon" %}
+    {%- if SUN == DAY %}
+    {{ WEATHER }}
+    {%- elif SUN == NIGHT %}
+    night_{{ WEATHER }}
+    {%- else %}
+    Default
+    {%- endif %}
+```
+</details>
 
 # MEINE VIDEOS FÜR DEN ANIMATED BACKGROUND UND SCREENSAVER
 
