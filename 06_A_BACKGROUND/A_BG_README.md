@@ -10,7 +10,7 @@ Die Hauptintention hinter diesem Sensor besteht darin, sicherzustellen, dass wä
 
 <details>
 
-<summary>## HIER GIBTS DAS TEMPLATE</summary>
+<summary>HIER GIBTS DAS TEMPLATE</summary>
 
 ### Animated Background Tag Nacht Sensor
 
@@ -54,7 +54,7 @@ Dieser enthällt nun zusätzliche Bilder und den neuen Template Sensor `sensor.a
 
 <details>
 
-<summary>## HIER GIBTS DEN EINTRAG FÜR DAS DASHBOARD</summary>
+<summary>HIER GIBTS DEN EINTRAG FÜR DAS DASHBOARD</summary>
 
 ### Code für den RAW Konfigurationseditor
 
