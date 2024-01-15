@@ -1,6 +1,6 @@
 # INFORMATIONEN ZUM ANIMIERTEN HINTERGRUND
 
-![ABACKGRAOUND](/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/a_background_tag_nacht.gif)
+![ABACKGRAOUND](/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/a_backgound_tag_nacht.gif)
 
 # MEINE VIDEOS FÜR DEN ANIMATED BACKGROUND UND SCREENSAVER
 
