@@ -8,9 +8,10 @@ Die Hauptintention hinter diesem Sensor besteht darin, sicherzustellen, dass wä
 ![ABACKGRAOUND](/../main/06_A_BACKGROUND/Bildschirmschoner_Hintergrund/Vorschaubilder/a_backgound_tag_nacht.gif)
 
 
+### HIER GIBT ES DAS TEMPLATE
 <details>
 
-<summary>HIER GIBTS DAS TEMPLATE</summary>
+<summary>TAG/NACHT TEMPLATE</summary>
 
 ### Animated Background Tag Nacht Sensor
 
@@ -52,9 +53,10 @@ Natürlich musste auch der Code für den `RAW Konfigurationseditor` am Dashboard
 Dieser enthällt nun zusätzliche Bilder und den neuen Template Sensor `sensor.a_background_tag_nacht` als Entität.
 
 
+### HIER GIBTS DEN EINTRAG FÜR DAS DASHBOARD
 <details>
 
-<summary>HIER GIBTS DEN EINTRAG FÜR DAS DASHBOARD</summary>
+<summary>RAW Code</summary>
 
 ### Code für den RAW Konfigurationseditor
 
