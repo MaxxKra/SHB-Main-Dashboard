@@ -1,5 +1,11 @@
 # INFORMATIONEN ZUM ANIMIERTEN HINTERGRUND
 
+Um den animierten Hintergrund zu installieren, folge dies Repository-Link bzw. installiere diesen als benutzerdefiniertes Repository:
+
+
+https://github.com/MaxxKra/lovelace-animated-background.git
+
+
 Hier zeige ich meinen selbst erstellten Template Sensor für die Steuerung eines animierten Hintergrunds in Home Assistant.
 Der Sensor basiert auf verschiedenen Parametern, darunter die Position der Sonne über und unter dem Horizont sowie aktuelle Wetterdaten. 
 Die Hauptintention hinter diesem Sensor besteht darin, sicherzustellen, dass während der Nacht, also wenn die Sonne unter dem Horizont liegt, keine Bilder mit Sonnenlicht im Hintergrund angezeigt werden.
